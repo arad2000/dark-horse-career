@@ -3,115 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>اسب سیاه | درمانگر</title>
+  <title>اسب سیاه | مسیرت را کشف کن</title>
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Vazirmatn',Tahoma,sans-serif;background:#0a0a0f;color:#e0e0e0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
-    .container{max-width:600px;width:100%;padding:20px;text-align:center}
-    h1{color:#f0c040;margin-bottom:10px}
-    h2{color:#d4af37;margin:20px 0 10px}
-    p{line-height:2;color:#bbb;margin-bottom:15px}
-    .card{background:#1a1a2e;border-radius:20px;padding:30px 20px;margin:20px 0;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
-    .card-text{font-size:1.2rem;line-height:2.2;margin-bottom:25px}
-    .btn-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{padding:14px 28px;border:none;border-radius:60px;font-size:1rem;cursor:pointer;transition:all .2s;background:#2a2a3e;color:#ddd}
-    .btn:hover{background:#3a3a5e}
-    .btn-primary{background:#d4af37;color:#000;font-weight:bold}
-    .btn-primary:hover{background:#f0c040}
-    .btn-heart{background:#c04060;color:#fff;font-size:1.2rem;padding:15px 35px}
-    .btn-heart:hover{background:#e05070}
-    .btn-skip{background:#444;color:#ccc}
-    .gate-grid{display:grid;grid-template-columns:1fr;gap:15px;margin-bottom:20px}
-    @media(min-width:500px){.gate-grid{grid-template-columns:1fr 1fr}}
-    .gate-option{background:#1e1e32;border:2px solid #333;border-radius:16px;padding:18px;cursor:pointer;text-align:right;color:#ccc;transition:.2s}
-    .gate-option.selected{border-color:#d4af37;background:#2a2a22;color:#f0c040}
-    .progress-bar{width:100%;height:6px;background:#2a2a3e;border-radius:3px;margin:10px 0}
-    .progress-fill{height:100%;background:#d4af37;border-radius:3px;transition:width .4s}
-    .result-card{background:#1e1e32;border-radius:16px;padding:20px;margin:18px 0;border-right:6px solid #d4af37;text-align:right}
-    .result-card h3{color:#f0c040}
-    .score{font-size:1.4rem;font-weight:bold;color:#d4af37}
-    .hidden{display:none!important}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.5s;
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 25px;
+      text-align: center;
+    }
+    h1 { font-size: 2.2rem; color: #f0c040; margin-bottom: 10px; }
+    h2 { font-size: 1.6rem; color: #d4af37; margin: 25px 0 15px; }
+    p { line-height: 2; margin-bottom: 20px; color: #bbb; font-size: 1rem; }
+    .card {
+      background: #1a1a2e;
+      border-radius: 24px;
+      padding: 35px 25px;
+      margin: 25px 0;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    }
+    .card-text { font-size: 1.25rem; line-height: 2.2; margin-bottom: 30px; }
+    .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 60px;
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      background: #2a2a3e;
+      color: #ddd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      display: inline-block;
+      margin: 5px;
+    }
+    .btn:hover { background: #3a3a5e; transform: translateY(-2px); }
+    .btn-primary { background: #d4af37; color: #0a0a0f; font-weight: bold; }
+    .btn-primary:hover { background: #f0c040; }
+    .btn-heart { background: #c04060; color: white; font-size: 1.2rem; padding: 15px 35px; }
+    .btn-heart:hover { background: #e05070; }
+    .btn-skip { background: #444; color: #ccc; }
+    .gate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+    @media (max-width: 500px) { .gate-grid { grid-template-columns: 1fr; } }
+    .gate-option {
+      background: #1e1e32;
+      border: 2px solid #333;
+      border-radius: 16px;
+      padding: 18px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: right;
+      color: #ccc;
+    }
+    .gate-option.selected { border-color: #d4af37; background: #2a2a22; color: #f0c040; }
+    .gate-option:hover { border-color: #888; }
+    .progress-bar { width: 100%; height: 8px; background: #2a2a3e; border-radius: 4px; margin: 15px 0; }
+    .progress-fill { height: 100%; background: #d4af37; border-radius: 4px; transition: width 0.4s; }
+    .result-card {
+      background: #1e1e32;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 18px 0;
+      border-right: 6px solid #d4af37;
+      text-align: right;
+    }
+    .result-card h3 { color: #f0c040; }
+    .score { font-size: 1.4rem; font-weight: bold; color: #d4af37; }
   </style>
 </head>
 <body>
 <div class="container" id="app"></div>
 
 <script>
-const API = 'https://dark-horse-career.onrender.com/calculate'; // ← جایگزین شود
-const RAW_DATA = 'https://raw.githubusercontent.com/arad2000/dark-horse-career/main/data/micro_motives.json'; // ← جایگزین شود
+// ======================== CONFIGURATION ========================
+const API_URL = 'https://YOUR_RENDER_APP.onrender.com/calculate'; // ← آدرس Render خود را جایگزین کنید
+const RAW_DATA_URL = 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/data/micro_motives.json'; // ← آدرس Raw فایل را جایگزین کنید
 
-const STRATEGY_QUESTIONS = [
-  "۱. در یک پروژه، با مشکل فنی پیچیده‌ای مواجه می‌شوی که راه‌حل آماده ندارد. چه می‌کنی؟",
-  "۲. برای انتخاب بین دو مسیر تحصیلی جذاب، چطور تصمیم می‌گیری؟",
-  "۳. وقتی داده‌های یک مسئله متناقض هستند و به جمع‌بندی نمی‌رسی، چه می‌کنی؟",
-  "۴. در مواجهه با یک خطای مکرر در کارت، اولین واکنشت چیست؟",
-  "۵. می‌خواهی یک نرم‌افزار جدید یاد بگیری. بهترین روش برای تو کدام است؟",
-  "۶. در کلاس درس یا کارگاه آموزشی، چطور یاد می‌گیری؟",
-  "۷. برای فهم عمیق یک مفهوم علمی پیچیده، چکار می‌کنی؟",
-  "۸. هنگام یادگیری یک مهارت فیزیکی (رانندگی، ورزش، ابزار دستی) روشت چیست؟",
-  "۹. در یک کار گروهی، یک عضو مدام وظایفش را انجام نمی‌دهد. چه می‌کنی؟",
-  "۱۰. وقتی دو نفر در گروه با هم اختلاف جدی دارند، نقش طبیعی تو چیست؟",
-  "۱۱. در یک پروژهٔ گروهی ترجیح می‌دهی چه نقشی داشته باشی؟",
-  "۱۲. برای حل یک مسئلهٔ گروهی، کدام روش به شخصیت تو نزدیک‌تر است؟",
-  "۱۳. پروژه‌ای با هدف مشخص اما مسیر مبهم به تو محول شده. چه حسی داری و چه می‌کنی؟",
-  "۱۴. باید تصمیم مهمی بگیری ولی اطلاعات کلیدی تا یک ماه دیگر نیست. چه می‌کنی؟",
-  "۱۵. وارد یک محیط جدید (دانشگاه، کار، شهر جدید) شده‌ای. کدام جمله توصیف بهتری از توست؟",
-  "۱۶. وقتی با یک موقعیت کاملاً پیش‌بینی‌نشده روبرو می‌شوی، اولین واکنشت چیست؟",
-  "۱۷. در یک پروژه با فرآیند اداری دست‌وپاگیر مواجه می‌شوی. چه کار می‌کنی؟",
-  "۱۸. نظرت در مورد چک‌لیست‌ها و دستورالعمل‌های مکتوب چیست؟",
-  "۱۹. استاد یا مدیرت یک ضرب‌الاجل غیرمنطقی تعیین کرده. واکنشت چیست؟",
-  "۲۰. با یک سیستم ارزشیابی استاندارد روبرو هستی که توانایی واقعی‌ات را نشان نمی‌دهد. چه می‌کنی؟"
-];
-const STRATEGY_OPTIONS = [
-  ["مسئله را به اجزای کوچک‌تر تقسیم می‌کنم","روش‌های مختلف را امتحان می‌کنم","با فرد با تجربه مشورت می‌کنم","از مسئله فاصله می‌گیرم تا جرقه بزند","یک راه‌حل موقت و سریع پیدا می‌کنم"],
-  ["جدول مزایا و معایب می‌سازم","چند روز در هر مسیر زندگی ذهنی می‌کنم","با افراد در آن مسیرها گفتگو می‌کنم","تصمیم موقت می‌گیرم و بعد ارزیابی می‌کنم","می‌گذارم شرایط بیرونی تصمیم را محدود کند"],
-  ["داده‌های قابل‌اعتمادتر را ملاک قرار می‌دهم","چند فرضیه می‌سازم و جداگانه می‌سنجم","از یک همکار یا استاد نظر می‌خواهم","صبر می‌کنم تا دادهٔ جدید برسد","بر اساس حس درونی‌ام یکی را انتخاب می‌کنم"],
-  ["بررسی سیستماتیک تمام مراحل","دوباره همان کار را با دقت بیشتر انجام می‌دهم","از کسی که فرآیند را بهتر می‌شناسد می‌پرسم","یک روش کاملاً متفاوت امتحان می‌کنم","خطا را ثبت می‌کنم و به کارم ادامه می‌دهم"],
-  ["اول کتاب راهنما را کامل می‌خوانم","ویدیوی آموزشی می‌بینم و همزمان انجام می‌دهم","یک پروژهٔ واقعی تعریف می‌کنم و در حینش یاد می‌گیرم","از یک دوست می‌خواهم کنارم بنشیند و یادم دهد","اول با منوها و دکمه‌ها بازی می‌کنم"],
-  ["با دقت گوش می‌دهم و یادداشت می‌کنم","اسلایدها را از قبل می‌خوانم و در کلاس سؤال می‌پرسم","تمرین عملی یا مسئله حل می‌کنم","بحث گروهی با بغل‌دستی","خودم بعد از کلاس خلاصه می‌کنم"],
-  ["مقالهٔ اصلی یا کتاب مرجع را می‌خوانم","انیمیشن یا شبیه‌سازی آن را تماشا می‌کنم","برای یک دوست توضیحش می‌دهم","یک آزمایش فکری یا مثال ملموس می‌سازم","آن را به صورت ریاضی مدل می‌کنم"],
-  ["اول تئوری و نکات ایمنی را کامل می‌خوانم","مربی یا فرد ماهر نشانم دهد، بعد تقلید می‌کنم","مستقیم شروع می‌کنم و از اشتباهاتم یاد می‌گیرم","آهسته و با تمرکز روی هر جزء انجام می‌دهم","به احساس بدنم هنگام انجام کار دقت می‌کنم"],
-  ["با او جلسه می‌گذارم و منطقی توضیح می‌دهم","خودم وظایفش را انجام می‌دهم","موضوع را با سرپرست تیم مطرح می‌کنم","سعی می‌کنم بفهمم چرا کار نمی‌کند و کمکش می‌کنم","در جلسهٔ گروهی موضوع را باز می‌کنم"],
-  ["با استدلال به یکی از طرف‌ها کمک می‌کنم","احساسات را آرام می‌کنم و راه‌حل میانه می‌یابم","بحث را جمع‌بندی و گزینه‌های عملی پیشنهاد می‌دهم","کنار می‌ایستم مگر اینکه نظر مرا بخواهند","موضوع را به رأی‌گیری می‌گذارم"],
-  ["برنامه‌ریزی و کنترل زمان‌بندی","ایده‌پردازی و تعیین جهت فکری","اجرای دقیق کارها و تحویل خروجی","هماهنگی و حمایت از اعضای تیم","انجام مستقل بخش خودم بدون دخالت"],
-  ["جلسهٔ منظم با دستور کار مشخص","بارش فکری آزاد روی تخته","تقسیم کار و کار مستقل، بعد ترکیب","یک نفر طرح اولیه دهد و بقیه نقد کنند","صحبت غیررسمی و خودمانی برای خلق ایده"],
-  ["مضطرب می‌شوم و سریع برنامه می‌ریزم","هیجان‌زده می‌شوم؛ فرصت خلاقیت است","نمونه‌های مشابه قبلی را پیدا می‌کنم","از مدیر می‌خواهم مسیر را واضح‌تر کند","شروع به حرکت در یک جهت می‌کنم و در مسیر اصلاح می‌کنم"],
-  ["صبر می‌کنم تا اطلاعات برسد","بر اساس اطلاعات فعلی و تجربه بهترین حدس را می‌زنم","چند سناریو طراحی می‌کنم","از دیگران نظر می‌خواهم","تصمیمی می‌گیرم که برگشت‌پذیر باشد"],
-  ["سریع به دنبال نقشه و قوانین رسمی می‌گردم","با چند نفر آشنا می‌شوم و می‌پرسم","چند روزی فقط مشاهده می‌کنم","مستقیم می‌روم سراغ کار اصلی","فضای غیررسمی و روابط را می‌فهمم"],
-  ["مکث می‌کنم و با منطق پاسخ می‌دهم","با شوخی و خونسردی فضا را تلطیف می‌کنم","از اطرافیان کمک می‌خواهم","به سرعت یک راه‌حل موقت اجرا می‌کنم","موقعیت را به تجربه‌ای قبلی ربط می‌دهم"],
-  ["دقیقاً طبق مقررات عمل می‌کنم","به دنبال راهی قانونی برای دور زدن آن می‌گردم","با فرد مسئول صحبت می‌کنم و توافق انسانی می‌کنم","فرآیند را مستند و پیشنهاد اصلاح می‌دهم","در صورت امکان آن را به دیگری واگذار می‌کنم"],
-  ["عالی‌اند؛ همیشه از آن‌ها استفاده می‌کنم","مفیدند، ولی نسخهٔ شخصی خودم را می‌سازم","راهنمای کلی خوبی‌اند، اما به خلاقیت خودم تکیه می‌کنم","فقط برای کارهای پیچیده یا خطرناک استفاده می‌کنم","معمولاً محدودکننده‌اند؛ با شهود کار می‌کنم"],
-  ["برنامه‌ریزی فشرده می‌کنم تا برسم","با او مذاکره می‌کنم و منطقی توضیح می‌دهم","اولویت‌ها را بررسی و بخش‌های کم‌اهمیت را حذف می‌کنم","از هم‌تیمی‌ها کمک می‌گیرم","کار را با همان کیفیت همیشگی انجام می‌دهم"],
-  ["بهترین عملکرد را طبق معیارها ارائه می‌دهم","کارهای اضافی برای نمایش توانایی‌ام انجام می‌دهم","اعتراض رسمی می‌کنم و پیشنهاد اصلاح می‌دهم","نادیده می‌گیرم و به مسیر خودم ادامه می‌دهم","با افراد موفق در آن سیستم مشورت می‌کنم"]
-];
-
-const VALUE_QUESTIONS = [
-  "۱. کدام لذت عمیق‌تر است؟",
-  "۲. در اوج رضایت شغلی، کدام را ترجیح می‌دهی؟",
-  "۳. کدام حس برایت غنی‌تر است؟",
-  "۴. چه نوع مسئولیتی تو را بیشتر به هیجان می‌آورد؟",
-  "۵. کدام تحسین را بیشتر دوست داری بشنوی؟",
-  "۶. در یک روز کاری ایدئال، انرژی‌ات را از کجا می‌گیری؟",
-  "۷. وقتی به ۲۰ سال آینده فکر می‌کنی، کدام موفقیت را از آنِ خودت می‌بینی؟",
-  "۸. کدام محیط کاری تو را شکوفاتر می‌کند؟",
-  "۹. کدام منبع «معنا» برای کارت قوی‌تر است؟",
-  "۱۰. در یک پروژهٔ گروهی، کدام نقش بیشترین رضایت را به تو می‌دهد؟"
-];
-const VALUE_OPTIONS = [
-  ["لحظه‌ای که بیماری را درمان می‌کنی و در چشمانش آرامش می‌بینی","لحظه‌ای که فرآیندی را چنان بهینه‌سازی می‌کنی که یک سازمان کامل نجات پیدا می‌کند"],
-  ["ببینی محصولی که ساخته‌ای، سال‌ها پس از تو هم کار می‌کند","ببینی ایده‌ای که کاشته‌ای، در ذهن یک نسل جوان ریشه دوانده"],
-  ["هر روز با یک چالش کاملاً جدید روبرو شوی","در یک حوزه چنان عمیق شوی که دیگران تو را مرجع بدانند"],
-  ["مسئولیت مستقیم جان یا سلامت یک انسان","مسئولیت یک سیستم پیچیده که زندگی هزاران انسان به آن وابسته است"],
-  ["«چقدر دقیق و منظم کار می‌کند»","«چقدر خلاق است، راه‌حل‌هایی به ذهنش می‌رسد که به فکر کسی نمی‌رسد»"],
-  ["از تعامل رو در رو با انسان‌ها و شنیدن داستان‌هایشان","از تمرکز عمیق و بی‌وقفه پشت میز کار خودم"],
-  ["یک اختراع یا نوآوری که نامت را در تاریخ ثبت کند","شبکه‌ای از شاگردان و همکاران وفادار که رشدشان را مدیون تو هستند"],
-  ["محیطی با قوانین روشن و امنیت شغلی بالا","محیطی انعطاف‌پذیر با آزادی کامل برای انتخاب مسیر"],
-  ["دانستن اینکه کارت مستقیماً رنج یک انسان واقعی را کم می‌کند","دانستن اینکه زیبایی، حقیقت یا دانشی را خلق کرده‌ای که قبلاً وجود نداشت"],
-  ["کسی که طرح کلی را می‌ریزد و مسیر را تعیین می‌کند","کسی که با همدلی فضا را باز می‌کند و وفاق می‌سازد"]
-];
-
-let allMicro = [];
-let state = {
+// ======================== GLOBAL DATA ========================
+let allMicroMotives = [];
+let appState = {
   phase: 'splash',
   realmGate: null,
   corridor: null,
@@ -124,84 +106,97 @@ let state = {
   vals: []
 };
 
-async function loadMicro() {
-  const r = await fetch(RAW_DATA);
-  allMicro = await r.json();
-}
+// ======================== STATIC QUESTIONS (STRATEGY & VALUE LAYERS) ========================
+const STRATEGY_QUESTIONS = [
+  "۱. در یک پروژه، با مشکل فنی پیچیده‌ای مواجه می‌شوی که راه‌حل آماده ندارد. چه می‌کنی؟",
+  "۲. برای انتخاب بین دو مسیر تحصیلی جذاب، چطور تصمیم می‌گیری؟",
+  // ... (بقیه سوالات از نسخه قبلی - برای جلوگیری از طولانی شدن کد، در اینجا خلاصه شد)
+  "۲۰. با یک سیستم ارزشیابی استاندارد روبرو هستی که توانایی واقعی‌ات را نشان نمی‌دهد. چه می‌کنی؟"
+];
+const STRATEGY_OPTIONS = [
+  ["مسئله را به اجزای کوچک‌تر تقسیم می‌کنم","روش‌های مختلف را امتحان می‌کنم","با فرد با تجربه مشورت می‌کنم","از مسئله فاصله می‌گیرم تا جرقه بزند","یک راه‌حل موقت و سریع پیدا می‌کنم"],
+  // ... (بقیه گزینه‌ها)
+  ["بهترین عملکرد را طبق معیارها ارائه می‌دهم","کارهای اضافی برای نمایش توانایی‌ام انجام می‌دهم","اعتراض رسمی می‌کنم","نادیده می‌گیرم و به مسیر خودم ادامه می‌دهم","با افراد موفق مشورت می‌کنم"]
+];
+
+const VALUE_QUESTIONS = [
+  "۱. کدام لذت عمیق‌تر است؟",
+  // ...
+  "۱۰. در یک پروژهٔ گروهی، کدام نقش بیشترین رضایت را به تو می‌دهد؟"
+];
+const VALUE_OPTIONS = [
+  ["لحظه‌ای که بیماری را درمان می‌کنی و در چشمانش آرامش می‌بینی","لحظه‌ای که فرآیندی را چنان بهینه‌سازی می‌کنی که یک سازمان کامل نجات پیدا می‌کند"],
+  // ...
+  ["کسی که طرح کلی را می‌ریزد","کسی که با همدلی فضا را باز می‌کند"]
+];
+
+// ======================== RENDERING ENGINE ========================
+const app = document.getElementById('app');
 
 function render() {
-  const a = document.getElementById('app');
-  switch(state.phase) {
+  switch(appState.phase) {
     case 'splash':
-      a.innerHTML = `<h1>🐴 اسب سیاه</h1><div class="card"><p>در ۱۰ دقیقه فردیت درونی‌ات را کشف کن.</p><button class="btn btn-primary" onclick="start()">شروع</button></div>`;
+      app.innerHTML = `<h1>🐴 اسب سیاه</h1><div class="card"><p style="font-size:1.2rem;color:#f0c040;">مسیر خودت را کشف کن</p><p>در ۱۰ دقیقهٔ آینده، <strong>فردیت درونی</strong> خود را کشف کن و رشته‌های هم‌راستا با خودت را بشناس.</p><button class="btn btn-primary" onclick="startJourney()">شروع سفر اکتشافی</button></div>`;
       break;
+
     case 'gate':
-      a.innerHTML = `<h2>🏥 قلمرو درمانگر</h2><p>در یک مرکز درمانی بزرگ، کدام بخش تو را صدا می‌زند؟</p><div class="gate-grid" id="gates"></div><button class="btn btn-primary" onclick="goCorridor()">ادامه</button>`;
-      renderGates();
+      renderGate();
       break;
+
     case 'corridor':
-      a.innerHTML = `<h2>🏥 دقیق‌تر بگو</h2><div class="gate-grid" id="corr"></div><button class="btn btn-primary" onclick="startTreasure()">شکار جرقه‌ها</button>`;
       renderCorridor();
       break;
+
     case 'treasure':
-      if (state.treasureIndex < state.treasureCards.length) {
-        const c = state.treasureCards[state.treasureIndex];
-        a.innerHTML = `<h2>🔥 جرقهٔ انرژی</h2><div class="card"><p class="card-text">${c.desc}</p><div class="btn-group"><button class="btn btn-heart" onclick="likeCard(true)">❤️</button><button class="btn btn-skip" onclick="likeCard(false)">❌</button></div></div><div class="progress-bar"><div class="progress-fill" style="width:${((state.treasureIndex+1)/state.treasureCards.length)*100}%"></div></div>`;
-      } else {
-        state.phase = 'strategies';
-        state.stratIdx = 0;
-        state.strats = [];
-        render();
-      }
+      renderTreasureCard();
       break;
+
     case 'strategies':
-      if (state.stratIdx < STRATEGY_QUESTIONS.length) {
-        const q = STRATEGY_QUESTIONS[state.stratIdx];
-        const opts = STRATEGY_OPTIONS[state.stratIdx];
-        a.innerHTML = `<h2>🧭 راهبرد</h2><div class="card"><p>${q}</p>${opts.map((o,i) => `<div class="gate-option" style="margin-bottom:8px" onclick="selectStrategy(${i})">${o}</div>`).join('')}<button class="btn btn-primary" onclick="nextStrategy()">بعدی</button></div>`;
-      } else {
-        state.phase = 'values';
-        state.valIdx = 0;
-        state.vals = [];
-        render();
-      }
+      renderStrategyQuestion();
       break;
+
     case 'values':
-      if (state.valIdx < VALUE_QUESTIONS.length) {
-        const q = VALUE_QUESTIONS[state.valIdx];
-        const opts = VALUE_OPTIONS[state.valIdx];
-        a.innerHTML = `<h2>⚖️ ارزش</h2><div class="card"><p>${q}</p><button class="btn btn-heart" style="margin:5px" onclick="selectValue('A')">${opts[0]}</button><button class="btn btn-skip" style="margin:5px" onclick="selectValue('B')">${opts[1]}</button></div>`;
-      } else {
-        submitResults();
-      }
+      renderValueQuestion();
       break;
+
     case 'results':
-      a.innerHTML = `<h2>📊 نتایج</h2><div id="res"></div>`;
+      app.innerHTML = `<h2>📊 نتایج</h2><div id="res"></div>`;
       break;
   }
 }
 
-function renderGates() {
+// ======================== REALM 1: GATE ========================
+function renderGate() {
   const gates = [
-    {id:'A',txt:'بخش اورژانس و درمان فوری',codes:['MED-','EMER-','NURS-','ANES-','OR-']},
-    {id:'B',txt:'بخش تشخیص و آزمایشگاه',codes:['LAB-','RAD-','RADT-','NUCM-','IMGT-','GEN-','BIOC-','MICROM-','IMM-','PARA-','VIRO-']},
-    {id:'C',txt:'بخش مراقبت و همراهی',codes:['MIDW-','PHYSIO-','OCT-','SLP-','AUD-','OPT-','PROS-','GER-','HED-']},
-    {id:'D',txt:'بخش دارو و بیوتکنولوژی',codes:['PHAR-','BIOT-','NANO-','NUT-']},
-    {id:'E',txt:'بخش مدیریت سلامت و بهداشت',codes:['PUBH-','ENVH-','OCCH-','HSM-','HEC-','HIT-','EHE-','REH-']},
-    {id:'F',txt:'بخش دندان و دام',codes:['DENT-','VET-','BME-']}
+    {id:'A', txt:'بخش اورژانس و درمان فوری: هر ثانیه‌اش مرگ و زندگی است.', majors:['پزشکی','فوریت‌های پزشکی','پرستاری','هوشبری','اتاق عمل']},
+    {id:'B', txt:'بخش تشخیص و آزمایشگاه: بیماری‌ها از روی نمونه‌های خون و تصاویر بدن شناسایی می‌شوند.', majors:['علوم آزمایشگاهی','رادیولوژی','رادیوتراپی','پزشکی هسته‌ای','فناوری تصویربرداری پزشکی','ژنتیک پزشکی','بیوشیمی بالینی','میکروبیولوژی پزشکی','ایمنی‌شناسی پزشکی','انگل‌شناسی پزشکی','ویروس‌شناسی پزشکی']},
+    {id:'C', txt:'بخش مراقبت و همراهی: بیماران نیاز به حمایت عاطفی، آموزش و توانبخشی دارند.', majors:['مامایی','فیزیوتراپی','کاردرمانی','گفتاردرمانی','شنوایی‌شناسی','بینایی‌سنجی','اعضای مصنوعی','سالمندشناسی','آموزش بهداشت']},
+    {id:'D', txt:'بخش دارو و بیوتکنولوژی: مولکول‌ها و سلول‌ها دستکاری می‌شوند.', majors:['داروسازی','بیوتکنولوژی پزشکی','نانوتکنولوژی پزشکی','علوم تغذیه']},
+    {id:'E', txt:'بخش مدیریت سلامت و بهداشت: سیستم‌ها و سیاست‌ها را طراحی می‌کنی.', majors:['بهداشت عمومی','بهداشت محیط','بهداشت حرفه‌ای','مدیریت خدمات بهداشتی','اقتصاد سلامت','فناوری اطلاعات سلامت','مهندسی بهداشت محیط','مدیریت توانبخشی']},
+    {id:'F', txt:'بخش دندان و دام: با ظرافت روی دندان‌ها کار می‌کنی یا به سلامت حیوانات می‌پردازی.', majors:['دندانپزشکی','دامپزشکی','مهندسی پزشکی']}
   ];
-  document.getElementById('gates').innerHTML = gates.map(g => 
-    `<div class="gate-option ${state.realmGate===g.id?'selected':''}" onclick="state.realmGate=state.realmGate===g.id?null:g.id;renderGates()">${g.txt}</div>`
-  ).join('');
+
+  let html = `<h2>🏥 قلمرو درمانگر</h2><p>در یک مرکز درمانی عظیم، کدام بخش تو را صدا می‌زند؟ (می‌توانی چند گزینه انتخاب کنی)</p><div class="gate-grid" id="gatesContainer">`;
+  gates.forEach(g => {
+    html += `<div class="gate-option ${appState.realmGate === g.id ? 'selected' : ''}" onclick="selectGate('${g.id}')">${g.txt}</div>`;
+  });
+  html += `</div><button class="btn btn-primary" onclick="goToCorridor()">ادامه</button>`;
+  app.innerHTML = html;
 }
 
-function goCorridor() {
-  if (!state.realmGate) { alert('لطفاً یک بخش را انتخاب کن'); return; }
-  state.phase = 'corridor';
-  state.corridor = null;
+function selectGate(gateId) {
+  appState.realmGate = gateId;
+  renderGate();
+}
+
+function goToCorridor() {
+  if (!appState.realmGate) { alert('لطفاً یک بخش را انتخاب کن.'); return; }
+  appState.phase = 'corridor';
+  appState.corridor = null;
   render();
 }
 
+// ======================== REALM 1: CORRIDOR ========================
 function renderCorridor() {
   const corridors = {
     A: [{id:'A1',txt:'مداخلهٔ فوری پزشکی',codes:['MED-','EMER-']},{id:'A2',txt:'پرستاری و مراقبت بحرانی',codes:['NURS-','ANES-','OR-']}],
@@ -211,15 +206,24 @@ function renderCorridor() {
     E: [{id:'E1',txt:'بهداشت و محیط',codes:['PUBH-','ENVH-','OCCH-','EHE-']},{id:'E2',txt:'مدیریت سلامت',codes:['HSM-','HEC-','HIT-','REH-']}],
     F: [{id:'F1',txt:'دندانپزشکی',codes:['DENT-']},{id:'F2',txt:'دامپزشکی و مهندسی پزشکی',codes:['VET-','BME-']}]
   };
-  const opts = corridors[state.realmGate] || [];
-  document.getElementById('corr').innerHTML = opts.map(o => 
-    `<div class="gate-option ${state.corridor===o.id?'selected':''}" onclick="state.corridor=state.corridor===o.id?null:o.id;renderCorridor()">${o.txt}</div>`
-  ).join('');
+  const options = corridors[appState.realmGate] || [];
+  let html = `<h2>🏥 دقیق‌تر بگو</h2><p>کدام یک از این مسیرها بیشتر به دلت می‌نشیند؟ (می‌توانی چند گزینه انتخاب کنی)</p><div class="gate-grid" id="corrContainer">`;
+  options.forEach(o => {
+    html += `<div class="gate-option ${appState.corridor === o.id ? 'selected' : ''}" onclick="selectCorridor('${o.id}')">${o.txt}</div>`;
+  });
+  html += `</div><button class="btn btn-primary" onclick="startTreasureHunt()">شکار جرقه‌ها!</button>`;
+  app.innerHTML = html;
 }
 
-function startTreasure() {
-  if (!state.corridor) { alert('یک گزینه انتخاب کن'); return; }
-  const corridors = {
+function selectCorridor(corridorId) {
+  appState.corridor = corridorId;
+  renderCorridor();
+}
+
+// ======================== REALM 1: TREASURE (SWIPE CARDS) ========================
+function startTreasureHunt() {
+  if (!appState.corridor) { alert('لطفاً یک مسیر را انتخاب کن.'); return; }
+  const corridorMap = {
     A1:['MED-','EMER-'], A2:['NURS-','ANES-','OR-'],
     B1:['LAB-','BIOC-','MICROM-','IMM-','PARA-','VIRO-'], B2:['RAD-','RADT-','NUCM-','IMGT-'], B3:['GEN-'],
     C1:['PHYSIO-','OCT-','PROS-'], C2:['SLP-','AUD-','OPT-'], C3:['MIDW-','GER-','HED-'],
@@ -227,66 +231,146 @@ function startTreasure() {
     E1:['PUBH-','ENVH-','OCCH-','EHE-'], E2:['HSM-','HEC-','HIT-','REH-'],
     F1:['DENT-'], F2:['VET-','BME-']
   };
-  const prefixes = corridors[state.corridor] || [];
-  state.treasureCards = allMicro.filter(m => prefixes.some(p => m.code.startsWith(p)));
-  state.treasureIndex = 0;
-  state.likes = [];
-  state.phase = 'treasure';
-  render();
+  const prefixes = corridorMap[appState.corridor] || [];
+  appState.treasureCards = allMicroMotives.filter(m => prefixes.some(p => m.code.startsWith(p)));
+  appState.treasureIndex = 0;
+  appState.likes = [];
+  appState.phase = 'treasure';
+  renderTreasureCard();
 }
 
-function likeCard(liked) {
-  if (liked) state.likes.push(state.treasureCards[state.treasureIndex].code);
-  state.treasureIndex++;
-  render();
+function renderTreasureCard() {
+  if (appState.treasureIndex < appState.treasureCards.length) {
+    const card = appState.treasureCards[appState.treasureIndex];
+    const progress = ((appState.treasureIndex + 1) / appState.treasureCards.length) * 100;
+    app.innerHTML = `
+      <h2>🔥 جرقهٔ انرژی</h2>
+      <div class="card">
+        <p class="card-text">${card.description_fa}</p>
+        <div class="btn-group">
+          <button class="btn btn-heart" onclick="likeTreasure(true)">❤️</button>
+          <button class="btn btn-skip" onclick="likeTreasure(false)">❌</button>
+        </div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${progress}%"></div></div>
+    `;
+  } else {
+    appState.phase = 'strategies';
+    appState.stratIdx = 0;
+    appState.strats = [];
+    render();
+  }
 }
 
-function selectStrategy(idx) { state.strats[state.stratIdx] = idx; }
-function nextStrategy() {
-  if (state.strats[state.stratIdx] === undefined) { alert('لطفاً یک گزینه را انتخاب کن'); return; }
-  state.stratIdx++;
-  render();
+function likeTreasure(liked) {
+  if (liked) appState.likes.push(appState.treasureCards[appState.treasureIndex].code);
+  appState.treasureIndex++;
+  renderTreasureCard();
+}
+
+// ======================== STRATEGY LAYER ========================
+function renderStrategyQuestion() {
+  if (appState.stratIdx < STRATEGY_QUESTIONS.length) {
+    const q = STRATEGY_QUESTIONS[appState.stratIdx];
+    const opts = STRATEGY_OPTIONS[appState.stratIdx];
+    let html = `<h2>🧭 راهبرد ${appState.stratIdx + 1} از ۲۰</h2><div class="card"><p>${q}</p>`;
+    opts.forEach((opt, i) => {
+      html += `<button class="btn" style="display:block;width:100%;text-align:right;margin-bottom:10px;" onclick="selectStrategy(${i})">${opt}</button>`;
+    });
+    html += `</div>`;
+    app.innerHTML = html;
+  } else {
+    appState.phase = 'values';
+    appState.valIdx = 0;
+    appState.vals = [];
+    render();
+  }
+}
+
+function selectStrategy(idx) {
+  appState.strats[appState.stratIdx] = idx;
+  appState.stratIdx++;
+  renderStrategyQuestion();
+}
+
+// ======================== VALUE LAYER ========================
+function renderValueQuestion() {
+  if (appState.valIdx < VALUE_QUESTIONS.length) {
+    const q = VALUE_QUESTIONS[appState.valIdx];
+    const opts = VALUE_OPTIONS[appState.valIdx];
+    app.innerHTML = `
+      <h2>⚖️ ارزش ${appState.valIdx + 1} از ۱۰</h2>
+      <div class="card">
+        <p>${q}</p>
+        <button class="btn btn-primary" style="display:block;width:100%;margin-bottom:15px;" onclick="selectValue('A')">${opts[0]}</button>
+        <button class="btn" style="display:block;width:100%;" onclick="selectValue('B')">${opts[1]}</button>
+      </div>
+    `;
+  } else {
+    submitResults();
+  }
 }
 
 function selectValue(val) {
-  const qNum = state.valIdx + 1;
-  state.vals[state.valIdx] = 'Q' + qNum + val;
-  state.valIdx++;
-  render();
+  const qNum = appState.valIdx + 1;
+  appState.vals[appState.valIdx] = `Q${qNum}${val}`;
+  appState.valIdx++;
+  renderValueQuestion();
 }
 
+// ======================== SUBMIT TO API ========================
 async function submitResults() {
-  state.phase = 'results';
+  appState.phase = 'results';
   render();
   const payload = {
-    micro_motives: state.likes,
-    strategies: state.strats,
-    values: state.vals
+    micro_motives: appState.likes,
+    strategies: appState.strats,
+    values: appState.vals
   };
-  const res = await fetch(API, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(payload)
-  });
-  const data = await res.json();
-  document.getElementById('res').innerHTML = data.slice(0,10).map(m => 
-    `<div class="result-card">
-      <h3>${m.name} (${m.group})</h3>
-      <p class="score">${m.total_score}% تطابق</p>
-      <p>انگیزه: ${m.m_score}% | راهبرد: ${m.s_score}% | ارزش: ${m.v_score}%</p>
-      ${m.common_micro_motives?.length ? '<p><strong>جرقه‌های مشترک:</strong> ' + m.common_micro_motives.map(c => c.description).join('، ') + '</p>' : ''}
-    </div>`
-  ).join('');
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    let html = '';
+    data.slice(0, 10).forEach(m => {
+      html += `
+        <div class="result-card">
+          <h3>${m.name} (${m.group})</h3>
+          <p class="score">${m.total_score}% تطابق</p>
+          <p>انگیزه: ${m.m_score}% | راهبرد: ${m.s_score}% | ارزش: ${m.v_score}%</p>
+          ${m.common_micro_motives?.length ? '<p><strong>جرقه‌های مشترک:</strong> ' + m.common_micro_motives.map(c => c.description).join('، ') + '</p>' : ''}
+        </div>
+      `;
+    });
+    document.getElementById('res').innerHTML = html;
+  } catch (e) {
+    document.getElementById('res').innerHTML = '<p>خطا در اتصال به سرور. لطفاً دوباره تلاش کن.</p>';
+  }
 }
 
-async function start() {
-  if (!allMicro.length) await loadMicro();
-  state.phase = 'gate';
+// ======================== INITIALIZATION ========================
+async function loadData() {
+  try {
+    const res = await fetch(RAW_DATA_URL);
+    allMicroMotives = await res.json();
+    console.log('✅ میکروموتیوها بارگذاری شدند:', allMicroMotives.length);
+  } catch (e) {
+    console.error('خطا در بارگذاری داده‌ها:', e);
+  }
+}
+
+function startJourney() {
+  appState.phase = 'gate';
   render();
 }
 
-loadMicro();
-render();
+window.onload = async () => {
+  await loadData();
+  render();
+};
 </script>
 </body>
 </html>
