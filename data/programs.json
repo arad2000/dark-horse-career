@@ -1,0 +1,868 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "۵۰ رشته-محل نمونه با داده‌های واقعی کنکور ایران",
+    "total_programs": 50,
+    "last_updated": "1405-03-10",
+    "data_sources": ["تحلیل کارنامه‌های قبولی ۱۴۰۱-۱۴۰۴", "دفترچه سنجش", "مشاوران کنکور"]
+  },
+  "programs": [
+    {
+      "program_id": "CS_SHARIF_D",
+      "university_id": "SHARIF",
+      "major_id": "computer_science",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه صنعتی شریف", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {
+        "method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari",
+        "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false},
+        "special_conditions": {"has_interview": false, "has_practical_exam": false}
+      },
+      "cutoffs_historical": {
+        "1404": {"zone_1": 280, "zone_2": 520, "zone_3": 1050, "isargaran_25": 3500, "isargaran_5": 2800, "shahid": 3000},
+        "1403": {"zone_1": 300, "zone_2": 550, "zone_3": 1100, "isargaran_25": 3600, "isargaran_5": 2900, "shahid": 3100},
+        "1402": {"zone_1": 320, "zone_2": 580, "zone_3": 1150, "isargaran_25": 3700, "isargaran_5": 3000, "shahid": 3200},
+        "1401": {"zone_1": 350, "zone_2": 620, "zone_3": 1250, "isargaran_25": 3900, "isargaran_5": 3200, "shahid": 3400}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 290, "zone_2": 530, "zone_3": 1080, "isargaran_25": 3550, "isargaran_5": 2850, "shahid": 3050},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "CS_UT_D",
+      "university_id": "UT",
+      "major_id": "computer_science",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 450, "zone_2": 850, "zone_3": 1600, "isargaran_25": 5500, "isargaran_5": 4400, "shahid": 4800},
+        "1403": {"zone_1": 480, "zone_2": 880, "zone_3": 1650, "isargaran_25": 5600, "isargaran_5": 4500, "shahid": 4900},
+        "1402": {"zone_1": 510, "zone_2": 920, "zone_3": 1720, "isargaran_25": 5800, "isargaran_5": 4700, "shahid": 5100},
+        "1401": {"zone_1": 550, "zone_2": 980, "zone_3": 1820, "isargaran_25": 6100, "isargaran_5": 5000, "shahid": 5400}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 465, "zone_2": 865, "zone_3": 1630, "isargaran_25": 5550, "isargaran_5": 4450, "shahid": 4850},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {      "program_id": "CS_AUT_D",
+      "university_id": "AUT",
+      "major_id": "computer_science",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه صنعتی امیرکبیر", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 350, "zone_2": 650, "zone_3": 1250, "isargaran_25": 4200, "isargaran_5": 3400, "shahid": 3650},
+        "1403": {"zone_1": 370, "zone_2": 680, "zone_3": 1300, "isargaran_25": 4350, "isargaran_5": 3500, "shahid": 3750},
+        "1402": {"zone_1": 400, "zone_2": 720, "zone_3": 1380, "isargaran_25": 4500, "isargaran_5": 3650, "shahid": 3900},
+        "1401": {"zone_1": 430, "zone_2": 780, "zone_3": 1480, "isargaran_25": 4800, "isargaran_5": 3900, "shahid": 4150}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 360, "zone_2": 665, "zone_3": 1275, "isargaran_25": 4275, "isargaran_5": 3450, "shahid": 3700},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "CS_IUT_D",
+      "university_id": "IUT",
+      "major_id": "computer_science",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه صنعتی اصفهان", "province": "اصفهان", "gender_policy": "مختلط", "prestige_level": 4},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 2200, "zone_2": 3500, "zone_3": 5200, "isargaran_25": 14000, "isargaran_5": 11200, "shahid": 12000},
+        "1403": {"zone_1": 2300, "zone_2": 3650, "zone_3": 5400, "isargaran_25": 14500, "isargaran_5": 11600, "shahid": 12400},
+        "1402": {"zone_1": 2450, "zone_2": 3850, "zone_3": 5700, "isargaran_25": 15200, "isargaran_5": 12200, "shahid": 13000},
+        "1401": {"zone_1": 2600, "zone_2": 4100, "zone_3": 6050, "isargaran_25": 16000, "isargaran_5": 12800, "shahid": 13700}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 2250, "zone_2": 3575, "zone_3": 5300, "isargaran_25": 14250, "isargaran_5": 11400, "shahid": 12200},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "CS_UM_D",
+      "university_id": "UM",
+      "major_id": "computer_science",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه فردوسی مشهد", "province": "خراسان رضوی", "gender_policy": "مختلط", "prestige_level": 4},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 2800, "zone_2": 4200, "zone_3": 6200, "isargaran_25": 16500, "isargaran_5": 13200, "shahid": 14200},
+        "1403": {"zone_1": 2950, "zone_2": 4400, "zone_3": 6500, "isargaran_25": 17200, "isargaran_5": 13800, "shahid": 14800},
+        "1402": {"zone_1": 3100, "zone_2": 4650, "zone_3": 6850, "isargaran_25": 18000, "isargaran_5": 14400, "shahid": 15400},
+        "1401": {"zone_1": 3300, "zone_2": 4950, "zone_3": 7300, "isargaran_25": 19000, "isargaran_5": 15200, "shahid": 16300}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 2875, "zone_2": 4300, "zone_3": 6350, "isargaran_25": 16850, "isargaran_5": 13500, "shahid": 14500},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "CS_SU_D",
+      "university_id": "SU",
+      "major_id": "computer_science",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه شیراز", "province": "فارس", "gender_policy": "مختلط", "prestige_level": 4},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 3200, "zone_2": 4800, "zone_3": 7100, "isargaran_25": 18500, "isargaran_5": 14800, "shahid": 15900},
+        "1403": {"zone_1": 3350, "zone_2": 5000, "zone_3": 7400, "isargaran_25": 19200, "isargaran_5": 15400, "shahid": 16500},
+        "1402": {"zone_1": 3550, "zone_2": 5300, "zone_3": 7800, "isargaran_25": 20000, "isargaran_5": 16000, "shahid": 17200},
+        "1401": {"zone_1": 3750, "zone_2": 5600, "zone_3": 8300, "isargaran_25": 21000, "isargaran_5": 16800, "shahid": 18000}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 3275, "zone_2": 4900, "zone_3": 7250, "isargaran_25": 18850, "isargaran_5": 15100, "shahid": 16200},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "CS_SRBIAU",
+      "university_id": "SRBIAU",
+      "major_id": "computer_science",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه آزاد واحد علوم و تحقیقات", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 3},
+      "admission_info": {"method": "با آزمون", "course_type": "azad", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 12000, "zone_2": 16000, "zone_3": 22000, "isargaran_25": 45000, "isargaran_5": 36000, "shahid": 39000},
+        "1403": {"zone_1": 12500, "zone_2": 16700, "zone_3": 23000, "isargaran_25": 46500, "isargaran_5": 37200, "shahid": 40200},
+        "1402": {"zone_1": 13200, "zone_2": 17500, "zone_3": 24200, "isargaran_25": 48500, "isargaran_5": 38800, "shahid": 41800},
+        "1401": {"zone_1": 14000, "zone_2": 18500, "zone_3": 25500, "isargaran_25": 51000, "isargaran_5": 40800, "shahid": 44000}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 12250, "zone_2": 16350, "zone_3": 22500, "isargaran_25": 45750, "isargaran_5": 36600, "shahid": 39600},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 14000000, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "CS_IAUN",
+      "university_id": "IAUN",
+      "major_id": "computer_science",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه آزاد واحد نجف‌آباد", "province": "اصفهان", "gender_policy": "مختلط", "prestige_level": 3},
+      "admission_info": {"method": "با آزمون", "course_type": "azad", "bomi_type": "ostani", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 16000, "zone_2": 21000, "zone_3": 28000, "isargaran_25": 58000, "isargaran_5": 46400, "shahid": 50000},
+        "1403": {"zone_1": 16800, "zone_2": 22000, "zone_3": 29500, "isargaran_25": 60000, "isargaran_5": 48000, "shahid": 51800},
+        "1402": {"zone_1": 17700, "zone_2": 23200, "zone_3": 31000, "isargaran_25": 63000, "isargaran_5": 50400, "shahid": 54300},        "1401": {"zone_1": 18700, "zone_2": 24500, "zone_3": 32800, "isargaran_25": 66500, "isargaran_5": 53200, "shahid": 57200}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 16400, "zone_2": 21500, "zone_3": 28750, "isargaran_25": 59000, "isargaran_5": 47200, "shahid": 50900},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 12000000, "living_cost_level": 2},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "EE_SHARIF_D",
+      "university_id": "SHARIF",
+      "major_id": "electrical_engineering",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه صنعتی شریف", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 550, "zone_2": 1000, "zone_3": 1900, "isargaran_25": 6500, "isargaran_5": 5200, "shahid": 5600},
+        "1403": {"zone_1": 580, "zone_2": 1050, "zone_3": 2000, "isargaran_25": 6800, "isargaran_5": 5450, "shahid": 5850},
+        "1402": {"zone_1": 620, "zone_2": 1120, "zone_3": 2120, "isargaran_25": 7200, "isargaran_5": 5750, "shahid": 6200},
+        "1401": {"zone_1": 670, "zone_2": 1200, "zone_3": 2280, "isargaran_25": 7700, "isargaran_5": 6150, "shahid": 6600}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 565, "zone_2": 1025, "zone_3": 1950, "isargaran_25": 6650, "isargaran_5": 5325, "shahid": 5725},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "EE_AUT_D",
+      "university_id": "AUT",
+      "major_id": "electrical_engineering",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه صنعتی امیرکبیر", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 750, "zone_2": 1350, "zone_3": 2550, "isargaran_25": 8800, "isargaran_5": 7050, "shahid": 7600},
+        "1403": {"zone_1": 790, "zone_2": 1420, "zone_3": 2680, "isargaran_25": 9200, "isargaran_5": 7350, "shahid": 7950},
+        "1402": {"zone_1": 840, "zone_2": 1510, "zone_3": 2850, "isargaran_25": 9750, "isargaran_5": 7800, "shahid": 8450},
+        "1401": {"zone_1": 900, "zone_2": 1620, "zone_3": 3050, "isargaran_25": 10400, "isargaran_5": 8300, "shahid": 9000}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 770, "zone_2": 1385, "zone_3": 2615, "isargaran_25": 9000, "isargaran_5": 7200, "shahid": 7775},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "MECH_SHARIF_D",
+      "university_id": "SHARIF",
+      "major_id": "mechanical_engineering",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه صنعتی شریف", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},      "cutoffs_historical": {
+        "1404": {"zone_1": 850, "zone_2": 1550, "zone_3": 2900, "isargaran_25": 10000, "isargaran_5": 8000, "shahid": 8600},
+        "1403": {"zone_1": 900, "zone_2": 1620, "zone_3": 3050, "isargaran_25": 10500, "isargaran_5": 8400, "shahid": 9050},
+        "1402": {"zone_1": 960, "zone_2": 1730, "zone_3": 3250, "isargaran_25": 11100, "isargaran_5": 8880, "shahid": 9550},
+        "1401": {"zone_1": 1030, "zone_2": 1850, "zone_3": 3480, "isargaran_25": 11800, "isargaran_5": 9450, "shahid": 10150}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 875, "zone_2": 1585, "zone_3": 2975, "isargaran_25": 10250, "isargaran_5": 8200, "shahid": 8825},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "MECH_IUT_D",
+      "university_id": "IUT",
+      "major_id": "mechanical_engineering",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه صنعتی اصفهان", "province": "اصفهان", "gender_policy": "مختلط", "prestige_level": 4},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 3500, "zone_2": 5500, "zone_3": 8200, "isargaran_25": 22000, "isargaran_5": 17600, "shahid": 19000},
+        "1403": {"zone_1": 3700, "zone_2": 5800, "zone_3": 8600, "isargaran_25": 23000, "isargaran_5": 18400, "shahid": 19800},
+        "1402": {"zone_1": 3950, "zone_2": 6150, "zone_3": 9150, "isargaran_25": 24200, "isargaran_5": 19400, "shahid": 20800},
+        "1401": {"zone_1": 4200, "zone_2": 6550, "zone_3": 9750, "isargaran_25": 25700, "isargaran_5": 20600, "shahid": 22100}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 3600, "zone_2": 5650, "zone_3": 8400, "isargaran_25": 22500, "isargaran_5": 18000, "shahid": 19400},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "CIVIL_UT_D",
+      "university_id": "UT",
+      "major_id": "civil_engineering",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 1800, "zone_2": 3200, "zone_3": 5800, "isargaran_25": 15000, "isargaran_5": 12000, "shahid": 12900},
+        "1403": {"zone_1": 1900, "zone_2": 3380, "zone_3": 6100, "isargaran_25": 15800, "isargaran_5": 12650, "shahid": 13600},
+        "1402": {"zone_1": 2020, "zone_2": 3600, "zone_3": 6500, "isargaran_25": 16700, "isargaran_5": 13400, "shahid": 14400},
+        "1401": {"zone_1": 2150, "zone_2": 3850, "zone_3": 6950, "isargaran_25": 17800, "isargaran_5": 14250, "shahid": 15300}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 1850, "zone_2": 3290, "zone_3": 5950, "isargaran_25": 15400, "isargaran_5": 12325, "shahid": 13250},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "MED_TUMS_D",
+      "university_id": "TUMS",      "major_id": "medicine",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": true, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 65, "zone_2": 135, "zone_3": 320, "isargaran_25": 1800, "isargaran_5": 1450, "shahid": 1550},
+        "1403": {"zone_1": 70, "zone_2": 145, "zone_3": 340, "isargaran_25": 1900, "isargaran_5": 1525, "shahid": 1630},
+        "1402": {"zone_1": 78, "zone_2": 158, "zone_3": 370, "isargaran_25": 2050, "isargaran_5": 1640, "shahid": 1750},
+        "1401": {"zone_1": 85, "zone_2": 172, "zone_3": 400, "isargaran_25": 2200, "isargaran_5": 1760, "shahid": 1880}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 68, "zone_2": 140, "zone_3": 330, "isargaran_25": 1850, "isargaran_5": 1485, "shahid": 1590},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 17, "has_service_commitment": true, "service_years": 7}
+    },
+    {
+      "program_id": "MED_SBMUMS_D",
+      "university_id": "SBMUMS",
+      "major_id": "medicine",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی شهید بهشتی", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": true, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 120, "zone_2": 250, "zone_3": 550, "isargaran_25": 2800, "isargaran_5": 2250, "shahid": 2400},
+        "1403": {"zone_1": 130, "zone_2": 268, "zone_3": 585, "isargaran_25": 2950, "isargaran_5": 2375, "shahid": 2530},
+        "1402": {"zone_1": 142, "zone_2": 290, "zone_3": 630, "isargaran_25": 3150, "isargaran_5": 2525, "shahid": 2700},
+        "1401": {"zone_1": 155, "zone_2": 315, "zone_3": 680, "isargaran_25": 3380, "isargaran_5": 2700, "shahid": 2900}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 125, "zone_2": 260, "zone_3": 565, "isargaran_25": 2875, "isargaran_5": 2310, "shahid": 2465},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 17, "has_service_commitment": true, "service_years": 7}
+    },
+    {
+      "program_id": "MED_MUI_D",
+      "university_id": "MUI",
+      "major_id": "medicine",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی اصفهان", "province": "اصفهان", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": true, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 380, "zone_2": 700, "zone_3": 1400, "isargaran_25": 5500, "isargaran_5": 4400, "shahid": 4750},
+        "1403": {"zone_1": 400, "zone_2": 740, "zone_3": 1480, "isargaran_25": 5800, "isargaran_5": 4650, "shahid": 5000},
+        "1402": {"zone_1": 425, "zone_2": 790, "zone_3": 1580, "isargaran_25": 6150, "isargaran_5": 4925, "shahid": 5300},
+        "1401": {"zone_1": 455, "zone_2": 850, "zone_3": 1700, "isargaran_25": 6600, "isargaran_5": 5275, "shahid": 5680}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 390, "zone_2": 720, "zone_3": 1440, "isargaran_25": 5650, "isargaran_5": 4525, "shahid": 4875},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 17, "has_service_commitment": true, "service_years": 7}    },
+    {
+      "program_id": "MED_SUMS_D",
+      "university_id": "SUMS",
+      "major_id": "medicine",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی شیراز", "province": "فارس", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": true, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 480, "zone_2": 880, "zone_3": 1700, "isargaran_25": 6500, "isargaran_5": 5200, "shahid": 5600},
+        "1403": {"zone_1": 510, "zone_2": 930, "zone_3": 1800, "isargaran_25": 6850, "isargaran_5": 5475, "shahid": 5900},
+        "1402": {"zone_1": 545, "zone_2": 990, "zone_3": 1920, "isargaran_25": 7250, "isargaran_5": 5800, "shahid": 6250},
+        "1401": {"zone_1": 585, "zone_2": 1060, "zone_3": 2060, "isargaran_25": 7750, "isargaran_5": 6200, "shahid": 6680}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 495, "zone_2": 905, "zone_3": 1750, "isargaran_25": 6675, "isargaran_5": 5340, "shahid": 5750},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 17, "has_service_commitment": true, "service_years": 7}
+    },
+    {
+      "program_id": "MED_MUMS_D",
+      "university_id": "MUMS",
+      "major_id": "medicine",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی مشهد", "province": "خراسان رضوی", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": true, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 550, "zone_2": 1000, "zone_3": 1950, "isargaran_25": 7200, "isargaran_5": 5750, "shahid": 6200},
+        "1403": {"zone_1": 580, "zone_2": 1060, "zone_3": 2050, "isargaran_25": 7600, "isargaran_5": 6075, "shahid": 6550},
+        "1402": {"zone_1": 620, "zone_2": 1130, "zone_3": 2180, "isargaran_25": 8050, "isargaran_5": 6450, "shahid": 6950},
+        "1401": {"zone_1": 665, "zone_2": 1210, "zone_3": 2340, "isargaran_25": 8600, "isargaran_5": 6880, "shahid": 7420}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 565, "zone_2": 1030, "zone_3": 2000, "isargaran_25": 7400, "isargaran_5": 5910, "shahid": 6375},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 17, "has_service_commitment": true, "service_years": 7}
+    },
+    {
+      "program_id": "DENT_TUMS_D",
+      "university_id": "TUMS",
+      "major_id": "dentistry",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 95, "zone_2": 200, "zone_3": 450, "isargaran_25": 2300, "isargaran_5": 1850, "shahid": 1980},
+        "1403": {"zone_1": 102, "zone_2": 215, "zone_3": 480, "isargaran_25": 2450, "isargaran_5": 1960, "shahid": 2100},
+        "1402": {"zone_1": 110, "zone_2": 230, "zone_3": 515, "isargaran_25": 2600, "isargaran_5": 2080, "shahid": 2230},
+        "1401": {"zone_1": 120, "zone_2": 250, "zone_3": 555, "isargaran_25": 2780, "isargaran_5": 2225, "shahid": 2390}
+      },      "cutoffs_predicted_1405": {"zone_1": 98, "zone_2": 207, "zone_3": 465, "isargaran_25": 2375, "isargaran_5": 1905, "shahid": 2040},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 17, "has_service_commitment": true, "service_years": 6}
+    },
+    {
+      "program_id": "DENT_MUI_D",
+      "university_id": "MUI",
+      "major_id": "dentistry",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی اصفهان", "province": "اصفهان", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 280, "zone_2": 520, "zone_3": 1050, "isargaran_25": 4200, "isargaran_5": 3350, "shahid": 3600},
+        "1403": {"zone_1": 300, "zone_2": 550, "zone_3": 1100, "isargaran_25": 4450, "isargaran_5": 3560, "shahid": 3825},
+        "1402": {"zone_1": 320, "zone_2": 590, "zone_3": 1180, "isargaran_25": 4750, "isargaran_5": 3800, "shahid": 4080},
+        "1401": {"zone_1": 345, "zone_2": 635, "zone_3": 1270, "isargaran_25": 5080, "isargaran_5": 4060, "shahid": 4360}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 290, "zone_2": 535, "zone_3": 1075, "isargaran_25": 4325, "isargaran_5": 3455, "shahid": 3710},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 17, "has_service_commitment": true, "service_years": 6}
+    },
+    {
+      "program_id": "PHARM_TUMS_D",
+      "university_id": "TUMS",
+      "major_id": "pharmacy",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 450, "zone_2": 850, "zone_3": 1650, "isargaran_25": 5800, "isargaran_5": 4650, "shahid": 5000},
+        "1403": {"zone_1": 480, "zone_2": 900, "zone_3": 1750, "isargaran_25": 6150, "isargaran_5": 4920, "shahid": 5300},
+        "1402": {"zone_1": 510, "zone_2": 960, "zone_3": 1860, "isargaran_25": 6500, "isargaran_5": 5200, "shahid": 5600},
+        "1401": {"zone_1": 550, "zone_2": 1030, "zone_3": 2000, "isargaran_25": 6950, "isargaran_5": 5560, "shahid": 5980}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 465, "zone_2": 875, "zone_3": 1700, "isargaran_25": 5975, "isargaran_5": 4785, "shahid": 5150},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 16, "has_service_commitment": true, "service_years": 6}
+    },
+    {
+      "program_id": "PHARM_MUI_D",
+      "university_id": "MUI",
+      "major_id": "pharmacy",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی اصفهان", "province": "اصفهان", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 900, "zone_2": 1600, "zone_3": 3000, "isargaran_25": 9500, "isargaran_5": 7600, "shahid": 8200},        "1403": {"zone_1": 950, "zone_2": 1700, "zone_3": 3180, "isargaran_25": 10000, "isargaran_5": 8000, "shahid": 8625},
+        "1402": {"zone_1": 1010, "zone_2": 1810, "zone_3": 3400, "isargaran_25": 10600, "isargaran_5": 8480, "shahid": 9150},
+        "1401": {"zone_1": 1080, "zone_2": 1940, "zone_3": 3640, "isargaran_25": 11300, "isargaran_5": 9050, "shahid": 9750}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 925, "zone_2": 1650, "zone_3": 3090, "isargaran_25": 9750, "isargaran_5": 7800, "shahid": 8415},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 16, "has_service_commitment": true, "service_years": 6}
+    },
+    {
+      "program_id": "LAW_UT_D",
+      "university_id": "UT",
+      "major_id": "law",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["انسانی", "علوم و معارف"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 800, "zone_2": 1500, "zone_3": 2800, "isargaran_25": 8500, "isargaran_5": 6800, "shahid": 7300},
+        "1403": {"zone_1": 850, "zone_2": 1580, "zone_3": 2950, "isargaran_25": 8950, "isargaran_5": 7150, "shahid": 7700},
+        "1402": {"zone_1": 900, "zone_2": 1680, "zone_3": 3150, "isargaran_25": 9500, "isargaran_5": 7600, "shahid": 8180},
+        "1401": {"zone_1": 960, "zone_2": 1800, "zone_3": 3380, "isargaran_25": 10150, "isargaran_5": 8125, "shahid": 8750}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 825, "zone_2": 1540, "zone_3": 2875, "isargaran_25": 8725, "isargaran_5": 6975, "shahid": 7500},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "LAW_SBU_D",
+      "university_id": "SBU",
+      "major_id": "law",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه شهید بهشتی", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 4},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["انسانی", "علوم و معارف"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 1400, "zone_2": 2600, "zone_3": 4800, "isargaran_25": 13500, "isargaran_5": 10800, "shahid": 11600},
+        "1403": {"zone_1": 1480, "zone_2": 2750, "zone_3": 5080, "isargaran_25": 14200, "isargaran_5": 11350, "shahid": 12200},
+        "1402": {"zone_1": 1580, "zone_2": 2930, "zone_3": 5400, "isargaran_25": 15050, "isargaran_5": 12050, "shahid": 12950},
+        "1401": {"zone_1": 1680, "zone_2": 3120, "zone_3": 5780, "isargaran_25": 16000, "isargaran_5": 12800, "shahid": 13750}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 1440, "zone_2": 2675, "zone_3": 4940, "isargaran_25": 13850, "isargaran_5": 11075, "shahid": 11900},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "PSY_UT_D",
+      "university_id": "UT",
+      "major_id": "psychology",
+      "major_group": "علوم انسانی",      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["انسانی", "تجربی", "علوم و معارف"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 2800, "zone_2": 4800, "zone_3": 8500, "isargaran_25": 20000, "isargaran_5": 16000, "shahid": 17200},
+        "1403": {"zone_1": 2950, "zone_2": 5050, "zone_3": 8950, "isargaran_25": 21000, "isargaran_5": 16800, "shahid": 18050},
+        "1402": {"zone_1": 3150, "zone_2": 5400, "zone_3": 9550, "isargaran_25": 22200, "isargaran_5": 17750, "shahid": 19100},
+        "1401": {"zone_1": 3350, "zone_2": 5750, "zone_3": 10200, "isargaran_25": 23700, "isargaran_5": 18950, "shahid": 20350}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 2875, "zone_2": 4925, "zone_3": 8725, "isargaran_25": 20500, "isargaran_5": 16400, "shahid": 17625},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "PSY_PNU_T_SAVABEGH",
+      "university_id": "PNU_T",
+      "major_id": "psychology",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه پیام نور مرکز تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 2},
+      "admission_info": {"method": "سوابق تحصیلی", "course_type": "payam_noor", "bomi_type": "keshvari", "is_floating": true, "diploma_requirements": {"accepts_diploma_types": [], "is_floating": true}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_savabegh": {"minimum_gpa": 13.0, "minimum_traz": 6000},
+      "financial": {"tuition_per_term": 3500000, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "ACC_UT_D",
+      "university_id": "UT",
+      "major_id": "accounting",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["انسانی", "ریاضی", "علوم و معارف"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 3200, "zone_2": 5500, "zone_3": 9800, "isargaran_25": 23000, "isargaran_5": 18400, "shahid": 19800},
+        "1403": {"zone_1": 3380, "zone_2": 5800, "zone_3": 10350, "isargaran_25": 24200, "isargaran_5": 19350, "shahid": 20800},
+        "1402": {"zone_1": 3600, "zone_2": 6150, "zone_3": 11000, "isargaran_25": 25700, "isargaran_5": 20550, "shahid": 22100},
+        "1401": {"zone_1": 3830, "zone_2": 6550, "zone_3": 11700, "isargaran_25": 27300, "isargaran_5": 21850, "shahid": 23500}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 3290, "zone_2": 5650, "zone_3": 10075, "isargaran_25": 23600, "isargaran_5": 18875, "shahid": 20300},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "NURSE_TUMS_D",
+      "university_id": "TUMS",
+      "major_id": "nursing",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {        "1404": {"zone_1": 7500, "zone_2": 12000, "zone_3": 20000, "isargaran_25": 42000, "isargaran_5": 33600, "shahid": 36000},
+        "1403": {"zone_1": 7900, "zone_2": 12600, "zone_3": 21000, "isargaran_25": 44000, "isargaran_5": 35200, "shahid": 37750},
+        "1402": {"zone_1": 8400, "zone_2": 13400, "zone_3": 22300, "isargaran_25": 46800, "isargaran_5": 37450, "shahid": 40150},
+        "1401": {"zone_1": 8950, "zone_2": 14300, "zone_3": 23800, "isargaran_25": 49800, "isargaran_5": 39850, "shahid": 42750}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 7700, "zone_2": 12300, "zone_3": 20500, "isargaran_25": 43000, "isargaran_5": 34400, "shahid": 36875},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 14, "has_service_commitment": true, "service_years": 4}
+    },
+    {
+      "program_id": "NURSE_MUI_D",
+      "university_id": "MUI",
+      "major_id": "nursing",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی اصفهان", "province": "اصفهان", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 11500, "zone_2": 17000, "zone_3": 27000, "isargaran_25": 55000, "isargaran_5": 44000, "shahid": 47200},
+        "1403": {"zone_1": 12100, "zone_2": 17850, "zone_3": 28350, "isargaran_25": 57800, "isargaran_5": 46250, "shahid": 49600},
+        "1402": {"zone_1": 12850, "zone_2": 18950, "zone_3": 30100, "isargaran_25": 61200, "isargaran_5": 49000, "shahid": 52550},
+        "1401": {"zone_1": 13700, "zone_2": 20200, "zone_3": 32050, "isargaran_25": 65100, "isargaran_5": 52100, "shahid": 55850}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 11800, "zone_2": 17425, "zone_3": 27675, "isargaran_25": 56400, "isargaran_5": 45125, "shahid": 48400},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 14, "has_service_commitment": true, "service_years": 4}
+    },
+    {
+      "program_id": "IE_SHARIF_D",
+      "university_id": "SHARIF",
+      "major_id": "industrial_engineering",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه صنعتی شریف", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 1100, "zone_2": 1950, "zone_3": 3600, "isargaran_25": 12000, "isargaran_5": 9600, "shahid": 10300},
+        "1403": {"zone_1": 1160, "zone_2": 2060, "zone_3": 3800, "isargaran_25": 12650, "isargaran_5": 10125, "shahid": 10875},
+        "1402": {"zone_1": 1240, "zone_2": 2200, "zone_3": 4050, "isargaran_25": 13400, "isargaran_5": 10725, "shahid": 11525},
+        "1401": {"zone_1": 1325, "zone_2": 2350, "zone_3": 4350, "isargaran_25": 14300, "isargaran_5": 11450, "shahid": 12300}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 1130, "zone_2": 2005, "zone_3": 3700, "isargaran_25": 12325, "isargaran_5": 9865, "shahid": 10590},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "IE_IUT_D",
+      "university_id": "IUT",
+      "major_id": "industrial_engineering",      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه صنعتی اصفهان", "province": "اصفهان", "gender_policy": "مختلط", "prestige_level": 4},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ghotbi", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 4200, "zone_2": 6800, "zone_3": 10500, "isargaran_25": 28000, "isargaran_5": 22400, "shahid": 24000},
+        "1403": {"zone_1": 4450, "zone_2": 7200, "zone_3": 11100, "isargaran_25": 29500, "isargaran_5": 23600, "shahid": 25300},
+        "1402": {"zone_1": 4750, "zone_2": 7650, "zone_3": 11800, "isargaran_25": 31200, "isargaran_5": 24950, "shahid": 26750},
+        "1401": {"zone_1": 5080, "zone_2": 8180, "zone_3": 12600, "isargaran_25": 33200, "isargaran_5": 26550, "shahid": 28500}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 4325, "zone_2": 7000, "zone_3": 10800, "isargaran_25": 28750, "isargaran_5": 23000, "shahid": 24650},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "AI_UT_D",
+      "university_id": "UT",
+      "major_id": "artificial_intelligence",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 180, "zone_2": 380, "zone_3": 800, "isargaran_25": 2800, "isargaran_5": 2250, "shahid": 2400},
+        "1403": {"zone_1": 200, "zone_2": 420, "zone_3": 880, "isargaran_25": 3000, "isargaran_5": 2400, "shahid": 2570}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 190, "zone_2": 400, "zone_3": 840, "isargaran_25": 2900, "isargaran_5": 2325, "shahid": 2485},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "DS_UT_D",
+      "university_id": "UT",
+      "major_id": "data_science",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 380, "zone_2": 720, "zone_3": 1400, "isargaran_25": 4800, "isargaran_5": 3850, "shahid": 4125},
+        "1403": {"zone_1": 405, "zone_2": 765, "zone_3": 1480, "isargaran_25": 5080, "isargaran_5": 4065, "shahid": 4355},
+        "1402": {"zone_1": 430, "zone_2": 815, "zone_3": 1580, "isargaran_25": 5400, "isargaran_5": 4320, "shahid": 4630},
+        "1401": {"zone_1": 460, "zone_2": 870, "zone_3": 1690, "isargaran_25": 5760, "isargaran_5": 4610, "shahid": 4940}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 393, "zone_2": 743, "zone_3": 1440, "isargaran_25": 4940, "isargaran_5": 3955, "shahid": 4240},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "ARCH_UT_D",      "university_id": "UT",
+      "major_id": "architecture",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی", "هنر"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 2200, "zone_2": 3800, "zone_3": 7000, "isargaran_25": 18000, "isargaran_5": 14400, "shahid": 15500},
+        "1403": {"zone_1": 2330, "zone_2": 4020, "zone_3": 7400, "isargaran_25": 19000, "isargaran_5": 15200, "shahid": 16350},
+        "1402": {"zone_1": 2480, "zone_2": 4270, "zone_3": 7880, "isargaran_25": 20100, "isargaran_5": 16100, "shahid": 17320},
+        "1401": {"zone_1": 2650, "zone_2": 4560, "zone_3": 8430, "isargaran_25": 21400, "isargaran_5": 17125, "shahid": 18430}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 2265, "zone_2": 3910, "zone_3": 7200, "isargaran_25": 18500, "isargaran_5": 14800, "shahid": 15925},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "ECON_UT_D",
+      "university_id": "UT",
+      "major_id": "economics",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["انسانی", "ریاضی", "علوم و معارف"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 2500, "zone_2": 4200, "zone_3": 7700, "isargaran_25": 19500, "isargaran_5": 15600, "shahid": 16750},
+        "1403": {"zone_1": 2650, "zone_2": 4440, "zone_3": 8150, "isargaran_25": 20500, "isargaran_5": 16400, "shahid": 17620},
+        "1402": {"zone_1": 2820, "zone_2": 4730, "zone_3": 8680, "isargaran_25": 21750, "isargaran_5": 17400, "shahid": 18700},
+        "1401": {"zone_1": 3020, "zone_2": 5060, "zone_3": 9280, "isargaran_25": 23150, "isargaran_5": 18525, "shahid": 19900}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 2575, "zone_2": 4320, "zone_3": 7925, "isargaran_25": 20000, "isargaran_5": 16000, "shahid": 17185},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "MGT_UT_D",
+      "university_id": "UT",
+      "major_id": "business_administration",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["انسانی", "ریاضی", "علوم و معارف"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 2000, "zone_2": 3500, "zone_3": 6500, "isargaran_25": 17000, "isargaran_5": 13600, "shahid": 14600},
+        "1403": {"zone_1": 2120, "zone_2": 3700, "zone_3": 6870, "isargaran_25": 17900, "isargaran_5": 14325, "shahid": 15380},
+        "1402": {"zone_1": 2250, "zone_2": 3930, "zone_3": 7300, "isargaran_25": 19000, "isargaran_5": 15200, "shahid": 16320},
+        "1401": {"zone_1": 2410, "zone_2": 4200, "zone_3": 7810, "isargaran_25": 20300, "isargaran_5": 16240, "shahid": 17440}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 2060, "zone_2": 3600, "zone_3": 6685, "isargaran_25": 17450, "isargaran_5": 13960, "shahid": 14990},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "PHYS_SHARIF_D",
+      "university_id": "SHARIF",
+      "major_id": "physics",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه صنعتی شریف", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 2500, "zone_2": 4500, "zone_3": 8200, "isargaran_25": 21500, "isargaran_5": 17200, "shahid": 18500},
+        "1403": {"zone_1": 2650, "zone_2": 4770, "zone_3": 8700, "isargaran_25": 22700, "isargaran_5": 18150, "shahid": 19500},
+        "1402": {"zone_1": 2820, "zone_2": 5080, "zone_3": 9280, "isargaran_25": 24100, "isargaran_5": 19275, "shahid": 20720},
+        "1401": {"zone_1": 3020, "zone_2": 5430, "zone_3": 9920, "isargaran_25": 25700, "isargaran_5": 20575, "shahid": 22120}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 2575, "zone_2": 4635, "zone_3": 8450, "isargaran_25": 22100, "isargaran_5": 17675, "shahid": 19000},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "CHEM_UT_D",
+      "university_id": "UT",
+      "major_id": "chemistry",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["تجربی", "ریاضی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 6500, "zone_2": 10500, "zone_3": 17500, "isargaran_25": 38000, "isargaran_5": 30400, "shahid": 32700},
+        "1403": {"zone_1": 6850, "zone_2": 11100, "zone_3": 18500, "isargaran_25": 40000, "isargaran_5": 32000, "shahid": 34400},
+        "1402": {"zone_1": 7300, "zone_2": 11800, "zone_3": 19700, "isargaran_25": 42500, "isargaran_5": 34000, "shahid": 36550},
+        "1401": {"zone_1": 7800, "zone_2": 12600, "zone_3": 21050, "isargaran_25": 45250, "isargaran_5": 36200, "shahid": 38900}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 6675, "zone_2": 10800, "zone_3": 18000, "isargaran_25": 39000, "isargaran_5": 31200, "shahid": 33550},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "BIO_UT_D",
+      "university_id": "UT",
+      "major_id": "biology",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 9500, "zone_2": 15000, "zone_3": 24500, "isargaran_25": 52000, "isargaran_5": 41600, "shahid": 44750},
+        "1403": {"zone_1": 10000, "zone_2": 15900, "zone_3": 25900, "isargaran_25": 54800, "isargaran_5": 43850, "shahid": 47150},
+        "1402": {"zone_1": 10650, "zone_2": 16900, "zone_3": 27550, "isargaran_25": 58200, "isargaran_5": 46550, "shahid": 50050},
+        "1401": {"zone_1": 11400, "zone_2": 18050, "zone_3": 29450, "isargaran_25": 62000, "isargaran_5": 49600, "shahid": 53300}      },
+      "cutoffs_predicted_1405": {"zone_1": 9750, "zone_2": 15450, "zone_3": 25200, "isargaran_25": 53400, "isargaran_5": 42725, "shahid": 45950},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "PHYSIO_TUMS_D",
+      "university_id": "TUMS",
+      "major_id": "physiotherapy",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه علوم پزشکی تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 1200, "zone_2": 2200, "zone_3": 4100, "isargaran_25": 11000, "isargaran_5": 8800, "shahid": 9475},
+        "1403": {"zone_1": 1270, "zone_2": 2330, "zone_3": 4330, "isargaran_25": 11600, "isargaran_5": 9275, "shahid": 10000},
+        "1402": {"zone_1": 1350, "zone_2": 2480, "zone_3": 4610, "isargaran_25": 12300, "isargaran_5": 9840, "shahid": 10600},
+        "1401": {"zone_1": 1445, "zone_2": 2650, "zone_3": 4925, "isargaran_25": 13100, "isargaran_5": 10480, "shahid": 11290}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 1235, "zone_2": 2265, "zone_3": 4215, "isargaran_25": 11300, "isargaran_5": 9040, "shahid": 9735},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 14, "has_service_commitment": false}
+    },
+    {
+      "program_id": "VET_UT_D",
+      "university_id": "UT",
+      "major_id": "veterinary",
+      "major_group": "علوم تجربی",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["تجربی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 3500, "zone_2": 6000, "zone_3": 10500, "isargaran_25": 26000, "isargaran_5": 20800, "shahid": 22400},
+        "1403": {"zone_1": 3700, "zone_2": 6350, "zone_3": 11100, "isargaran_25": 27400, "isargaran_5": 21925, "shahid": 23600},
+        "1402": {"zone_1": 3930, "zone_2": 6750, "zone_3": 11800, "isargaran_25": 29100, "isargaran_5": 23275, "shahid": 25050},
+        "1401": {"zone_1": 4200, "zone_2": 7210, "zone_3": 12620, "isargaran_25": 31000, "isargaran_5": 24800, "shahid": 26700}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 3600, "zone_2": 6175, "zone_3": 10800, "isargaran_25": 26700, "isargaran_5": 21360, "shahid": 23000},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 14, "has_service_commitment": false}
+    },
+    {
+      "program_id": "POLSCI_UT_D",
+      "university_id": "UT",
+      "major_id": "political_science",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["انسانی", "علوم و معارف"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {        "1404": {"zone_1": 4500, "zone_2": 7500, "zone_3": 13000, "isargaran_25": 31000, "isargaran_5": 24800, "shahid": 26700},
+        "1403": {"zone_1": 4750, "zone_2": 7930, "zone_3": 13750, "isargaran_25": 32700, "isargaran_5": 26150, "shahid": 28150},
+        "1402": {"zone_1": 5060, "zone_2": 8450, "zone_3": 14620, "isargaran_25": 34700, "isargaran_5": 27750, "shahid": 29850},
+        "1401": {"zone_1": 5400, "zone_2": 9020, "zone_3": 15600, "isargaran_25": 37000, "isargaran_5": 29600, "shahid": 31850}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 4625, "zone_2": 7715, "zone_3": 13375, "isargaran_25": 31850, "isargaran_5": 25475, "shahid": 27425},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "POLSCI_ATU_D",
+      "university_id": "ATU",
+      "major_id": "political_science",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه علامه طباطبایی", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 4},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["انسانی", "علوم و معارف"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 6500, "zone_2": 10500, "zone_3": 17800, "isargaran_25": 41000, "isargaran_5": 32800, "shahid": 35300},
+        "1403": {"zone_1": 6870, "zone_2": 11100, "zone_3": 18850, "isargaran_25": 43200, "isargaran_5": 34550, "shahid": 37170},
+        "1402": {"zone_1": 7300, "zone_2": 11800, "zone_3": 20050, "isargaran_25": 45900, "isargaran_5": 36700, "shahid": 39500},
+        "1401": {"zone_1": 7800, "zone_2": 12600, "zone_3": 21400, "isargaran_25": 48800, "isargaran_5": 39050, "shahid": 42050}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 6685, "zone_2": 10800, "zone_3": 18325, "isargaran_25": 42100, "isargaran_5": 33675, "shahid": 36235},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "JOUR_ATU_D",
+      "university_id": "ATU",
+      "major_id": "journalism",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه علامه طباطبایی", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 4},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["انسانی", "علوم و معارف"], "is_floating": false}, "special_conditions": {"has_interview": true, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 8500, "zone_2": 13500, "zone_3": 22500, "isargaran_25": 51000, "isargaran_5": 40800, "shahid": 43900},
+        "1403": {"zone_1": 9000, "zone_2": 14300, "zone_3": 23800, "isargaran_25": 53800, "isargaran_5": 43050, "shahid": 46300},
+        "1402": {"zone_1": 9570, "zone_2": 15200, "zone_3": 25300, "isargaran_25": 57200, "isargaran_5": 45750, "shahid": 49200},
+        "1401": {"zone_1": 10200, "zone_2": 16200, "zone_3": 27000, "isargaran_25": 60900, "isargaran_5": 48700, "shahid": 52400}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 8750, "zone_2": 13900, "zone_3": 23150, "isargaran_25": 52400, "isargaran_5": 41925, "shahid": 45100},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "CS_PNU_T_SAVABEGH",
+      "university_id": "PNU_T",
+      "major_id": "computer_science",      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه پیام نور مرکز تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 2},
+      "admission_info": {"method": "سوابق تحصیلی", "course_type": "payam_noor", "bomi_type": "keshvari", "is_floating": false, "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_savabegh": {"minimum_gpa": 13.0, "minimum_traz": 6000},
+      "financial": {"tuition_per_term": 3500000, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "ACC_IAUCTB_SAVABEGH",
+      "university_id": "IAUCTB",
+      "major_id": "accounting",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه آزاد واحد تهران مرکزی", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 3},
+      "admission_info": {"method": "سوابق تحصیلی", "course_type": "azad", "bomi_type": "ostani", "is_floating": true, "diploma_requirements": {"accepts_diploma_types": [], "is_floating": true}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_savabegh": {"minimum_gpa": 12.0, "minimum_traz": 5500},
+      "financial": {"tuition_per_term": 9000000, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "MGT_IAUM_SAVABEGH",
+      "university_id": "IAUM",
+      "major_id": "business_administration",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه آزاد واحد مشهد", "province": "خراسان رضوی", "gender_policy": "مختلط", "prestige_level": 3},
+      "admission_info": {"method": "سوابق تحصیلی", "course_type": "azad", "bomi_type": "ostani", "is_floating": true, "diploma_requirements": {"accepts_diploma_types": [], "is_floating": true}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_savabegh": {"minimum_gpa": 12.5, "minimum_traz": 5800},
+      "financial": {"tuition_per_term": 8500000, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "EDU_FARHANGIAN_T",
+      "university_id": "FARHANGIAN_T",
+      "major_id": "education",
+      "major_group": "علوم انسانی",
+      "university": {"name": "دانشگاه فرهنگیان تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 3},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "ostani", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "تجربی", "انسانی", "علوم و معارف"], "is_floating": false}, "special_conditions": {"has_interview": true, "has_practical_exam": false, "max_age": 24}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 7500, "zone_2": 11500, "zone_3": 18500, "isargaran_25": 38000, "isargaran_5": 30400, "shahid": 32700},
+        "1403": {"zone_1": 7950, "zone_2": 12200, "zone_3": 19600, "isargaran_25": 40000, "isargaran_5": 32000, "shahid": 34400},
+        "1402": {"zone_1": 8450, "zone_2": 12975, "zone_3": 20850, "isargaran_25": 42500, "isargaran_5": 34000, "shahid": 36550},
+        "1401": {"zone_1": 9030, "zone_2": 13850, "zone_3": 22300, "isargaran_25": 45250, "isargaran_5": 36200, "shahid": 38900}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 7725, "zone_2": 11850, "zone_3": 19050, "isargaran_25": 39000, "isargaran_5": 31200, "shahid": 33550},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 14, "has_service_commitment": true, "service_years": 8}
+    },
+    {
+      "program_id": "CS_SAJAD_D",
+      "university_id": "SAJAD",      "major_id": "computer_science",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "مؤسسه آموزش عالی سجاد مشهد", "province": "خراسان رضوی", "gender_policy": "مختلط", "prestige_level": 3},
+      "admission_info": {"method": "با آزمون", "course_type": "gheir_entefaei", "bomi_type": "ostani", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 18000, "zone_2": 24000, "zone_3": 32000, "isargaran_25": 65000, "isargaran_5": 52000, "shahid": 56000},
+        "1403": {"zone_1": 19000, "zone_2": 25200, "zone_3": 33600, "isargaran_25": 68500, "isargaran_5": 54800, "shahid": 59000},
+        "1402": {"zone_1": 20100, "zone_2": 26800, "zone_3": 35700, "isargaran_25": 72800, "isargaran_5": 58250, "shahid": 62700},
+        "1401": {"zone_1": 21400, "zone_2": 28500, "zone_3": 38000, "isargaran_25": 77500, "isargaran_5": 62000, "shahid": 66700}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 18500, "zone_2": 24600, "zone_3": 32800, "isargaran_25": 66750, "isargaran_5": 53400, "shahid": 57500},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 7500000, "living_cost_level": 3},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": false}
+    },
+    {
+      "program_id": "PETRO_UT_D",
+      "university_id": "UT",
+      "major_id": "petroleum_engineering",
+      "major_group": "ریاضی-فیزیک",
+      "university": {"name": "دانشگاه تهران", "province": "تهران", "gender_policy": "مختلط", "prestige_level": 5},
+      "admission_info": {"method": "با آزمون", "course_type": "roozaneh", "bomi_type": "keshvari", "diploma_requirements": {"accepts_diploma_types": ["ریاضی", "فنی"], "is_floating": false}, "special_conditions": {"has_interview": false, "has_practical_exam": false}},
+      "cutoffs_historical": {
+        "1404": {"zone_1": 2800, "zone_2": 4800, "zone_3": 8800, "isargaran_25": 22500, "isargaran_5": 18000, "shahid": 19400},
+        "1403": {"zone_1": 2960, "zone_2": 5070, "zone_3": 9300, "isargaran_25": 23700, "isargaran_5": 18960, "shahid": 20400},
+        "1402": {"zone_1": 3150, "zone_2": 5400, "zone_3": 9900, "isargaran_25": 25200, "isargaran_5": 20160, "shahid": 21700},
+        "1401": {"zone_1": 3370, "zone_2": 5770, "zone_3": 10580, "isargaran_25": 26850, "isargaran_5": 21480, "shahid": 23100}
+      },
+      "cutoffs_predicted_1405": {"zone_1": 2880, "zone_2": 4935, "zone_3": 9050, "isargaran_25": 23100, "isargaran_5": 18480, "shahid": 19900},
+      "gpa_impact": {"year": 1405, "konkur_weight": 0.40, "gpa_weight": 0.60},
+      "financial": {"tuition_per_term": 0, "living_cost_level": 5},
+      "special_requirements": {"min_gpa_required": 0, "has_service_commitment": true, "service_years": 4}
+    }
+  ]
+}
