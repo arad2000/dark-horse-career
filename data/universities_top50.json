@@ -1,0 +1,2224 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "پروفایل ۵۰ دانشگاه برتر ایران - داده‌های واقعی",
+    "last_updated": "1405-03-10",
+    "total_universities": 50,
+    "data_sources": [
+      "رتبه‌بندی ISC 1403",
+      "رتبه‌بندی تایمز 2024",
+      "گزارش‌های دانشجویی",
+      "مشاوران کنکور"
+    ]
+  },
+  "universities": {
+    "SHARIF": {
+      "name_fa": "دانشگاه صنعتی شریف",
+      "name_en": "Sharif University of Technology",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1966,
+      "website": "https://sharif.edu",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 1,
+        "prestige_level": 5,
+        "reputation_tags": ["نخبه‌محور", "برند ملی", "مهاجرت‌پذیر"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 5,
+        "pressure": 5,
+        "social": 2,
+        "research_oriented": 5,
+        "entrepreneurship": 4,
+        "support_level": 2
+      },
+      "atmosphere_tags": [
+        "فشار رقابتی بسیار بالا",
+        "محیط نخبه‌محور",
+        "پژوهش‌محور",
+        "مناسب برای مهاجرت",
+        "نیاز به تحمل استرس بالا"      ],
+      "career_outcomes": {
+        "industry_connection": 5,
+        "internship_opportunities": 4,
+        "migration_strength": 5,
+        "employment_rate_5yrs": 95,
+        "avg_salary_ranking": 1
+      },
+      "notable_for": ["مهندسی کامپیوتر", "مهندسی برق", "فیزیک", "ریاضی"]
+    },
+
+    "UT": {
+      "name_fa": "دانشگاه تهران",
+      "name_en": "University of Tehran",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1934,
+      "website": "https://ut.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 2,
+        "prestige_level": 5,
+        "reputation_tags": ["قدیمی‌ترین دانشگاه", "برند ملی", "تنوع رشته‌ای"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 5,
+        "pressure": 4,
+        "social": 4,
+        "research_oriented": 5,
+        "entrepreneurship": 3,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "فشار رقابتی بالا",
+        "فضای سیاسی-اجتماعی فعال",
+        "تنوع رشته‌ای بالا",
+        "شبکه فارغ‌التحصیلان قوی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 4,
+        "internship_opportunities": 4,        "migration_strength": 5,
+        "employment_rate_5yrs": 90,
+        "avg_salary_ranking": 2
+      },
+      "notable_for": ["حقوق", "علوم سیاسی", "ادبیات", "مهندسی"]
+    },
+
+    "AUT": {
+      "name_fa": "دانشگاه صنعتی امیرکبیر",
+      "name_en": "Amirkabir University of Technology",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1958,
+      "website": "https://aut.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 3,
+        "prestige_level": 5,
+        "reputation_tags": ["پلی‌تکنیک", "فنی قوی", "مهاجرت‌پذیر"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 4,
+        "pressure": 5,
+        "social": 3,
+        "research_oriented": 5,
+        "entrepreneurship": 4,
+        "support_level": 2
+      },
+      "atmosphere_tags": [
+        "فشار درسی بسیار بالا",
+        "کارگاه‌محور",
+        "استارتاپ‌های دانشجویی فعال",
+        "مناسب برای کارآفرینی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 5,
+        "internship_opportunities": 5,
+        "migration_strength": 5,
+        "employment_rate_5yrs": 93,
+        "avg_salary_ranking": 3
+      },      "notable_for": ["مهندسی مکانیک", "مهندسی عمران", "مهندسی برق"]
+    },
+
+    "IUST": {
+      "name_fa": "دانشگاه علم و صنعت ایران",
+      "name_en": "Iran University of Science and Technology",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1929,
+      "website": "https://iust.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 4,
+        "prestige_level": 4,
+        "reputation_tags": ["صنعتی قدیمی", "مهندسی قوی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 4,
+        "pressure": 4,
+        "social": 3,
+        "research_oriented": 4,
+        "entrepreneurship": 3,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "فضای فنی و صنعتی",
+        "متوسط از نظر فشار",
+        "ارتباط خوب با صنعت"
+      ],
+      "career_outcomes": {
+        "industry_connection": 5,
+        "internship_opportunities": 4,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 88,
+        "avg_salary_ranking": 4
+      },
+      "notable_for": ["مهندسی راه‌آهن", "مهندسی عمران", "مهندسی مکانیک"]
+    },
+
+    "SBMU": {
+      "name_fa": "دانشگاه شهید بهشتی",      "name_en": "Shahid Beheshti University",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1959,
+      "website": "https://sbu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 5,
+        "prestige_level": 4,
+        "reputation_tags": ["دانشگاه ملی سابق", "فضای آرام"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 4,
+        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فضای سبز زیبا",
+        "محیط دانشجویی آرام",
+        "مناسب برای تمرکز علمی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 4,
+        "internship_opportunities": 3,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 87,
+        "avg_salary_ranking": 6
+      },
+      "notable_for": ["حقوق", "علوم پایه", "علوم انسانی"]
+    },
+
+    "KNTU": {
+      "name_fa": "دانشگاه خواجه نصیرالدین طوسی",
+      "name_en": "K. N. Toosi University of Technology",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1980,      "website": "https://kntu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 7,
+        "prestige_level": 4,
+        "reputation_tags": ["صنعتی متوسط", "مهندسی"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": false,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 3,
+        "research_oriented": 3,
+        "entrepreneurship": 3,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "پراکندگی دانشکده‌ها در شهر",
+        "فضای مهندسی",
+        "کمتر خوابگاهی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 4,
+        "internship_opportunities": 3,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 85,
+        "avg_salary_ranking": 8
+      },
+      "notable_for": ["مهندسی هوافضا", "مهندسی نقشه‌برداری"]
+    },
+
+    "ATU": {
+      "name_fa": "دانشگاه علامه طباطبایی",
+      "name_en": "Allameh Tabataba'i University",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1984,
+      "website": "https://atu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },      "prestige": {
+        "national_ranking": 8,
+        "prestige_level": 4,
+        "reputation_tags": ["قطب علوم انسانی", "روزنامه‌نگاری"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 4,
+        "entrepreneurship": 2,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "قطب علوم انسانی ایران",
+        "فضای فرهنگی فعال",
+        "کتابخانه‌های غنی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 2,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 75,
+        "avg_salary_ranking": 20
+      },
+      "notable_for": ["روزنامه‌نگاری", "حقوق", "علوم سیاسی", "اقتصاد"]
+    },
+
+    "TMU": {
+      "name_fa": "دانشگاه تربیت مدرس",
+      "name_en": "Tarbiat Modares University",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1982,
+      "website": "https://modares.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 6,
+        "prestige_level": 4,
+        "reputation_tags": ["تحصیلات تکمیلی", "پژوهشی"]
+      },      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 4,
+        "social": 3,
+        "research_oriented": 5,
+        "entrepreneurship": 3,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "فقط تحصیلات تکمیلی",
+        "پژوهش‌محور",
+        "فضای آکادمیک جدی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 5,
+        "employment_rate_5yrs": 90,
+        "avg_salary_ranking": 5
+      },
+      "notable_for": ["همه رشته‌ها در مقطع ارشد و دکترا"]
+    },
+
+    "IUMS": {
+      "name_fa": "دانشگاه علوم پزشکی ایران",
+      "name_en": "Iran University of Medical Sciences",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1974,
+      "website": "https://iums.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 10,
+        "prestige_level": 4,
+        "reputation_tags": ["پزشکی برتر", "بیمارستان‌های قوی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },      "environment": {
+        "competitive": 4,
+        "pressure": 5,
+        "social": 3,
+        "research_oriented": 4,
+        "entrepreneurship": 2,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "فشار درسی بسیار بالا",
+        "محیط بیمارستانی",
+        "تعهد خدمت"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 5,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 99,
+        "avg_salary_ranking": 7
+      },
+      "notable_for": ["پزشکی", "دندانپزشکی", "پیراپزشکی"]
+    },
+
+    "SBMUMS": {
+      "name_fa": "دانشگاه علوم پزشکی شهید بهشتی",
+      "name_en": "Shahid Beheshti University of Medical Sciences",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1961,
+      "website": "https://sbmu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 9,
+        "prestige_level": 5,
+        "reputation_tags": ["پزشکی برتر", "تحقیقات قوی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 4,
+        "pressure": 5,
+        "social": 3,
+        "research_oriented": 5,        "entrepreneurship": 2,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "فشار بالا",
+        "تحقیقات پزشکی قوی",
+        "بیمارستان‌های آموزشی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 5,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 99,
+        "avg_salary_ranking": 6
+      },
+      "notable_for": ["پزشکی", "دندانپزشکی", "داروسازی"]
+    },
+
+    "TUMS": {
+      "name_fa": "دانشگاه علوم پزشکی تهران",
+      "name_en": "Tehran University of Medical Sciences",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1934,
+      "website": "https://tums.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 1,
+        "prestige_level": 5,
+        "reputation_tags": ["برترین علوم پزشکی", "بین‌المللی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 5,
+        "pressure": 5,
+        "social": 3,
+        "research_oriented": 5,
+        "entrepreneurship": 2,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "رقابت بسیار شدید",        "قطب پزشکی کشور",
+        "بیمارستان‌های پیشرفته"
+      ],
+      "career_outcomes": {
+        "industry_connection": 4,
+        "internship_opportunities": 5,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 99,
+        "avg_salary_ranking": 1
+      },
+      "notable_for": ["پزشکی", "دندانپزشکی", "داروسازی", "بهداشت"]
+    },
+
+    "IUT": {
+      "name_fa": "دانشگاه صنعتی اصفهان",
+      "name_en": "Isfahan University of Technology",
+      "type": "دولتی",
+      "province": "اصفهان",
+      "city": "اصفهان",
+      "established_year": 1977,
+      "website": "https://iut.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 5,
+        "prestige_level": 4,
+        "reputation_tags": ["صنعتی برتر", "پردیس بزرگ"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 4,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 4,
+        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فضای متعادل",
+        "پردیس بزرگ و زیبا",
+        "ارتباط خوب با صنعت",
+        "مناسب برای زندگی دانشجویی"
+      ],
+      "career_outcomes": {        "industry_connection": 4,
+        "internship_opportunities": 4,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 88,
+        "avg_salary_ranking": 5
+      },
+      "notable_for": ["مهندسی مکانیک", "مهندسی مواد", "مهندسی کامپیوتر"]
+    },
+
+    "UI": {
+      "name_fa": "دانشگاه اصفهان",
+      "name_en": "University of Isfahan",
+      "type": "دولتی",
+      "province": "اصفهان",
+      "city": "اصفهان",
+      "established_year": 1946,
+      "website": "https://ui.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 8,
+        "prestige_level": 4,
+        "reputation_tags": ["دانشگاه مادر", "علوم پایه قوی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 4,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فضای فرهنگی قوی",
+        "پردیس زیبا",
+        "علوم پایه و انسانی قوی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 85,
+        "avg_salary_ranking": 10      },
+      "notable_for": ["علوم پایه", "زبان‌ها", "علوم انسانی"]
+    },
+
+    "MUI": {
+      "name_fa": "دانشگاه علوم پزشکی اصفهان",
+      "name_en": "Isfahan University of Medical Sciences",
+      "type": "دولتی",
+      "province": "اصفهان",
+      "city": "اصفهان",
+      "established_year": 1950,
+      "website": "https://mui.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 3,
+        "prestige_level": 5,
+        "reputation_tags": ["علوم پزشکی برتر", "تحقیقات قوی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 4,
+        "pressure": 5,
+        "social": 3,
+        "research_oriented": 5,
+        "entrepreneurship": 2,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "فشار درسی بالا",
+        "قطب پزشکی مرکز",
+        "تحقیقات پزشکی قوی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 5,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 99,
+        "avg_salary_ranking": 3
+      },
+      "notable_for": ["پزشکی", "دندانپزشکی", "داروسازی"]
+    },
+
+    "UM": {      "name_fa": "دانشگاه فردوسی مشهد",
+      "name_en": "Ferdowsi University of Mashhad",
+      "type": "دولتی",
+      "province": "خراسان رضوی",
+      "city": "مشهد",
+      "established_year": 1949,
+      "website": "https://um.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 6,
+        "prestige_level": 4,
+        "reputation_tags": ["دانشگاه مادر شرق", "ادبیات قوی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 4,
+        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فضای فرهنگی و مذهبی",
+        "پردیس بزرگ",
+        "ادبیات فارسی قوی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 85,
+        "avg_salary_ranking": 12
+      },
+      "notable_for": ["ادبیات فارسی", "الهیات", "کشاورزی"]
+    },
+
+    "MUMS": {
+      "name_fa": "دانشگاه علوم پزشکی مشهد",
+      "name_en": "Mashhad University of Medical Sciences",
+      "type": "دولتی",
+      "province": "خراسان رضوی",
+      "city": "مشهد",      "established_year": 1949,
+      "website": "https://mums.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 4,
+        "prestige_level": 5,
+        "reputation_tags": ["علوم پزشکی برتر", "گردشگری سلامت"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 4,
+        "pressure": 5,
+        "social": 3,
+        "research_oriented": 4,
+        "entrepreneurship": 2,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "فشار درسی بالا",
+        "گردشگری سلامت",
+        "بیمارستان‌های بزرگ"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 5,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 99,
+        "avg_salary_ranking": 4
+      },
+      "notable_for": ["پزشکی", "دندانپزشکی", "طب سنتی"]
+    },
+
+    "SU": {
+      "name_fa": "دانشگاه شیراز",
+      "name_en": "Shiraz University",
+      "type": "دولتی",
+      "province": "فارس",
+      "city": "شیراز",
+      "established_year": 1946,
+      "website": "https://shirazu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true      },
+      "prestige": {
+        "national_ranking": 7,
+        "prestige_level": 4,
+        "reputation_tags": ["دانشگاه پهلوی سابق", "بین‌المللی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 4,
+        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "سابقه بین‌المللی",
+        "فضای فرهنگی غنی",
+        "پردیس ارم زیبا"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 85,
+        "avg_salary_ranking": 11
+      },
+      "notable_for": ["کشاورزی", "دامپزشکی", "علوم پایه"]
+    },
+
+    "SUMS": {
+      "name_fa": "دانشگاه علوم پزشکی شیراز",
+      "name_en": "Shiraz University of Medical Sciences",
+      "type": "دولتی",
+      "province": "فارس",
+      "city": "شیراز",
+      "established_year": 1950,
+      "website": "https://sums.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 2,
+        "prestige_level": 5,
+        "reputation_tags": ["علوم پزشکی برتر", "پیوند اعضا"]      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 4,
+        "pressure": 5,
+        "social": 3,
+        "research_oriented": 5,
+        "entrepreneurship": 2,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "قطب پیوند اعضا",
+        "فشار درسی بالا",
+        "تحقیقات پزشکی قوی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 5,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 99,
+        "avg_salary_ranking": 2
+      },
+      "notable_for": ["پزشکی", "پیوند اعضا", "داروسازی"]
+    },
+
+    "TABRIZU": {
+      "name_fa": "دانشگاه تبریز",
+      "name_en": "University of Tabriz",
+      "type": "دولتی",
+      "province": "آذربایجان شرقی",
+      "city": "تبریز",
+      "established_year": 1947,
+      "website": "https://tabrizu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 9,
+        "prestige_level": 4,
+        "reputation_tags": ["دانشگاه مادر شمال غرب", "صنعتی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 4,
+        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فضای صنعتی",
+        "ارتباط با صنعت منطقه",
+        "هزینه زندگی پایین"
+      ],
+      "career_outcomes": {
+        "industry_connection": 4,
+        "internship_opportunities": 3,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 83,
+        "avg_salary_ranking": 15
+      },
+      "notable_for": ["مهندسی شیمی", "کشاورزی", "علوم پایه"]
+    },
+
+    "TBZMED": {
+      "name_fa": "دانشگاه علوم پزشکی تبریز",
+      "name_en": "Tabriz University of Medical Sciences",
+      "type": "دولتی",
+      "province": "آذربایجان شرقی",
+      "city": "تبریز",
+      "established_year": 1947,
+      "website": "https://tbzmed.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 5,
+        "prestige_level": 4,
+        "reputation_tags": ["علوم پزشکی برتر", "قطب شمال غرب"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 4,
+        "pressure": 4,
+        "social": 3,        "research_oriented": 4,
+        "entrepreneurship": 2,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "قطب پزشکی شمال غرب",
+        "فشار درسی متوسط به بالا"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 4,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 98,
+        "avg_salary_ranking": 8
+      },
+      "notable_for": ["پزشکی", "داروسازی", "بهداشت"]
+    },
+
+    "NIT": {
+      "name_fa": "دانشگاه صنعتی نوشیروانی بابل",
+      "name_en": "Babol Noshirvani University of Technology",
+      "type": "دولتی",
+      "province": "مازندران",
+      "city": "بابل",
+      "established_year": 1970,
+      "website": "https://nit.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 11,
+        "prestige_level": 4,
+        "reputation_tags": ["برترین شمال", "رتبه جهانی خوب"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 4,
+        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "رتبه جهانی خوب",        "فضای علمی متمرکز",
+        "شهر کوچک و آرام"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 85,
+        "avg_salary_ranking": 13
+      },
+      "notable_for": ["مهندسی عمران", "مهندسی شیمی", "مهندسی مکانیک"]
+    },
+
+    "GUILAN": {
+      "name_fa": "دانشگاه گیلان",
+      "name_en": "University of Guilan",
+      "type": "دولتی",
+      "province": "گیلان",
+      "city": "رشت",
+      "established_year": 1973,
+      "website": "https://guilan.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 15,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه شمال", "محیط‌زیستی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 4,
+        "research_oriented": 3,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فضای آرام",
+        "آب و هوای مطلوب",
+        "هزینه زندگی پایین"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,        "internship_opportunities": 2,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 80,
+        "avg_salary_ranking": 25
+      },
+      "notable_for": ["کشاورزی", "شیلات", "محیط‌زیست"]
+    },
+
+    "UMZ": {
+      "name_fa": "دانشگاه مازندران",
+      "name_en": "University of Mazandaran",
+      "type": "دولتی",
+      "province": "مازندران",
+      "city": "بابلسر",
+      "established_year": 1979,
+      "website": "https://umz.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 18,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه شمال", "ساحلی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 4,
+        "research_oriented": 3,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فضای آرام ساحلی",
+        "دور از هیاهو",
+        "مناسب برای تمرکز"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 2,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 78,
+        "avg_salary_ranking": 30
+      },      "notable_for": ["علوم پایه", "علوم دریایی"]
+    },
+
+    "BASU": {
+      "name_fa": "دانشگاه بوعلی سینا همدان",
+      "name_en": "Bu-Ali Sina University",
+      "type": "دولتی",
+      "province": "همدان",
+      "city": "همدان",
+      "established_year": 1973,
+      "website": "https://basu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 16,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه غرب", "علوم پایه"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 4,
+        "research_oriented": 3,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "شهر تاریخی",
+        "هزینه زندگی پایین",
+        "فضای علمی آرام"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 2,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 80,
+        "avg_salary_ranking": 28
+      },
+      "notable_for": ["شیمی", "فیزیک", "کشاورزی"]
+    },
+
+    "RAZI": {
+      "name_fa": "دانشگاه رازی کرمانشاه",      "name_en": "Razi University",
+      "type": "دولتی",
+      "province": "کرمانشاه",
+      "city": "کرمانشاه",
+      "established_year": 1972,
+      "website": "https://razi.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 20,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه غرب", "کشاورزی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 3,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "پردیس بزرگ",
+        "هزینه زندگی پایین",
+        "فضای علمی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 78,
+        "avg_salary_ranking": 32
+      },
+      "notable_for": ["کشاورزی", "دامپزشکی", "علوم پایه"]
+    },
+
+    "KURDISTAN": {
+      "name_fa": "دانشگاه کردستان",
+      "name_en": "University of Kurdistan",
+      "type": "دولتی",
+      "province": "کردستان",
+      "city": "سنندج",
+      "established_year": 1991,      "website": "https://uok.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 22,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه غرب", "منطقه‌ای"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 4,
+        "research_oriented": 3,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فرهنگ غنی کردی",
+        "فضای صمیمی",
+        "هزینه پایین"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 77,
+        "avg_salary_ranking": 35
+      },
+      "notable_for": ["زبان کردی", "ادبیات", "کشاورزی"]
+    },
+
+    "URMIA": {
+      "name_fa": "دانشگاه ارومیه",
+      "name_en": "Urmia University",
+      "type": "دولتی",
+      "province": "آذربایجان غربی",
+      "city": "ارومیه",
+      "established_year": 1965,
+      "website": "https://urmia.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },      "prestige": {
+        "national_ranking": 19,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه شمال غرب", "کشاورزی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 4,
+        "research_oriented": 3,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "نزدیک به دریاچه ارومیه",
+        "تنوع فرهنگی",
+        "فضای آرام"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 78,
+        "avg_salary_ranking": 33
+      },
+      "notable_for": ["کشاورزی", "دامپزشکی", "محیط‌زیست"]
+    },
+
+    "SAHAND": {
+      "name_fa": "دانشگاه صنعتی سهند تبریز",
+      "name_en": "Sahand University of Technology",
+      "type": "دولتی",
+      "province": "آذربایجان شرقی",
+      "city": "تبریز",
+      "established_year": 1990,
+      "website": "https://sut.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 14,
+        "prestige_level": 4,
+        "reputation_tags": ["صنعتی جدید", "فناوری"]
+      },      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 3,
+        "research_oriented": 4,
+        "entrepreneurship": 4,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "پردیس مدرن",
+        "تمرکز بر فناوری",
+        "پارک علم و فناوری"
+      ],
+      "career_outcomes": {
+        "industry_connection": 4,
+        "internship_opportunities": 3,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 85,
+        "avg_salary_ranking": 14
+      },
+      "notable_for": ["مهندسی مواد", "مهندسی شیمی", "فناوری نانو"]
+    },
+
+    "KASHANU": {
+      "name_fa": "دانشگاه کاشان",
+      "name_en": "University of Kashan",
+      "type": "دولتی",
+      "province": "اصفهان",
+      "city": "کاشان",
+      "established_year": 1974,
+      "website": "https://kashanu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 21,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه مرکزی", "نانوتکنولوژی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 4,
+        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "شهر تاریخی",
+        "تحقیقات نانوتکنولوژی",
+        "فضای علمی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 2,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 80,
+        "avg_salary_ranking": 27
+      },
+      "notable_for": ["نانوتکنولوژی", "شیمی", "مهندسی"]
+    },
+
+    "YAZDU": {
+      "name_fa": "دانشگاه یزد",
+      "name_en": "Yazd University",
+      "type": "دولتی",
+      "province": "یزد",
+      "city": "یزد",
+      "established_year": 1988,
+      "website": "https://yazd.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 23,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه مرکزی", "صنعتی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 3,        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "شهر صنعتی",
+        "هزینه پایین",
+        "فرهنگ کار"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 82,
+        "avg_salary_ranking": 22
+      },
+      "notable_for": ["مهندسی نساجی", "معدن", "صنایع"]
+    },
+
+    "UK": {
+      "name_fa": "دانشگاه شهید باهنر کرمان",
+      "name_en": "Shahid Bahonar University of Kerman",
+      "type": "دولتی",
+      "province": "کرمان",
+      "city": "کرمان",
+      "established_year": 1972,
+      "website": "https://uk.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 17,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه جنوب شرق", "معدن"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 3,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "نزدیک به معادن",        "هزینه پایین",
+        "فضای آرام"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 80,
+        "avg_salary_ranking": 26
+      },
+      "notable_for": ["مهندسی معدن", "زمین‌شناسی", "کشاورزی"]
+    },
+
+    "USB": {
+      "name_fa": "دانشگاه سیستان و بلوچستان",
+      "name_en": "University of Sistan and Baluchestan",
+      "type": "دولتی",
+      "province": "سیستان و بلوچستان",
+      "city": "زاهدان",
+      "established_year": 1974,
+      "website": "https://usb.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 30,
+        "prestige_level": 2,
+        "reputation_tags": ["دانشگاه جنوب شرق", "منطقه‌ای"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 1
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 2,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "تنوع فرهنگی",
+        "منطقه مرزی",
+        "هزینه بسیار پایین"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 75,
+        "avg_salary_ranking": 40
+      },
+      "notable_for": ["زبان انگلیسی", "ادبیات", "محیط‌زیست"]
+    },
+
+    "ZNU": {
+      "name_fa": "دانشگاه زنجان",
+      "name_en": "University of Zanjan",
+      "type": "دولتی",
+      "province": "زنجان",
+      "city": "زنجان",
+      "established_year": 1975,
+      "website": "https://znu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 25,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه شمال غرب", "منطقه‌ای"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 3,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "شهر صنعتی",
+        "هزینه پایین",
+        "فضای علمی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 78,
+        "avg_salary_ranking": 34
+      },      "notable_for": ["علوم پایه", "کشاورزی"]
+    },
+
+    "QOM": {
+      "name_fa": "دانشگاه قم",
+      "name_en": "University of Qom",
+      "type": "دولتی",
+      "province": "قم",
+      "city": "قم",
+      "established_year": 1980,
+      "website": "https://qom.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 28,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه مذهبی", "الهیات"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 3,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فضای مذهبی",
+        "شهر زیارتی",
+        "الهیات و فلسفه قوی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 77,
+        "avg_salary_ranking": 36
+      },
+      "notable_for": ["الهیات", "فلسفه", "حقوق"]
+    },
+
+    "SEMNAN": {
+      "name_fa": "دانشگاه سمنان",      "name_en": "Semnan University",
+      "type": "دولتی",
+      "province": "سمنان",
+      "city": "سمنان",
+      "established_year": 1975,
+      "website": "https://semnan.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 26,
+        "prestige_level": 3,
+        "reputation_tags": ["دانشگاه مرکزی", "صنعتی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 3,
+        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "نزدیک به تهران",
+        "هزینه پایین",
+        "منطقه صنعتی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 79,
+        "avg_salary_ranking": 31
+      },
+      "notable_for": ["مهندسی", "صنایع", "کشاورزی"]
+    },
+
+    "ISU": {
+      "name_fa": "دانشگاه امام صادق",
+      "name_en": "Imam Sadiq University",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1982,      "website": "https://isu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مرد",
+        "accepts_international": false
+      },
+      "prestige": {
+        "national_ranking": 12,
+        "prestige_level": 4,
+        "reputation_tags": ["نخبه‌گزین", "مصاحبه‌محور"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 4,
+        "pressure": 3,
+        "social": 3,
+        "research_oriented": 4,
+        "entrepreneurship": 2,
+        "support_level": 5
+      },
+      "atmosphere_tags": [
+        "مصاحبه ورودی",
+        "فضای خاص فرهنگی",
+        "بورسیه و حمایت قوی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 95,
+        "avg_salary_ranking": 9
+      },
+      "notable_for": ["علوم سیاسی", "حقوق", "اقتصاد"]
+    },
+
+    "AZU": {
+      "name_fa": "دانشگاه الزهرا",
+      "name_en": "Alzahra University",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1964,
+      "website": "https://alzahra.ac.ir",
+      "admission_policy": {
+        "gender_policy": "زن",
+        "accepts_international": true
+      },      "prestige": {
+        "national_ranking": 13,
+        "prestige_level": 4,
+        "reputation_tags": ["دخترانه", "علوم انسانی"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 3,
+        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فقط دخترانه",
+        "پردیس زیبا",
+        "فضای فرهنگی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 82,
+        "avg_salary_ranking": 18
+      },
+      "notable_for": ["زبان‌ها", "روانشناسی", "هنر"]
+    },
+
+    "SRBIAU": {
+      "name_fa": "دانشگاه آزاد واحد علوم و تحقیقات تهران",
+      "name_en": "Islamic Azad University, Science and Research Branch",
+      "type": "آزاد",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1983,
+      "website": "https://srbiau.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 1,
+        "prestige_level": 3,
+        "reputation_tags": ["برترین آزاد", "تحصیلات تکمیلی"]
+      },      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 3,
+        "entrepreneurship": 3,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "برترین واحد آزاد",
+        "تحصیلات تکمیلی قوی",
+        "پردیس کوهستانی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 3,
+        "employment_rate_5yrs": 80,
+        "avg_salary_ranking": 24
+      },
+      "notable_for": ["همه رشته‌ها در مقطع ارشد و دکترا"]
+    },
+
+    "IAUCTB": {
+      "name_fa": "دانشگاه آزاد واحد تهران مرکزی",
+      "name_en": "Islamic Azad University, Central Tehran Branch",
+      "type": "آزاد",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1982,
+      "website": "https://ctbiau.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 2,
+        "prestige_level": 3,
+        "reputation_tags": ["واحد قدیمی", "تهران"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": false,
+        "city_cost_level": 5
+      },      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 4,
+        "research_oriented": 2,
+        "entrepreneurship": 3,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "دسترسی آسان",
+        "فضای شهری",
+        "مناسب برای کار همزمان"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 78,
+        "avg_salary_ranking": 29
+      },
+      "notable_for": ["مدیریت", "حسابداری", "حقوق"]
+    },
+
+    "IAUN": {
+      "name_fa": "دانشگاه آزاد واحد نجف‌آباد",
+      "name_en": "Islamic Azad University, Najafabad Branch",
+      "type": "آزاد",
+      "province": "اصفهان",
+      "city": "نجف‌آباد",
+      "established_year": 1985,
+      "website": "https://iaun.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": false
+      },
+      "prestige": {
+        "national_ranking": 3,
+        "prestige_level": 3,
+        "reputation_tags": ["برترین شهرستان", "مهندسی"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": true,
+        "city_cost_level": 2
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 4,
+        "research_oriented": 2,        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "برترین واحد شهرستان",
+        "پردیس بزرگ",
+        "مناسب برای کار همزمان"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 75,
+        "avg_salary_ranking": 38
+      },
+      "notable_for": ["مهندسی عمران", "مهندسی مکانیک", "حسابداری"]
+    },
+
+    "IAUM": {
+      "name_fa": "دانشگاه آزاد واحد مشهد",
+      "name_en": "Islamic Azad University, Mashhad Branch",
+      "type": "آزاد",
+      "province": "خراسان رضوی",
+      "city": "مشهد",
+      "established_year": 1982,
+      "website": "https://mshdiau.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 4,
+        "prestige_level": 3,
+        "reputation_tags": ["واحد بزرگ", "مشهد"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": true,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 4,
+        "research_oriented": 2,
+        "entrepreneurship": 3,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "شهر مذهبی",        "پردیس بزرگ",
+        "تنوع رشته‌ای"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 77,
+        "avg_salary_ranking": 37
+      },
+      "notable_for": ["مدیریت", "حسابداری", "مهندسی"]
+    },
+
+    "IAUS": {
+      "name_fa": "دانشگاه آزاد واحد شیراز",
+      "name_en": "Islamic Azad University, Shiraz Branch",
+      "type": "آزاد",
+      "province": "فارس",
+      "city": "شیراز",
+      "established_year": 1983,
+      "website": "https://iaus.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 5,
+        "prestige_level": 3,
+        "reputation_tags": ["واحد جنوب", "شیراز"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": true,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 4,
+        "research_oriented": 2,
+        "entrepreneurship": 3,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "شهر فرهنگی",
+        "پردیس زیبا",
+        "تنوع رشته"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,        "internship_opportunities": 3,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 77,
+        "avg_salary_ranking": 39
+      },
+      "notable_for": ["مهندسی", "علوم انسانی", "هنر"]
+    },
+
+    "PNU_T": {
+      "name_fa": "دانشگاه پیام نور مرکز تهران",
+      "name_en": "Payame Noor University - Tehran",
+      "type": "پیام نور",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1988,
+      "website": "https://pnu.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": false
+      },
+      "prestige": {
+        "national_ranking": 1,
+        "prestige_level": 2,
+        "reputation_tags": ["غیرحضوری", "مناسب کار"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": false,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 1,
+        "pressure": 1,
+        "social": 2,
+        "research_oriented": 1,
+        "entrepreneurship": 3,
+        "support_level": 2
+      },
+      "atmosphere_tags": [
+        "آموزش غیرحضوری",
+        "مناسب برای کار همزمان",
+        "انعطاف زمانی"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 1,
+        "migration_strength": 1,
+        "employment_rate_5yrs": 70,
+        "avg_salary_ranking": 45
+      },      "notable_for": ["رشته‌های عمومی", "علوم انسانی"]
+    },
+
+    "IMAMREZA": {
+      "name_fa": "دانشگاه بین‌المللی امام رضا",
+      "name_en": "Imam Reza International University",
+      "type": "غیرانتفاعی",
+      "province": "خراسان رضوی",
+      "city": "مشهد",
+      "established_year": 2001,
+      "website": "https://ir.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 5,
+        "prestige_level": 3,
+        "reputation_tags": ["غیرانتفاعی برتر", "بین‌المللی"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": true,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 2,
+        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "وابسته به آستان قدس",
+        "فضای مذهبی-فرهنگی",
+        "بورسیه‌های خاص"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 80,
+        "avg_salary_ranking": 23
+      },
+      "notable_for": ["علوم اسلامی", "حقوق", "مدیریت"]
+    },
+
+    "SAJAD": {
+      "name_fa": "مؤسسه آموزش عالی سجاد مشهد",      "name_en": "Sadjad Institute of Higher Education",
+      "type": "غیرانتفاعی",
+      "province": "خراسان رضوی",
+      "city": "مشهد",
+      "established_year": 1994,
+      "website": "https://sadjad.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": false
+      },
+      "prestige": {
+        "national_ranking": 2,
+        "prestige_level": 3,
+        "reputation_tags": ["غیرانتفاعی برتر", "مهندسی"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": false,
+        "city_cost_level": 3
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 3,
+        "social": 3,
+        "research_oriented": 2,
+        "entrepreneurship": 3,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "برترین غیرانتفاعی",
+        "مهندسی قوی",
+        "کیفیت آموزشی بالا"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 82,
+        "avg_salary_ranking": 21
+      },
+      "notable_for": ["مهندسی کامپیوتر", "مهندسی برق", "مهندسی عمران"]
+    },
+
+    "MOTAHARI": {
+      "name_fa": "دانشگاه شهید مطهری",
+      "name_en": "Shahid Motahari University",
+      "type": "غیرانتفاعی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1989,      "website": "https://motahari.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": false
+      },
+      "prestige": {
+        "national_ranking": 3,
+        "prestige_level": 3,
+        "reputation_tags": ["الهیات قوی", "حقوق"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 3,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 3,
+        "entrepreneurship": 1,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "فضای مذهبی-علمی",
+        "الهیات و فلسفه قوی",
+        "اساتید برجسته"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 85,
+        "avg_salary_ranking": 19
+      },
+      "notable_for": ["الهیات", "حقوق", "فلسفه", "زبان عربی"]
+    },
+
+    "ART": {
+      "name_fa": "دانشگاه هنر تهران",
+      "name_en": "Tehran University of Art",
+      "type": "دولتی",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1979,
+      "website": "https://art.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },      "prestige": {
+        "national_ranking": 1,
+        "prestige_level": 4,
+        "reputation_tags": ["قطب هنر", "دولتی"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": true,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 4,
+        "pressure": 3,
+        "social": 4,
+        "research_oriented": 3,
+        "entrepreneurship": 4,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "فضای خلاقانه",
+        "تنوع هنری",
+        "اساتید مطرح"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 3,
+        "migration_strength": 4,
+        "employment_rate_5yrs": 75,
+        "avg_salary_ranking": 17
+      },
+      "notable_for": ["سینما", "موسیقی", "نقاشی", "طراحی صنعتی"]
+    },
+
+    "IAU_TNB": {
+      "name_fa": "دانشگاه آزاد واحد تهران شمال",
+      "name_en": "Islamic Azad University, North Tehran Branch",
+      "type": "آزاد",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1985,
+      "website": "https://tnb.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 6,
+        "prestige_level": 2,
+        "reputation_tags": ["واحد متوسط", "تهران"]
+      },      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": false,
+        "city_cost_level": 5
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 2,
+        "entrepreneurship": 3,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "مناسب برای کار همزمان",
+        "دسترسی آسان",
+        "فضای شهری"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 76,
+        "avg_salary_ranking": 42
+      },
+      "notable_for": ["مهندسی", "مدیریت", "حسابداری"]
+    },
+
+    "IAU_STH": {
+      "name_fa": "دانشگاه آزاد واحد تهران جنوب",
+      "name_en": "Islamic Azad University, South Tehran Branch",
+      "type": "آزاد",
+      "province": "تهران",
+      "city": "تهران",
+      "established_year": 1984,
+      "website": "https://azad.ac.ir/stb",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 7,
+        "prestige_level": 2,
+        "reputation_tags": ["واحد قدیمی", "مهندسی"]
+      },
+      "campus": {
+        "campus_type": "روزانه",
+        "dormitory_available": false,
+        "city_cost_level": 5
+      },      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 2,
+        "entrepreneurship": 3,
+        "support_level": 3
+      },
+      "atmosphere_tags": [
+        "واحد قدیمی",
+        "مهندسی قوی",
+        "دسترسی آسان"
+      ],
+      "career_outcomes": {
+        "industry_connection": 3,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 76,
+        "avg_salary_ranking": 41
+      },
+      "notable_for": ["مهندسی عمران", "مهندسی برق", "حسابداری"]
+    },
+
+    "BIRJAND": {
+      "name_fa": "دانشگاه بیرجند",
+      "name_en": "University of Birjand",
+      "type": "دولتی",
+      "province": "خراسان جنوبی",
+      "city": "بیرجند",
+      "established_year": 1975,
+      "website": "https://birjand.ac.ir",
+      "admission_policy": {
+        "gender_policy": "مختلط",
+        "accepts_international": true
+      },
+      "prestige": {
+        "national_ranking": 32,
+        "prestige_level": 2,
+        "reputation_tags": ["دانشگاه منطقه‌ای", "شرق"]
+      },
+      "campus": {
+        "campus_type": "خوابگاهی",
+        "dormitory_available": true,
+        "city_cost_level": 1
+      },
+      "environment": {
+        "competitive": 2,
+        "pressure": 2,
+        "social": 3,
+        "research_oriented": 2,        "entrepreneurship": 2,
+        "support_level": 4
+      },
+      "atmosphere_tags": [
+        "هزینه بسیار پایین",
+        "شهر کوچک",
+        "فضای آرام"
+      ],
+      "career_outcomes": {
+        "industry_connection": 2,
+        "internship_opportunities": 2,
+        "migration_strength": 2,
+        "employment_rate_5yrs": 75,
+        "avg_salary_ranking": 43
+      },
+      "notable_for": ["علوم پایه", "کشاورزی"]
+    }
+  }
+}
