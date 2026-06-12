@@ -2,7 +2,10 @@ import json
 import random
 import os
 
-random.seed(42)  # برای reproducibility
+random.seed(42)
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
 
 GROUPS = {
     "medical": "medical_majors.json",
@@ -14,19 +17,16 @@ GROUPS = {
 }
 
 def enhance_weights(weights_matrix):
-    """دریافت ماتریس ۲۰×۵ و اعمال تضاد + نویز"""
     new_matrix = []
     for row in weights_matrix:
         new_row = []
         for w in row:
-            # اعمال آستانه‌های تضاد
             if w >= 0.6:
                 w_new = 0.9
             elif w >= 0.4:
                 w_new = 0.5
             else:
                 w_new = 0.1
-            # اضافه کردن نویز کوچک برای جلوگیری از یکسان‌شدن مطلق
             noise = random.uniform(-0.05, 0.05)
             w_new = max(0.0, min(1.0, w_new + noise))
             new_row.append(round(w_new, 2))
@@ -43,11 +43,10 @@ def process_file(filepath):
 
 if __name__ == "__main__":
     for group, fname in GROUPS.items():
-        path = os.path.join("data", fname)
+        path = os.path.join(DATA_DIR, fname)
         if os.path.exists(path):
             print(f"🔧 در حال پردازش {group}...")
             process_file(path)
         else:
             print(f"⚠️ فایل {path} پیدا نشد.")
     print("✅ تمام فایل‌ها با وزن‌های استراتژی جدید جایگزین شدند.")
-    print("📊 حالا می‌توانید دوباره تست سلامت را اجرا کنید و واریانس را بررسی نمایید.")
