@@ -286,7 +286,7 @@ def calculate_value_score(
     
     total_score = 0.0
     valid_count = 0
-    
+    value_poles: Dict[str, str] = {}
     for choice in value_choices:
         if choice and choice.strip():
             choice_clean = choice.strip()
