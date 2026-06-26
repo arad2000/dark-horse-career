@@ -1,5 +1,5 @@
-// frontend/app.js — نسخهٔ اصلاح‌شدهٔ کامل
-// منطق اصلی برنامهٔ اسب سیاه
+// frontend/app.js — نسخهٔ نهایی رفع اشکال (V2.0)
+// رفع مشکل نمایش توضیحات کامل، دکمه بازگشت، محدودیت ۲۰-۸۰ و ارسال به API
 
 // ==================== CONFIG ====================
 const API_BASE = 'https://dark-horse-career.onrender.com';
@@ -8,11 +8,10 @@ const DATA_BASE = 'https://raw.githubusercontent.com/arad2000/dark-horse-career/
 // ==================== GLOBAL STATE ====================
 const state = {
   stage: 'splash',
-  history: [],                      // پشته برای ذخیره تاریخچه مراحل
+  history: [],
   selectedRealms: [],
   selectedSubRealms: [],
   selectedNarrowPaths: [],
-  microMotives: [],
   likedCodes: [],
   strategyAnswers: [],
   valueAnswers: [],
@@ -33,21 +32,22 @@ function goTo(stage) {
 
 function goBack() {
   if (state.history.length > 0) {
-    state.stage = state.history.pop();
-    // ریست کردن داده‌های مرحله‌ای که از آن برمی‌گردیم
-    if (state.stage === 'realm') {
+    // ریست کردن داده‌های مراحل جلوتر از مقصد
+    const targetStage = state.history[state.history.length - 1];
+    if (targetStage === 'realm') {
       state.selectedSubRealms = [];
       state.selectedNarrowPaths = [];
       state.swipeCards = [];
       state.likedCodes = [];
-    } else if (state.stage === 'subRealm') {
+    } else if (targetStage === 'subRealm') {
       state.selectedNarrowPaths = [];
       state.swipeCards = [];
       state.likedCodes = [];
-    } else if (state.stage === 'narrowPath') {
+    } else if (targetStage === 'narrowPath') {
       state.swipeCards = [];
       state.likedCodes = [];
     }
+    state.stage = state.history.pop();
     render();
   }
 }
@@ -80,24 +80,24 @@ function renderSplash() {
 
 // ==================== REALM SELECTION ====================
 function renderRealm() {
-  const maxSelect = 3;
+  const maxSelect = Math.min(3, REALMS.length);
   let html = `<h2>🌃 شهر رؤیاها</h2>
-    <p style="color:#b0a080;">تصور کن در "شهر رؤیاها" قدم می‌زنی... کدام محله‌ها تو را صدا می‌زنند؟</p>
-    <p style="font-size:0.85rem;color:#888;">(۱ تا ${Math.min(maxSelect, REALMS.length)} محله انتخاب کن)</p>
+    <p style="color:#b0a080;">کدام محله‌ها تو را صدا می‌زنند؟</p>
+    <p style="font-size:0.85rem;color:#888;">(۱ تا ${maxSelect} محله انتخاب کن)</p>
     <div class="grid" id="realmGrid">`;
-  
+
   REALMS.forEach(r => {
     html += `<div class="option ${state.selectedRealms.includes(r.id) ? 'selected' : ''}" onclick="toggleRealm('${r.id}')">
       <span class="option-icon">${r.icon}</span>
       <strong>${r.name}</strong>
       <p style="font-size:0.85rem;color:#d4af37;margin:5px 0;">${r.motto}</p>
-      <small style="color:#aaa;">${r.description.substring(0, 100)}...</small>
+      <small style="color:#aaa;">${r.description}</small>
     </div>`;
   });
-  
+
   html += `</div>
     <div style="display:flex;gap:10px;justify-content:center;">
-      <button class="btn" onclick="goBack()" ${state.history.length === 0 ? 'disabled' : ''}>⬅️ بازگشت</button>
+      <button class="btn" onclick="goBack()">⬅️ بازگشت</button>
       <button class="btn btn-primary" onclick="if(state.selectedRealms.length >= 1) goTo('subRealm')" ${state.selectedRealms.length < 1 ? 'disabled' : ''}>ادامه</button>
     </div>`;
   app.innerHTML = html;
@@ -105,13 +105,8 @@ function renderRealm() {
 
 function toggleRealm(id) {
   const idx = state.selectedRealms.indexOf(id);
-  if (idx > -1) {
-    state.selectedRealms.splice(idx, 1);
-  } else {
-    if (state.selectedRealms.length < 3) {
-      state.selectedRealms.push(id);
-    }
-  }
+  if (idx > -1) state.selectedRealms.splice(idx, 1);
+  else if (state.selectedRealms.length < 3) state.selectedRealms.push(id);
   renderRealm();
 }
 
@@ -128,16 +123,16 @@ function renderSubRealm() {
     <p style="color:#b0a080;">از میان این گذرها، کدام یک تو را به عمق می‌کشاند؟</p>
     <p style="font-size:0.85rem;color:#888;">(۱ تا ${maxSelect} گذر انتخاب کن)</p>
     <div class="grid" id="subGrid">`;
-  
+
   subs.forEach(s => {
     html += `<div class="option ${state.selectedSubRealms.includes(s.id) ? 'selected' : ''}" onclick="toggleSub('${s.id}', ${maxSelect})">
       <span class="option-icon">${s.icon}</span>
       <strong>${s.name}</strong>
       <p style="font-size:0.85rem;color:#d4af37;margin:5px 0;">«${s.motto}»</p>
-      <small style="color:#aaa;">${s.description.substring(0, 120)}...</small>
+      <small style="color:#aaa;">${s.description}</small>
     </div>`;
   });
-  
+
   html += `</div>
     <div style="display:flex;gap:10px;justify-content:center;">
       <button class="btn" onclick="goBack()">⬅️ بازگشت</button>
@@ -148,13 +143,8 @@ function renderSubRealm() {
 
 function toggleSub(id, maxSelect) {
   const idx = state.selectedSubRealms.indexOf(id);
-  if (idx > -1) {
-    state.selectedSubRealms.splice(idx, 1);
-  } else {
-    if (state.selectedSubRealms.length < maxSelect) {
-      state.selectedSubRealms.push(id);
-    }
-  }
+  if (idx > -1) state.selectedSubRealms.splice(idx, 1);
+  else if (state.selectedSubRealms.length < maxSelect) state.selectedSubRealms.push(id);
   renderSubRealm();
 }
 
@@ -164,20 +154,20 @@ function renderNarrowPath() {
   state.selectedSubRealms.forEach(subId => {
     if (NARROW_PATHS[subId]) paths.push(...NARROW_PATHS[subId]);
   });
-  
+
   let html = `<h2>مسیرهای باریک</h2>
     <p style="color:#b0a080;">کدام مسیر تو را صدا می‌زند؟</p>
     <p style="font-size:0.85rem;color:#888;">(می‌توانی چند گزینه انتخاب کنی)</p>
     <div class="grid" id="pathGrid">`;
-  
+
   paths.forEach(p => {
     html += `<div class="option ${state.selectedNarrowPaths.includes(p.id) ? 'selected' : ''}" onclick="togglePath('${p.id}')">
       <span class="option-icon">${p.icon}</span>
       <strong>${p.name}</strong>
-      <p style="font-size:0.85rem;color:#d4af37;margin:5px 0;">${p.description.substring(0, 80)}...</p>
+      <p style="font-size:0.85rem;color:#d4af37;margin:5px 0;">${p.description}</p>
     </div>`;
   });
-  
+
   html += `</div>
     <div style="display:flex;gap:10px;justify-content:center;">
       <button class="btn" onclick="goBack()">⬅️ بازگشت</button>
@@ -188,17 +178,13 @@ function renderNarrowPath() {
 
 function togglePath(id) {
   const idx = state.selectedNarrowPaths.indexOf(id);
-  if (idx > -1) {
-    state.selectedNarrowPaths.splice(idx, 1);
-  } else {
-    state.selectedNarrowPaths.push(id);
-  }
+  if (idx > -1) state.selectedNarrowPaths.splice(idx, 1);
+  else state.selectedNarrowPaths.push(id);
   renderNarrowPath();
 }
 
 // ==================== SWIPE CARDS ====================
 async function loadSwipeCards() {
-  // جمع‌آوری کدهای رشته‌های مرتبط
   const majorCodes = [];
   state.selectedNarrowPaths.forEach(pathId => {
     const path = findNarrowPath(pathId);
@@ -237,37 +223,51 @@ function findNarrowPath(id) {
 }
 
 function renderSwipe() {
+  // بررسی خودکار اتمام یا رسیدن به سقف ۸۰
   if (state.swipeIndex >= state.swipeCards.length || state.likedCodes.length >= 80) {
-    goTo('strategies');
+    if (state.likedCodes.length >= 20) goTo('strategies');
+    else {
+      alert('حداقل ۲۰ جرقه برای ادامه لازمه! می‌توانی جرقه‌های قبلی را مرور کنی یا مسیرهای بیشتری انتخاب کنی.');
+      goBack();
+    }
     return;
   }
-  
+
   const card = state.swipeCards[state.swipeIndex];
-  const progress = ((state.swipeIndex + 1) / state.totalSwipes) * 100;
-  
+  const progress = state.totalSwipes > 0 ? ((state.swipeIndex + 1) / state.totalSwipes) * 100 : 0;
+  const canFinish = state.likedCodes.length >= 20;
+  const reachedMax = state.likedCodes.length >= 80;
+
   app.innerHTML = `
     <h2>🔥 جرقهٔ انرژی</h2>
-    <div style="color:#f0c040;margin-bottom:10px;">💛 <strong>${state.likedCodes.length}</strong> جرقه</div>
+    <div style="color:#f0c040;margin-bottom:10px;">
+      💛 <strong>${state.likedCodes.length}</strong> جرقه 
+      <span style="font-size:0.8rem;color:#888;">(حداقل ۲۰ - حداکثر ۸۰)</span>
+    </div>
     <div class="progress-bar"><div class="progress-fill" style="width:${progress}%"></div></div>
     <div class="swipe-card">
       <p style="font-size:1.2rem;line-height:2.2;">${card.description_fa}</p>
       <div style="display:flex;gap:15px;justify-content:center;margin-top:20px;">
-        <button class="btn btn-heart" onclick="likeCard(true)">❤️ جرقه زد</button>
+        <button class="btn btn-heart" onclick="likeCard(true)" ${reachedMax ? 'disabled' : ''}>❤️ جرقه زد</button>
         <button class="btn btn-skip" onclick="likeCard(false)">❌ ادامه</button>
       </div>
-      ${state.likedCodes.length >= 20 ? `<button class="btn btn-primary" style="margin-top:15px;width:100%;" onclick="finishSwipe()">کافیه، برو به مرحلهٔ بعد (${state.likedCodes.length} جرقه)</button>` : ''}
+      ${canFinish ? `<button class="btn btn-primary" style="margin-top:15px;width:100%;" onclick="finishSwipe()">کافیه، برو به مرحلهٔ بعد (${state.likedCodes.length} جرقه)</button>` : ''}
+      ${!canFinish ? `<p style="color:#888;margin-top:15px;">برای ادامه حداقل به ۲۰ جرقه نیاز داری (${20 - state.likedCodes.length} جرقهٔ دیگر)</p>` : ''}
     </div>
   `;
 }
 
 function likeCard(liked) {
-  if (liked && state.likedCodes.length < 80) {
-    state.likedCodes.push(state.swipeCards[state.swipeIndex].code);
+  if (liked) {
+    if (state.likedCodes.length < 80) {
+      state.likedCodes.push(state.swipeCards[state.swipeIndex].code);
+    }
   }
   state.swipeIndex++;
   
   if (state.likedCodes.length >= 80) {
-    goTo('strategies');
+    alert('🎉 به حداکثر ۸۰ جرقه رسیدی! در حال انتقال به بخش راهبردها...');
+    setTimeout(() => goTo('strategies'), 500);
   } else {
     renderSwipe();
   }
@@ -275,7 +275,7 @@ function likeCard(liked) {
 
 function finishSwipe() {
   if (state.likedCodes.length < 20) {
-    alert('حداقل ۲۰ جرقه برای ادامه لازمه!');
+    alert(`حداقل ۲۰ جرقه نیاز داری! الان ${state.likedCodes.length} جرقه داری.`);
     return;
   }
   goTo('strategies');
@@ -342,10 +342,11 @@ async function submitResults() {
   goTo('results');
   app.innerHTML = `<h2>⏳ در حال تحلیل...</h2>`;
   
+  // تطبیق ساختار با API
   const payload = {
     micro_motives: state.likedCodes,
-    sjt_answers: {},
-    conjoint_choices: {},
+    sjt_answers: state.strategyAnswers.reduce((obj, val, idx) => { obj[`Q${idx+1}`] = val; return obj; }, {}),
+    conjoint_choices: state.valueAnswers.reduce((obj, val, idx) => { obj[`Q${idx+1}`] = val; return obj; }, {}),
     reality: null
   };
   
@@ -355,10 +356,12 @@ async function submitResults() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
+    if (!response.ok) throw new Error(`خطای سرور: ${response.status}`);
     const data = await response.json();
     displayResults(data);
   } catch (e) {
-    app.innerHTML = `<h2>❌ خطا</h2><p>اتصال به سرور برقرار نشد. لطفاً دوباره تلاش کن.</p><button class="btn btn-primary" onclick="goBack()">بازگشت</button>`;
+    console.error(e);
+    app.innerHTML = `<h2>❌ خطا</h2><p>اتصال به سرور برقرار نشد یا خطایی رخ داد. لطفاً دوباره تلاش کن.</p><button class="btn btn-primary" onclick="goBack()">بازگشت</button>`;
   }
 }
 
