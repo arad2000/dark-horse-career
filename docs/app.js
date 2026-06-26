@@ -1,4 +1,4 @@
-// frontend/app.js
+// frontend/app.js — نسخهٔ اصلاح‌شدهٔ کامل
 // منطق اصلی برنامهٔ اسب سیاه
 
 // ==================== CONFIG ====================
@@ -8,6 +8,7 @@ const DATA_BASE = 'https://raw.githubusercontent.com/arad2000/dark-horse-career/
 // ==================== GLOBAL STATE ====================
 const state = {
   stage: 'splash',
+  history: [],                      // پشته برای ذخیره تاریخچه مراحل
   selectedRealms: [],
   selectedSubRealms: [],
   selectedNarrowPaths: [],
@@ -17,10 +18,39 @@ const state = {
   valueAnswers: [],
   currentQuestion: 0,
   swipeCards: [],
-  swipeIndex: 0
+  swipeIndex: 0,
+  totalSwipes: 0
 };
 
 const app = document.getElementById('app');
+
+// ==================== NAVIGATION ====================
+function goTo(stage) {
+  state.history.push(state.stage);
+  state.stage = stage;
+  render();
+}
+
+function goBack() {
+  if (state.history.length > 0) {
+    state.stage = state.history.pop();
+    // ریست کردن داده‌های مرحله‌ای که از آن برمی‌گردیم
+    if (state.stage === 'realm') {
+      state.selectedSubRealms = [];
+      state.selectedNarrowPaths = [];
+      state.swipeCards = [];
+      state.likedCodes = [];
+    } else if (state.stage === 'subRealm') {
+      state.selectedNarrowPaths = [];
+      state.swipeCards = [];
+      state.likedCodes = [];
+    } else if (state.stage === 'narrowPath') {
+      state.swipeCards = [];
+      state.likedCodes = [];
+    }
+    render();
+  }
+}
 
 // ==================== RENDER ====================
 function render() {
@@ -43,49 +73,46 @@ function renderSplash() {
     <div class="card">
       <p class="quote">«شهر رؤیاها، جایی که هر کودکی قبل از خواب به آن سفر می‌کرد...»</p>
       <p>در چند دقیقهٔ آینده، <strong>فردیت درونی</strong> خود را کشف کن و رشته‌هایی را ببین که <strong>واقعاً</strong> با تو هم‌راستا هستند.</p>
-      <button class="btn btn-primary" onclick="startJourney()">شروع سفر اکتشافی</button>
+      <button class="btn btn-primary" onclick="goTo('realm')">شروع سفر اکتشافی</button>
     </div>
   `;
 }
 
-function startJourney() {
-  state.stage = 'realm';
-  state.selectedRealms = [];
-  render();
-}
-
 // ==================== REALM SELECTION ====================
 function renderRealm() {
+  const maxSelect = 3;
   let html = `<h2>🌃 شهر رؤیاها</h2>
-    <p>کدام محله‌ها بی‌اختیار تو را به سمت خود می‌کشانند؟<br><small>(۱ تا ۳ محله انتخاب کن)</small></p>
+    <p style="color:#b0a080;">تصور کن در "شهر رؤیاها" قدم می‌زنی... کدام محله‌ها تو را صدا می‌زنند؟</p>
+    <p style="font-size:0.85rem;color:#888;">(۱ تا ${Math.min(maxSelect, REALMS.length)} محله انتخاب کن)</p>
     <div class="grid" id="realmGrid">`;
+  
   REALMS.forEach(r => {
-    html += `<div class="option" data-id="${r.id}" onclick="toggleRealm('${r.id}')">
+    html += `<div class="option ${state.selectedRealms.includes(r.id) ? 'selected' : ''}" onclick="toggleRealm('${r.id}')">
       <span class="option-icon">${r.icon}</span>
-      <strong>${r.name}</strong><br>
-      <small>«${r.motto}»</small>
+      <strong>${r.name}</strong>
+      <p style="font-size:0.85rem;color:#d4af37;margin:5px 0;">${r.motto}</p>
+      <small style="color:#aaa;">${r.description.substring(0, 100)}...</small>
     </div>`;
   });
+  
   html += `</div>
-    <button class="btn btn-primary" id="btnNextRealm" disabled onclick="goToSubRealm()">ادامه</button>`;
+    <div style="display:flex;gap:10px;justify-content:center;">
+      <button class="btn" onclick="goBack()" ${state.history.length === 0 ? 'disabled' : ''}>⬅️ بازگشت</button>
+      <button class="btn btn-primary" onclick="if(state.selectedRealms.length >= 1) goTo('subRealm')" ${state.selectedRealms.length < 1 ? 'disabled' : ''}>ادامه</button>
+    </div>`;
   app.innerHTML = html;
 }
 
 function toggleRealm(id) {
   const idx = state.selectedRealms.indexOf(id);
-  if (idx > -1) state.selectedRealms.splice(idx, 1);
-  else if (state.selectedRealms.length < 3) state.selectedRealms.push(id);
-  
-  document.querySelectorAll('#realmGrid .option').forEach(el => {
-    el.classList.toggle('selected', state.selectedRealms.includes(el.dataset.id));
-  });
-  document.getElementById('btnNextRealm').disabled = state.selectedRealms.length < 1;
-}
-
-function goToSubRealm() {
-  state.stage = 'subRealm';
-  state.selectedSubRealms = [];
-  render();
+  if (idx > -1) {
+    state.selectedRealms.splice(idx, 1);
+  } else {
+    if (state.selectedRealms.length < 3) {
+      state.selectedRealms.push(id);
+    }
+  }
+  renderRealm();
 }
 
 // ==================== SUB-REALM SELECTION ====================
@@ -95,36 +122,40 @@ function renderSubRealm() {
     if (SUB_REALMS[realmId]) subs.push(...SUB_REALMS[realmId]);
   });
   
+  const maxSelect = Math.min(3, subs.length);
+  
   let html = `<h2>راهروهای محله</h2>
-    <p>از میان این گذرها، کدام یک تو را به عمق می‌کشاند؟<br><small>(۱ تا ۳ گذر انتخاب کن)</small></p>
+    <p style="color:#b0a080;">از میان این گذرها، کدام یک تو را به عمق می‌کشاند؟</p>
+    <p style="font-size:0.85rem;color:#888;">(۱ تا ${maxSelect} گذر انتخاب کن)</p>
     <div class="grid" id="subGrid">`;
+  
   subs.forEach(s => {
-    html += `<div class="option" data-id="${s.id}" onclick="toggleSub('${s.id}')">
+    html += `<div class="option ${state.selectedSubRealms.includes(s.id) ? 'selected' : ''}" onclick="toggleSub('${s.id}', ${maxSelect})">
       <span class="option-icon">${s.icon}</span>
-      <strong>${s.name}</strong><br>
-      <small>«${s.motto}»</small>
+      <strong>${s.name}</strong>
+      <p style="font-size:0.85rem;color:#d4af37;margin:5px 0;">«${s.motto}»</p>
+      <small style="color:#aaa;">${s.description.substring(0, 120)}...</small>
     </div>`;
   });
+  
   html += `</div>
-    <button class="btn btn-primary" id="btnNextSub" disabled onclick="goToNarrowPath()">ادامه</button>`;
+    <div style="display:flex;gap:10px;justify-content:center;">
+      <button class="btn" onclick="goBack()">⬅️ بازگشت</button>
+      <button class="btn btn-primary" onclick="if(state.selectedSubRealms.length >= 1) goTo('narrowPath')" ${state.selectedSubRealms.length < 1 ? 'disabled' : ''}>ادامه</button>
+    </div>`;
   app.innerHTML = html;
 }
 
-function toggleSub(id) {
+function toggleSub(id, maxSelect) {
   const idx = state.selectedSubRealms.indexOf(id);
-  if (idx > -1) state.selectedSubRealms.splice(idx, 1);
-  else if (state.selectedSubRealms.length < 3) state.selectedSubRealms.push(id);
-  
-  document.querySelectorAll('#subGrid .option').forEach(el => {
-    el.classList.toggle('selected', state.selectedSubRealms.includes(el.dataset.id));
-  });
-  document.getElementById('btnNextSub').disabled = state.selectedSubRealms.length < 1;
-}
-
-function goToNarrowPath() {
-  state.stage = 'narrowPath';
-  state.selectedNarrowPaths = [];
-  render();
+  if (idx > -1) {
+    state.selectedSubRealms.splice(idx, 1);
+  } else {
+    if (state.selectedSubRealms.length < maxSelect) {
+      state.selectedSubRealms.push(id);
+    }
+  }
+  renderSubRealm();
 }
 
 // ==================== NARROW PATH SELECTION ====================
@@ -135,54 +166,66 @@ function renderNarrowPath() {
   });
   
   let html = `<h2>مسیرهای باریک</h2>
-    <p>کدام مسیر تو را صدا می‌زند؟<br><small>(می‌توانی چند گزینه انتخاب کنی)</small></p>
+    <p style="color:#b0a080;">کدام مسیر تو را صدا می‌زند؟</p>
+    <p style="font-size:0.85rem;color:#888;">(می‌توانی چند گزینه انتخاب کنی)</p>
     <div class="grid" id="pathGrid">`;
+  
   paths.forEach(p => {
-    html += `<div class="option" data-id="${p.id}" onclick="togglePath('${p.id}')">
+    html += `<div class="option ${state.selectedNarrowPaths.includes(p.id) ? 'selected' : ''}" onclick="togglePath('${p.id}')">
       <span class="option-icon">${p.icon}</span>
-      <strong>${p.name}</strong><br>
-      <small>${p.description.substring(0, 80)}...</small>
+      <strong>${p.name}</strong>
+      <p style="font-size:0.85rem;color:#d4af37;margin:5px 0;">${p.description.substring(0, 80)}...</p>
     </div>`;
   });
+  
   html += `</div>
-    <button class="btn btn-primary" id="btnNextPath" disabled onclick="loadSwipeCards()">مشاهدهٔ جرقه‌های انرژی</button>`;
+    <div style="display:flex;gap:10px;justify-content:center;">
+      <button class="btn" onclick="goBack()">⬅️ بازگشت</button>
+      <button class="btn btn-primary" onclick="if(state.selectedNarrowPaths.length >= 1) loadSwipeCards()" ${state.selectedNarrowPaths.length < 1 ? 'disabled' : ''}>مشاهدهٔ جرقه‌های انرژی</button>
+    </div>`;
   app.innerHTML = html;
 }
 
 function togglePath(id) {
   const idx = state.selectedNarrowPaths.indexOf(id);
-  if (idx > -1) state.selectedNarrowPaths.splice(idx, 1);
-  else state.selectedNarrowPaths.push(id);
-  
-  document.querySelectorAll('#pathGrid .option').forEach(el => {
-    el.classList.toggle('selected', state.selectedNarrowPaths.includes(el.dataset.id));
-  });
-  document.getElementById('btnNextPath').disabled = state.selectedNarrowPaths.length < 1;
+  if (idx > -1) {
+    state.selectedNarrowPaths.splice(idx, 1);
+  } else {
+    state.selectedNarrowPaths.push(id);
+  }
+  renderNarrowPath();
 }
 
 // ==================== SWIPE CARDS ====================
 async function loadSwipeCards() {
-  // ۱. جمع‌آوری کدهای رشته‌های مرتبط
+  // جمع‌آوری کدهای رشته‌های مرتبط
   const majorCodes = [];
   state.selectedNarrowPaths.forEach(pathId => {
     const path = findNarrowPath(pathId);
     if (path && path.majorCodes) majorCodes.push(...path.majorCodes);
   });
   
-  // ۲. بارگذاری میکروموتیوها از گیت‌هاب
-  const url = DATA_BASE + 'micro_motives.json';
-  const response = await fetch(url);
-  const allMotives = await response.json();
+  if (majorCodes.length === 0) {
+    state.swipeCards = [];
+    goTo('strategies');
+    return;
+  }
   
-  // ۳. فیلتر کردن میکروموتیوهای مرتبط
-  state.swipeCards = allMotives.filter(m => 
-    majorCodes.some(prefix => m.code.startsWith(prefix))
-  );
-  
-  state.swipeIndex = 0;
-  state.likedCodes = [];
-  state.stage = 'swipe';
-  render();
+  try {
+    const url = DATA_BASE + 'micro_motives.json';
+    const response = await fetch(url);
+    const allMotives = await response.json();
+    
+    state.swipeCards = allMotives.filter(m => 
+      majorCodes.some(prefix => m.code.startsWith(prefix))
+    );
+    
+    state.swipeIndex = 0;
+    state.totalSwipes = state.swipeCards.length;
+    goTo('swipe');
+  } catch (e) {
+    alert('خطا در بارگذاری جرقه‌ها. لطفاً دوباره تلاش کن.');
+  }
 }
 
 function findNarrowPath(id) {
@@ -195,19 +238,16 @@ function findNarrowPath(id) {
 
 function renderSwipe() {
   if (state.swipeIndex >= state.swipeCards.length || state.likedCodes.length >= 80) {
-    state.stage = 'strategies';
-    state.currentQuestion = 0;
-    state.strategyAnswers = [];
-    render();
+    goTo('strategies');
     return;
   }
   
   const card = state.swipeCards[state.swipeIndex];
-  const progress = ((state.swipeIndex + 1) / state.swipeCards.length) * 100;
+  const progress = ((state.swipeIndex + 1) / state.totalSwipes) * 100;
   
   app.innerHTML = `
     <h2>🔥 جرقهٔ انرژی</h2>
-    <div class="counter">💛 <strong>${state.likedCodes.length}</strong> جرقه</div>
+    <div style="color:#f0c040;margin-bottom:10px;">💛 <strong>${state.likedCodes.length}</strong> جرقه</div>
     <div class="progress-bar"><div class="progress-fill" style="width:${progress}%"></div></div>
     <div class="swipe-card">
       <p style="font-size:1.2rem;line-height:2.2;">${card.description_fa}</p>
@@ -215,15 +255,22 @@ function renderSwipe() {
         <button class="btn btn-heart" onclick="likeCard(true)">❤️ جرقه زد</button>
         <button class="btn btn-skip" onclick="likeCard(false)">❌ ادامه</button>
       </div>
-      ${state.likedCodes.length >= 20 ? `<button class="btn btn-primary" style="margin-top:15px;" onclick="finishSwipe()">کافیه، برو به مرحلهٔ بعد</button>` : ''}
+      ${state.likedCodes.length >= 20 ? `<button class="btn btn-primary" style="margin-top:15px;width:100%;" onclick="finishSwipe()">کافیه، برو به مرحلهٔ بعد (${state.likedCodes.length} جرقه)</button>` : ''}
     </div>
   `;
 }
 
 function likeCard(liked) {
-  if (liked) state.likedCodes.push(state.swipeCards[state.swipeIndex].code);
+  if (liked && state.likedCodes.length < 80) {
+    state.likedCodes.push(state.swipeCards[state.swipeIndex].code);
+  }
   state.swipeIndex++;
-  render();
+  
+  if (state.likedCodes.length >= 80) {
+    goTo('strategies');
+  } else {
+    renderSwipe();
+  }
 }
 
 function finishSwipe() {
@@ -231,19 +278,14 @@ function finishSwipe() {
     alert('حداقل ۲۰ جرقه برای ادامه لازمه!');
     return;
   }
-  state.stage = 'strategies';
-  state.currentQuestion = 0;
-  state.strategyAnswers = [];
-  render();
+  goTo('strategies');
 }
 
 // ==================== STRATEGY QUESTIONS ====================
 function renderStrategy() {
   if (state.currentQuestion >= STRATEGY_QUESTIONS.length) {
-    state.stage = 'values';
     state.currentQuestion = 0;
-    state.valueAnswers = [];
-    render();
+    goTo('values');
     return;
   }
   
@@ -256,14 +298,15 @@ function renderStrategy() {
   opts.forEach((opt, i) => {
     html += `<button class="btn" style="display:block;width:100%;text-align:right;margin-bottom:8px;" onclick="answerStrategy(${i})">${opt}</button>`;
   });
-  html += `</div>`;
+  html += `</div>
+    <button class="btn" onclick="goBack()">⬅️ بازگشت</button>`;
   app.innerHTML = html;
 }
 
 function answerStrategy(idx) {
-  state.strategyAnswers.push(idx);
+  state.strategyAnswers[state.currentQuestion] = idx;
   state.currentQuestion++;
-  render();
+  renderStrategy();
 }
 
 // ==================== VALUE DILEMMAS ====================
@@ -283,27 +326,27 @@ function renderValue() {
       <button class="btn btn-primary" style="display:block;width:100%;margin-bottom:10px;" onclick="answerValue('A')">${opts[0]}</button>
       <button class="btn" style="display:block;width:100%;" onclick="answerValue('B')">${opts[1]}</button>
     </div>
+    <button class="btn" onclick="goBack()">⬅️ بازگشت</button>
   `;
 }
 
 function answerValue(choice) {
   const qNum = state.currentQuestion + 1;
-  state.valueAnswers.push(`Q${qNum}${choice}`);
+  state.valueAnswers[state.currentQuestion] = `Q${qNum}${choice}`;
   state.currentQuestion++;
-  render();
+  renderValue();
 }
 
 // ==================== SUBMIT TO API ====================
 async function submitResults() {
-  state.stage = 'results';
+  goTo('results');
   app.innerHTML = `<h2>⏳ در حال تحلیل...</h2>`;
   
   const payload = {
     micro_motives: state.likedCodes,
     sjt_answers: {},
     conjoint_choices: {},
-    strategies: state.strategyAnswers,
-    values: state.valueAnswers
+    reality: null
   };
   
   try {
@@ -315,25 +358,31 @@ async function submitResults() {
     const data = await response.json();
     displayResults(data);
   } catch (e) {
-    app.innerHTML = `<h2>❌ خطا</h2><p>اتصال به سرور برقرار نشد. دوباره تلاش کن.</p>`;
+    app.innerHTML = `<h2>❌ خطا</h2><p>اتصال به سرور برقرار نشد. لطفاً دوباره تلاش کن.</p><button class="btn btn-primary" onclick="goBack()">بازگشت</button>`;
   }
 }
 
 function displayResults(data) {
   const recs = data.discovery_result?.recommendations || [];
-  let html = `<h2>📊 نتایج</h2>
-    <p>بر اساس <strong>${state.likedCodes.length}</strong> جرقهٔ انرژی، این‌ها رشته‌های هم‌راستا با تو هستند:</p>`;
+  const matchedRecs = recs.filter(r => r.fit_score >= 30).sort((a, b) => b.fit_score - a.fit_score);
   
-  recs.slice(0, 10).forEach(r => {
-    html += `
-      <div class="card" style="text-align:right;">
-        <h3 style="color:#f0c040;">${r.major_name_fa || 'رشتهٔ پیشنهادی'}</h3>
-        <div class="progress-bar"><div class="progress-fill" style="width:${r.fit_score}%"></div></div>
-        <p style="margin-top:8px;">🔹 <strong>${r.fit_score}%</strong> تطابق</p>
-        ${r.evidence?.length ? `<p style="color:#b0a080;font-size:0.85rem;">💡 ${r.evidence.slice(0,2).join('؛ ')}</p>` : ''}
-      </div>
-    `;
-  });
+  let html = `<h2>📊 نتایج</h2>
+    <p>بر اساس <strong>${state.likedCodes.length}</strong> جرقهٔ انرژی، ${matchedRecs.length} رشته با فردیت تو هم‌راستا هستند:</p>`;
+  
+  if (matchedRecs.length === 0) {
+    html += `<p>متأسفانه هیچ رشته‌ای با آستانهٔ ۳۰٪ پیدا نشد. سعی کن جرقه‌های بیشتری جمع کنی یا انتخاب‌هایت را گسترش دهی.</p>`;
+  } else {
+    matchedRecs.slice(0, 15).forEach(r => {
+      html += `
+        <div class="card" style="text-align:right;">
+          <h3 style="color:#f0c040;">${r.major_name_fa || 'رشتهٔ پیشنهادی'}</h3>
+          <div class="progress-bar"><div class="progress-fill" style="width:${r.fit_score}%"></div></div>
+          <p style="margin-top:8px;">🔹 <strong>${r.fit_score}%</strong> تطابق</p>
+          ${r.evidence && Object.keys(r.evidence).length > 0 ? `<p style="color:#b0a080;font-size:0.85rem;">💡 ${Object.values(r.evidence).flat().slice(0,3).join('؛ ')}</p>` : ''}
+        </div>
+      `;
+    });
+  }
   
   html += `<button class="btn btn-primary" onclick="resetJourney()">شروع دوباره</button>`;
   app.innerHTML = html;
@@ -341,6 +390,7 @@ function displayResults(data) {
 
 function resetJourney() {
   state.stage = 'splash';
+  state.history = [];
   state.selectedRealms = [];
   state.selectedSubRealms = [];
   state.selectedNarrowPaths = [];
@@ -348,6 +398,7 @@ function resetJourney() {
   state.swipeCards = [];
   state.strategyAnswers = [];
   state.valueAnswers = [];
+  state.currentQuestion = 0;
   render();
 }
 
