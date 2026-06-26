@@ -1,5 +1,5 @@
-// frontend/app.js — نسخهٔ نهایی (V10.0)
-// رفع مشکل اتصال به API + اصلاح منطق غیرفعال‌سازی زیرقلمروها
+// frontend/app.js — نسخهٔ نهایی (V11.0)
+// رفع کامل: دیباگ خطای سرور + اصلاح منطق غیرفعال‌سازی
 
 const API_BASE = 'https://dark-horse-career.onrender.com';
 const DATA_BASE = 'https://raw.githubusercontent.com/arad2000/dark-horse-career/main/data/';
@@ -11,14 +11,15 @@ const state = {
   selectedSubRealms: [],
   selectedNarrowPaths: [],
   likedCodes: [],
-  strategyAnswers: [], // آرایه اعداد
-  valueAnswers: [],    // آرایه کدها (مثلاً "Q1A")
+  strategyAnswers: [],
+  valueAnswers: [],
   currentQuestion: 0,
   swipeCards: [],
   swipeIndex: 0,
   totalSwipes: 0,
-  visitedPaths: new Set(),       // مسیرهای باریک بازدیدشده
-  visitedSubRealms: new Set(),   // زیرقلمروهای تکمیل‌شده (همه مسیرهایش رفته شده)
+  likedCodesSet: new Set(),
+  completedPaths: new Set(),
+  completedSubRealms: new Set(),
   strategyQuestions: [],
   valueQuestions: []
 };
@@ -108,8 +109,7 @@ function renderSubRealm() {
     <p style="font-size:0.85rem;color:#888;">(۱ تا ${maxSelect} گذر انتخاب کن)</p>
     <div class="grid" id="subGrid">`;
   subs.forEach(s => {
-    // فقط زیرقلمروهایی که تمام مسیرهای باریکشان بازدید شده، غیرفعال می‌شوند
-    const isComplete = state.visitedSubRealms.has(s.id);
+    const isComplete = state.completedSubRealms.has(s.id);
     html += `<div class="option ${state.selectedSubRealms.includes(s.id) ? 'selected' : ''} ${isComplete ? 'disabled' : ''}" 
       onclick="${isComplete ? '' : `toggleSub('${s.id}', ${maxSelect})`}" 
       style="${isComplete ? 'opacity:0.5;pointer-events:none;' : ''}">
@@ -140,12 +140,12 @@ function renderNarrowPath() {
     <p style="color:#b0a080;">کدام مسیر تو را صدا می‌زند؟ (می‌توانی چند گزینه انتخاب کنی)</p>
     <div class="grid" id="pathGrid">`;
   paths.forEach(p => {
-    const visited = state.visitedPaths.has(p.id);
-    html += `<div class="option ${state.selectedNarrowPaths.includes(p.id) ? 'selected' : ''} ${visited ? 'disabled' : ''}" 
-      onclick="${visited ? '' : `togglePath('${p.id}')`}" 
-      style="${visited ? 'opacity:0.5;pointer-events:none;' : ''}">
+    const isComplete = state.completedPaths.has(p.id);
+    html += `<div class="option ${state.selectedNarrowPaths.includes(p.id) ? 'selected' : ''} ${isComplete ? 'disabled' : ''}" 
+      onclick="${isComplete ? '' : `togglePath('${p.id}')`}" 
+      style="${isComplete ? 'opacity:0.5;pointer-events:none;' : ''}">
       <span class="option-icon">${p.icon}</span>
-      <strong>${p.name} ${visited ? '✅' : ''}</strong>
+      <strong>${p.name} ${isComplete ? '✅' : ''}</strong>
       <p style="color:#d4af37;">${p.description}</p></div>`;
   });
   html += `</div>
@@ -178,14 +178,10 @@ async function loadSwipeCards() {
     const all = await res.json();
     state.swipeCards = all.filter(m => 
       majorCodes.some(prefix => m.code.startsWith(prefix)) && 
-      !state.likedCodes.includes(m.code)
+      !state.likedCodesSet.has(m.code)
     );
     state.swipeIndex = 0;
     state.totalSwipes = state.swipeCards.length;
-    
-    // علامت‌گذاری مسیرهای باریک بازدیدشده
-    state.selectedNarrowPaths.forEach(id => state.visitedPaths.add(id));
-    
     goTo('swipe');
   } catch (e) {
     alert('خطا در بارگذاری جرقه‌ها.');
@@ -200,21 +196,27 @@ function findNarrowPath(id) {
   return null;
 }
 
-// بررسی اینکه آیا تمام مسیرهای باریک یک زیرقلمرو بازدید شده‌اند
-function markSubRealmIfComplete() {
+function updateCompletionStatus() {
+  state.selectedNarrowPaths.forEach(pathId => {
+    if (state.swipeCards.length === 0 || state.swipeIndex >= state.swipeCards.length) {
+      state.completedPaths.add(pathId);
+    }
+  });
+
   state.selectedSubRealms.forEach(subId => {
     const allPaths = NARROW_PATHS[subId] || [];
-    const allVisited = allPaths.every(p => state.visitedPaths.has(p.id));
-    if (allVisited) {
-      state.visitedSubRealms.add(subId);
+    const allCompleted = allPaths.length > 0 && allPaths.every(p => state.completedPaths.has(p.id));
+    if (allCompleted) {
+      state.completedSubRealms.add(subId);
     }
   });
 }
 
 function renderSwipe() {
   if (state.swipeIndex >= state.swipeCards.length) {
+    updateCompletionStatus();
+    
     if (state.likedCodes.length >= 20) {
-      markSubRealmIfComplete(); // چک کنیم زیرقلمرو تکمیل شده یا نه
       state.currentQuestion = 0;
       state.strategyAnswers = [];
       goTo('strategies');
@@ -232,7 +234,7 @@ function renderSwipe() {
   }
   
   if (state.likedCodes.length >= 80) {
-    markSubRealmIfComplete();
+    updateCompletionStatus();
     setTimeout(() => goTo('strategies'), 500);
     app.innerHTML = `<h2>🎉 تبریک!</h2><div class="card"><p>حداکثر جرقه! در حال انتقال...</p></div>`;
     return;
@@ -263,13 +265,16 @@ function renderSwipe() {
 }
 
 function likeCard(liked) {
-  if (liked && state.likedCodes.length < 80) state.likedCodes.push(state.swipeCards[state.swipeIndex].code);
+  if (liked && state.likedCodes.length < 80) {
+    state.likedCodes.push(state.swipeCards[state.swipeIndex].code);
+    state.likedCodesSet.add(state.swipeCards[state.swipeIndex].code);
+  }
   state.swipeIndex++;
   renderSwipe();
 }
 
 function finishSwipe() {
-  markSubRealmIfComplete();
+  updateCompletionStatus();
   state.currentQuestion = 0;
   state.strategyAnswers = [];
   goTo('strategies');
@@ -349,17 +354,16 @@ function answerValue(code) {
   render();
 }
 
-// ==================== SUBMIT TO API ====================
+// ==================== SUBMIT TO API (با دیباگ کامل) ====================
 async function submitResults() {
   state.stage = 'results';
   app.innerHTML = `<h2>⏳ در حال تحلیل...</h2>`;
 
-  // تبدیل آرایه‌ها به دیکشنری‌های مورد انتظار FastAPI
   const sjtAnswers = {};
   state.strategyQuestions.forEach((q, idx) => {
     if (state.strategyAnswers[idx] !== undefined) {
       const letter = String.fromCharCode(65 + state.strategyAnswers[idx]);
-      sjtAnswers[q.id] = letter; // "S01": "A"
+      sjtAnswers[q.id] = letter;
     }
   });
   
@@ -384,15 +388,35 @@ async function submitResults() {
       body: JSON.stringify(payload)
     });
     
+    const text = await response.text();
+    
     if (!response.ok) {
-      throw new Error(`Server error: ${response.status}`);
+      app.innerHTML = `
+        <h2>❌ خطای سرور</h2>
+        <div class="card" style="text-align:left;direction:ltr;">
+          <p>Status: <strong>${response.status}</strong></p>
+          <p style="color:#f0c040;">پاسخ سرور:</p>
+          <pre style="background:#111;padding:10px;border-radius:8px;overflow-x:auto;font-size:0.8rem;color:#0f0;">${text.substring(0, 1000)}</pre>
+          <p style="margin-top:10px;">Payload ارسالی:</p>
+          <pre style="background:#111;padding:10px;border-radius:8px;overflow-x:auto;font-size:0.8rem;color:#ff0;">${JSON.stringify(payload, null, 2).substring(0, 1000)}</pre>
+        </div>
+        <button class="btn btn-primary" onclick="goBack()">بازگشت</button>`;
+      return;
     }
     
-    const data = await response.json();
+    const data = JSON.parse(text);
     displayResults(data);
   } catch (e) {
     console.error('خطا:', e);
-    app.innerHTML = `<h2>❌ خطا</h2><p>اتصال به سرور برقرار نشد. لطفاً دوباره تلاش کن.</p><button class="btn btn-primary" onclick="goBack()">بازگشت</button>`;
+    app.innerHTML = `
+      <h2>❌ خطا</h2>
+      <div class="card">
+        <p>اتصال به سرور برقرار نشد.</p>
+        <p style="color:#f0c040;">خطا: ${e.message}</p>
+        <p style="margin-top:10px;">Payload ارسالی:</p>
+        <pre style="background:#111;padding:10px;border-radius:8px;overflow-x:auto;font-size:0.8rem;color:#ff0;text-align:left;direction:ltr;">${JSON.stringify(payload, null, 2).substring(0, 500)}</pre>
+      </div>
+      <button class="btn btn-primary" onclick="goBack()">بازگشت</button>`;
   }
 }
 
@@ -418,11 +442,12 @@ function resetJourney() {
   state.selectedSubRealms = [];
   state.selectedNarrowPaths = [];
   state.likedCodes = [];
+  state.likedCodesSet.clear();
   state.strategyAnswers = [];
   state.valueAnswers = [];
   state.currentQuestion = 0;
-  state.visitedPaths.clear();
-  state.visitedSubRealms.clear();
+  state.completedPaths.clear();
+  state.completedSubRealms.clear();
   render();
 }
 
