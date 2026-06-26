@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>اسب سیاه | مسیرت را کشف کن</title>
+  
+  <!-- PWA Meta -->
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Font -->
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+      background: #0a0a0f;
+      color: #f5f0e8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .container { max-width: 500px; width: 100%; padding: 20px; text-align: center; }
+    h1 { font-size: 1.8rem; color: #f0c040; margin-bottom: 8px; }
+    h2 { font-size: 1.4rem; color: #d4af37; margin: 15px 0 10px; }
+    p { line-height: 2; margin-bottom: 12px; color: #d0d0d0; font-size: 0.95rem; }
+    .quote { font-style: italic; color: #b0a080; margin: 15px 0; border-right: 3px solid #d4af37; padding-right: 12px; }
+    .card {
+      background: rgba(20, 20, 40, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 24px;
+      padding: 25px 18px;
+      margin: 15px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 15px rgba(212, 175, 55, 0.1);
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      background: #2a2a42;
+      color: #e0e0e0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      margin: 6px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #d4af37 0%, #b8962e 100%);
+      color: #0a0a0f;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+    }
+    .btn-heart {
+      background: linear-gradient(135deg, #c04060 0%, #a03050 100%);
+      color: white;
+      font-size: 1.1rem;
+      padding: 14px 32px;
+    }
+    .btn-skip { background: #3a3a4a; color: #ccc; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 15px 0;
+    }
+    @media (min-width: 420px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .option {
+      background: rgba(20, 20, 40, 0.7);
+      border: 2px solid rgba(212, 175, 55, 0.2);
+      border-radius: 16px;
+      padding: 15px 12px;
+      cursor: pointer;
+      text-align: right;
+      transition: all 0.2s;
+      color: #ccc;
+    }
+    .option.selected {
+      border-color: #d4af37;
+      background: rgba(40, 35, 20, 0.8);
+      color: #f0c040;
+    }
+    .option-icon { font-size: 1.8rem; display: block; margin-bottom: 4px; }
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #2a2a3e;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #d4af37, #f0c040);
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+    .swipe-card {
+      background: rgba(20,20,40,0.9);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 28px;
+      padding: 30px 20px;
+      margin: 15px 0;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.7), 0 0 20px rgba(212,175,55,0.2);
+    }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="container" id="app"></div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <!-- Data -->
+  <script src="data.js"></script>
+  
+  <!-- App Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
