@@ -527,7 +527,7 @@ function analyzeValueStyle(answers) {
 }
 
 // ==================== DISPLAY RESULTS (تمیز، بدون دیباگ) ====================
-// ==================== DISPLAY RESULTS (V19.1 — سناریوهای هوشمند با مرجعیت لایهٔ اول) ====================
+// ==================== DISPLAY RESULTS (V19.2 — اصلاح نهایی) ====================
 function displayResults(data, sjt, conj) {
   const recs = data.discovery_result?.recommendations || [];
   const matched = recs.filter(r => (r.fit_score || 0) >= 30).sort((a, b) => b.fit_score - a.fit_score);
@@ -541,7 +541,6 @@ function displayResults(data, sjt, conj) {
     const best = matched[0];
     const evidence = best.evidence || {};
 
-    // استخراج شواهد (با هر دو نام ممکن)
     const microMatch = evidence.micro_motives_matched || evidence.micro_motives_match || [];
     const strategyMatch = evidence.strategy_matched || evidence.strategy_match || [];
     const valueMatch = evidence.value_matched || evidence.value_match || [];
@@ -554,31 +553,28 @@ function displayResults(data, sjt, conj) {
       alignmentHTML = `
         <div style="background:#1a1a2e;border:2px solid #f0c040;border-radius:12px;padding:15px;margin:15px 0;text-align:right;">
           <p style="margin:0;font-size:1.2rem;">🎯 <strong style="color:#f0c040;">همسویی طلایی!</strong></p>
-          <p style="color:#b0a080;line-height:1.8;">عالی! هر سه لایهٔ فردیت تو — <strong>جرقه‌های انرژی، سبک فکری و ارزش‌هایت</strong> — با رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> کاملاً هم‌راستا هستند. این یعنی جرقه‌هایت، طرز فکرت و آنچه برایت معنا دارد، همه در یک جهت قرار گرفته‌اند. این رشته برای تو مثل یک مسیر هموار و روشن است — با قدرت قدم بردار.</p>
+          <p style="color:#b0a080;line-height:1.8;">عالی! خرده‌انگیزه‌هایت، سبک فکری و ارزش‌هایت — هر سه لایهٔ فردیت تو — با رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> کاملاً هم‌راستا هستند. این مسیر برای تو مثل یک جادهٔ هموار و روشن است — با قدرت قدم بردار.</p>
         </div>`;
     } else if (hasStrategy && !hasValue) {
       // ⚡ سناریوی ۲: لایهٔ دوم همسو، لایهٔ سوم ناهمسو
       alignmentHTML = `
         <div style="background:#1a1a2e;border:2px solid #d4af37;border-radius:12px;padding:15px;margin:15px 0;text-align:right;">
           <p style="margin:0;font-size:1.2rem;">⚡ <strong style="color:#d4af37;">همسویی سبک فکری — اما ارزش‌هایت کمی متفاوت است</strong></p>
-          <p style="color:#b0a080;line-height:1.8;">جرقه‌هایت و سبک فکری‌ات با رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> همسو هستند، اما <strong>ارزش‌های بنیادینت</strong> کمی مسیر متفاوتی را نشان می‌دهند. این یک ضعف نیست — بلکه نشان می‌دهد تو در این رشته می‌توانی با <strong>انگیزه‌های متفاوت و نوآورانه</strong> نسبت به دیگران عمل کنی.
-          <br>💡 <strong>پیشنهاد:</strong> به دنبال <strong>مسیرهای شغلی غیرسنتی</strong> در این رشته باش. محیط‌های کاری که ارزش‌های متفاوتی را ارج می‌نهند (مثلاً استارتاپ‌های اجتماعی، سازمان‌های مردم‌نهاد، یا شرکت‌های با فرهنگ سازمانی منحصربه‌فرد) را بررسی کن. تو می‌تونی نسخهٔ خودت از این رشته را بسازی.</p>
+          <p style="color:#b0a080;line-height:1.8;">خرده‌انگیزه‌هایت و سبک فکری‌ات با رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> همسو هستند، اما <strong>ارزش‌های بنیادینت</strong> مسیر کمی متفاوتی را نشان می‌دهند. این یک فرصت است: تو می‌توانی در این رشته با <strong>انگیزه‌های متفاوت و نوآورانه</strong> نسبت به دیگران عمل کنی. مسیرهای شغلی غیرسنتی، محیط‌های کاری با ارزش‌های متفاوت، یا سازمان‌های مردم‌نهاد را بررسی کن.</p>
         </div>`;
     } else if (!hasStrategy && hasValue) {
       // ⚡ سناریوی ۳: لایهٔ سوم همسو، لایهٔ دوم ناهمسو
       alignmentHTML = `
         <div style="background:#1a1a2e;border:2px solid #d4af37;border-radius:12px;padding:15px;margin:15px 0;text-align:right;">
           <p style="margin:0;font-size:1.2rem;">⚡ <strong style="color:#d4af37;">همسویی ارزش‌ها — اما سبک فکری‌ات مسیر متفاوتی را می‌طلبد</strong></p>
-          <p style="color:#b0a080;line-height:1.8;">جرقه‌هایت و ارزش‌هایت با رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> همسو هستند، اما <strong>سبک فکری و روش یادگیری‌ات</strong> با مسیر سنتی این رشته کمی تفاوت دارد. این یعنی تو با روش متفاوتی به این رشته نزدیک می‌شوی — و این دقیقاً ویژگی "اسب‌های سیاه" است.
-          <br>💡 <strong>پیشنهاد:</strong> <strong>محیط‌های خلاق، استارتاپی، یا پروژه‌های آزاد</strong> را برای این رشته در نظر بگیر. دانشگاه‌هایی با رویکرد <strong>یادگیری مبتنی بر پروژه (PBL)</strong> یا <strong>روش‌های آموزشی غیرسنتی</strong> می‌توانند برای تو مناسب‌تر باشند. تو نیاز داری مسیر را به روش خودت طی کنی، نه روش استاندارد.</p>
+          <p style="color:#b0a080;line-height:1.8;">خرده‌انگیزه‌هایت و ارزش‌هایت با رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> همسو هستند، اما <strong>سبک فکری و روش یادگیری‌ات</strong> با مسیر سنتی این رشته تفاوت دارد. این یعنی تو نیاز داری مسیر را به روش خودت طی کنی. <strong>محیط‌های خلاق، استارتاپی، یا دانشگاه‌های با یادگیری مبتنی بر پروژه (PBL)</strong> می‌توانند برای تو مناسب‌تر باشند.</p>
         </div>`;
     } else {
       // 🔍 سناریوی ۴: فقط لایهٔ اول همسو
       alignmentHTML = `
         <div style="background:#1a1a2e;border:2px solid #b0a080;border-radius:12px;padding:15px;margin:15px 0;text-align:right;">
-          <p style="margin:0;font-size:1.2rem;">🔍 <strong style="color:#f0c040;">جرقه‌هایت قوی هستند — اما سبک فکری و ارزش‌هایت هنوز در حال کشف شدن هستند</strong></p>
-          <p style="color:#b0a080;line-height:1.8;">رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> با جرقه‌های انرژی‌ات همسویی بالایی دارد، اما <strong>سبک فکری و ارزش‌های بنیادینت</strong> هنوز با این رشته همراستا نشده‌اند. این یعنی یا جرقه‌هایت پراکنده‌اند، یا نیاز به خودکاوی بیشتری داری.
-          <br>💡 <strong>پیشنهاد:</strong> جرقه‌های بیشتری بزن (مخصوصاً ۴۰-۵۰ جرقه از حوزه‌های متنوع). همچنین قلمروهای جدیدی را در شهر رؤیاها کشف کن — شاید رشته‌ای دیگر، همسویی بیشتری با سبک فکری و ارزش‌هایت داشته باشد. مسیر هنوز در حال شکل‌گیری است — به کاوش ادامه بده.</p>
+          <p style="margin:0;font-size:1.2rem;">🔍 <strong style="color:#f0c040;">خرده‌انگیزه‌هایت قوی هستند — سبک فکری و ارزش‌هایت هنوز در حال شکل‌گیری هستند</strong></p>
+          <p style="color:#b0a080;line-height:1.8;">رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> با خرده‌انگیزه‌هایت همسویی بالایی دارد. با همین تعداد خرده‌انگیزه، این رشته‌ها بیشترین هم‌راستایی را با فردیت فعلی تو نشان می‌دهند. اگر دوست داری جنبه‌های دیگری از خودت را کشف کنی، می‌توانی به شهر رؤیاها برگردی و قلمروهای جدید را کاوش کنی — اما این کاملاً اختیاری است.</p>
         </div>`;
     }
   }
@@ -596,11 +592,10 @@ function displayResults(data, sjt, conj) {
       ${valueStyle ? `<p style="margin:5px 0;"><span style="font-size:1.2rem;">⚖️</span> <strong>ارزش‌های کلیدی:</strong> ${valueStyle.summary}</p>` : ''}
     </div>` : ''}
 
-    <p>بر اساس <strong>${state.likedCodes.length}</strong> جرقهٔ انرژی، ${matched.length} رشته با فردیت تو هم‌راستا هستند:</p>
-    ${matched.length < 5 ? `<p style="color:#f0c040;">💡 هرچه جرقه‌های بیشتری بزنی (مخصوصاً ۴۰-۵۰ جرقه از حوزه‌های متنوع)، نتایج کامل‌تری می‌بینی.</p>` : ''}`;
+    <p>بر اساس <strong>${state.likedCodes.length}</strong> خرده‌انگیزه، ${matched.length} رشته با فردیت تو هم‌راستا هستند:</p>`;
 
   if (matched.length === 0) {
-    html += `<p style="color:#f0c040;">رشته‌ای با آستانهٔ ۳۰٪ پیدا نشد. جرقه‌های بیشتری بزن یا مسیرهای جدیدی انتخاب کن.</p>`;
+    html += `<p style="color:#f0c040;">با همین خرده‌انگیزه‌ها، هیچ رشته‌ای به آستانهٔ ۳۰٪ نرسیده است.</p>`;
   } else {
     matched.forEach(r => {
       let evidenceHtml = '';
@@ -609,7 +604,7 @@ function displayResults(data, sjt, conj) {
         const microMatch = r.evidence.micro_motives_matched || r.evidence.micro_motives_match || [];
         const strategyMatch = r.evidence.strategy_matched || r.evidence.strategy_match || [];
         const valueMatch = r.evidence.value_matched || r.evidence.value_match || [];
-        if (microMatch.length) parts.push(`🧩 جرقه‌های هم‌راستا: ${microMatch.slice(0,3).map(m=>m.description||m).join('، ')}`);
+        if (microMatch.length) parts.push(`🧩 خرده‌انگیزه‌های هم‌راستا: ${microMatch.slice(0,3).map(m=>m.description||m).join('، ')}`);
         if (strategyMatch.length) parts.push(`🧭 سبک فکری هم‌راستا: ${strategyMatch.slice(0,2).map(m=>m.description||m).join('، ')}`);
         if (valueMatch.length) parts.push(`⚖️ ارزش‌های هم‌راستا: ${valueMatch.slice(0,2).map(m=>m.description||m).join('، ')}`);
         if (parts.length) evidenceHtml = parts.join('<br>');
