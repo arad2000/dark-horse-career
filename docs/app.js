@@ -526,7 +526,7 @@ function analyzeValueStyle(answers) {
   return { values: selected.slice(0, 5), summary: unique.slice(0, 4).join('، '), description: 'ارزش‌های بنیادین شما نشان می‌دهد که چه چیزی به کارتان معنا می‌بخشد.' };
 }
 
-// ==================== DISPLAY RESULTS (V20.0 — سناریو برای هر رشته) ====================
+// ==================== DISPLAY RESULTS (V21.0 — سناریوی ۴ با پیشنهاد هوشمند) ====================
 function displayResults(data, sjt, conj) {
   const recs = data.discovery_result?.recommendations || [];
   const matched = recs.filter(r => (r.fit_score || 0) >= 30).sort((a, b) => b.fit_score - a.fit_score);
@@ -551,7 +551,6 @@ function displayResults(data, sjt, conj) {
     html += `<p style="color:#f0c040;">با همین خرده‌انگیزه‌ها، هیچ رشته‌ای به آستانهٔ ۳۰٪ نرسیده است.</p>`;
   } else {
     matched.forEach(r => {
-      // --- استخراج شواهد و تحلیل همسویی برای این رشته ---
       let alignmentBadge = '';
       if (r.evidence && typeof r.evidence === 'object') {
         const microMatch = r.evidence.micro_motives_matched || r.evidence.micro_motives_match || [];
@@ -561,7 +560,6 @@ function displayResults(data, sjt, conj) {
         const hasStrategy = strategyMatch.length > 0;
         const hasValue = valueMatch.length > 0;
 
-        // تعیین سناریو و پیشنهاد شخصی‌سازی‌شده
         let scenarioText = '';
         let borderColor = '#b0a080';
 
@@ -575,8 +573,29 @@ function displayResults(data, sjt, conj) {
           borderColor = '#d4af37';
           scenarioText = '⚡ خرده‌انگیزه‌ها و ارزش‌هایت همسو هستند، اما سبک فکری‌ات با مسیر سنتی تفاوت دارد. محیط‌های خلاق و استارتاپی را بررسی کن.';
         } else {
+          // سناریوی ۴: فقط لایهٔ اول همسو — پیشنهاد هوشمند بر اساس سبک فکری و ارزشی کاربر
           borderColor = '#b0a080';
-          scenarioText = '🔍 خرده‌انگیزه‌هایت با این رشته همسو هستند. سبک فکری و ارزش‌هایت هنوز در حال شکل‌گیری هستند.';
+          let suggestionText = 'خرده‌انگیزه‌هایت با این رشته همسو هستند.';
+
+          if (strategyStyle && valueStyle) {
+            const strategyDomain = getDomainFromStyle(strategyStyle.style);
+            const valueDomain = getDomainFromValues(valueStyle.summary);
+            const combined = [...new Set([...strategyDomain, ...valueDomain])].slice(0, 3).join('، ');
+            if (combined) {
+              suggestionText += ` بر اساس پاسخ‌هایت، سبک فکری «${strategyStyle.style}» و ارزش‌های «${valueStyle.summary}» در تو قوی‌تر است. شاید علاقه‌مند باشی حوزه‌های ${combined} را نیز بررسی کنی.`;
+            }
+          } else if (strategyStyle) {
+            const strategyDomain = getDomainFromStyle(strategyStyle.style).slice(0, 3).join('، ');
+            if (strategyDomain) {
+              suggestionText += ` بر اساس پاسخ‌هایت، سبک فکری «${strategyStyle.style}» در تو قوی‌تر است. شاید علاقه‌مند باشی حوزه‌های ${strategyDomain} را نیز بررسی کنی.`;
+            }
+          } else if (valueStyle) {
+            const valueDomain = getDomainFromValues(valueStyle.summary).slice(0, 3).join('، ');
+            if (valueDomain) {
+              suggestionText += ` بر اساس پاسخ‌هایت، ارزش‌های «${valueStyle.summary}» در تو قوی‌تر است. شاید علاقه‌مند باشی حوزه‌های ${valueDomain} را نیز بررسی کنی.`;
+            }
+          }
+          scenarioText = '🔍 ' + suggestionText;
         }
 
         alignmentBadge = `
@@ -585,7 +604,6 @@ function displayResults(data, sjt, conj) {
           </div>`;
       }
 
-      // --- استخراج شواهد متنی ---
       let evidenceHtml = '';
       if (r.evidence && typeof r.evidence === 'object') {
         const parts = [];
@@ -611,6 +629,33 @@ function displayResults(data, sjt, conj) {
 
   html += `<button class="btn btn-primary" onclick="resetJourney()" style="margin-top:15px;">شروع دوباره</button>`;
   app.innerHTML = html;
+}
+
+// ==================== توابع کمکی نگاشت سبک/ارزش به حوزه‌های رشته‌ای ====================
+function getDomainFromStyle(style) {
+  const map = {
+    'تحلیلی و گام‌به‌گام': ['علوم پایه', 'مهندسی', 'حقوق', 'پزشکی'],
+    'آزمایشگر و جهشی': ['کارآفرینی', 'طراحی', 'علوم تجربی', 'فناوری'],
+    'مشورتی و اجتماعی': ['علوم انسانی', 'مشاوره', 'مددکاری', 'آموزش'],
+    'شهودی و جرقه‌ای': ['هنر', 'معماری', 'روزنامه‌نگاری', 'طراحی'],
+    'اقدام‌گرا و سریع': ['مدیریت', 'فوریت‌های پزشکی', 'کارآفرینی', 'مهندسی صنایع']
+  };
+  return map[style] || ['علوم انسانی', 'مهندسی', 'هنر'];
+}
+
+function getDomainFromValues(valueSummary) {
+  const keywords = valueSummary.split('، ');
+  const domains = new Set();
+  keywords.forEach(kw => {
+    if (kw.includes('انسان') || kw.includes('رنج') || kw.includes('تعامل')) domains.add('علوم پزشکی').add('مددکاری').add('مشاوره');
+    if (kw.includes('سیستم') || kw.includes('ماندگار') || kw.includes('نظم')) domains.add('مهندسی').add('علوم پایه');
+    if (kw.includes('خلاقیت') || kw.includes('زیبایی') || kw.includes('تنوع')) domains.add('هنر').add('طراحی').add('کارآفرینی');
+    if (kw.includes('آزادی') || kw.includes('انعطاف')) domains.add('کارآفرینی').add('فناوری');
+    if (kw.includes('رهبری') || kw.includes('تعیین مسیر')) domains.add('مدیریت').add('حقوق').add('علوم سیاسی');
+    if (kw.includes('مربی') || kw.includes('پرورش')) domains.add('آموزش').add('روانشناسی').add('مشاوره');
+  });
+  if (domains.size === 0) return ['علوم انسانی', 'مهندسی', 'هنر'];
+  return [...domains].slice(0, 4);
 }
 
 // ==================== RESET & INIT ====================
