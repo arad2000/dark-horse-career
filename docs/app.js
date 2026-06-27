@@ -1,7 +1,7 @@
 // frontend/app.js — نسخهٔ نهایی و کامل (V17.3)
 // تمام قابلیت‌ها: لوگوی مه‌آلود، سه حلقه، سوایپ، ذخیره خودکار، دیباگ پیشرفته، شواهد تطابق
 
-const API_BASE = 'https://dark-horse-api.onrender.com';
+const API_BASE = 'https://dark-horse-career.onrender.com';
 const DATA_BASE = 'https://raw.githubusercontent.com/arad2000/dark-horse-career/main/data/';
 
 // ==================== GLOBAL STATE ====================
