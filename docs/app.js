@@ -563,6 +563,7 @@ function displayResults(data, sjt, conj) {
     <h2>📊 نتایج</h2>
     <p style="color:#b0a080;font-style:italic;margin-bottom:15px;">✨ این پیشنهادها بر اساس ویژگی‌هایی است که <strong>امروز</strong> در خودت کشف کردی. فردیت یک سفر است، نه یک مقصد — ممکن است در طول زمان تغییر کند و این کاملاً طبیعی است.</p>
     <p>بر اساس <strong>${state.likedCodes.length}</strong> جرقهٔ انرژی، ${matched.length} رشته با فردیت تو هم‌راستا هستند:</p>
+    ${matched.length < 5 ? `<p style="color:#f0c040;">💡 نکته: هرچه جرقه‌های بیشتری بزنی (مخصوصاً ۴۰-۵۰ جرقه)، نتایج کامل‌تر و متنوع‌تری می‌بینی. جرقه‌ها ۶۰٪ امتیاز نهایی را تشکیل می‌دهند.</p>` : ''}
 
     <!-- باکس دیباگ Payload -->
     <div style="background:#1a1a2e;border:1px solid #d4af37;border-radius:12px;padding:12px;margin:15px 0;text-align:right;font-size:0.8rem;color:#f0c040;">
@@ -586,29 +587,18 @@ function displayResults(data, sjt, conj) {
     html += `<p style="color:#f0c040;">رشته‌ای با آستانهٔ ۳۰٪ پیدا نشد. جرقه‌های بیشتری بزن یا مسیرهای جدیدی انتخاب کن.</p>`;
   } else {
     matched.forEach(r => {
-      // شواهد تطابق (اگر API برگرداند)
       let evidenceHtml = '';
       if (r.evidence && typeof r.evidence === 'object') {
         const parts = [];
-        if (r.evidence.micro_motives_match && r.evidence.micro_motives_match.length > 0) {
-          parts.push(`🧩 جرقه‌های هم‌راستا: ${r.evidence.micro_motives_match.slice(0, 3).join('، ')}`);
-        }
-        if (r.evidence.strategy_match && r.evidence.strategy_match.length > 0) {
-          parts.push(`🧭 سبک فکری هم‌راستا: ${r.evidence.strategy_match.slice(0, 2).join('، ')}`);
-        }
-        if (r.evidence.value_match && r.evidence.value_match.length > 0) {
-          parts.push(`⚖️ ارزش‌های هم‌راستا: ${r.evidence.value_match.slice(0, 2).join('، ')}`);
-        }
-        if (parts.length > 0) evidenceHtml = parts.join('<br>');
+        if (r.evidence.micro_motives_match?.length) parts.push(`🧩 جرقه‌های هم‌راستا: ${r.evidence.micro_motives_match.slice(0,3).join('، ')}`);
+        if (r.evidence.strategy_match?.length) parts.push(`🧭 سبک فکری هم‌راستا: ${r.evidence.strategy_match.slice(0,2).join('، ')}`);
+        if (r.evidence.value_match?.length) parts.push(`⚖️ ارزش‌های هم‌راستا: ${r.evidence.value_match.slice(0,2).join('، ')}`);
+        if (parts.length) evidenceHtml = parts.join('<br>');
       }
 
-      // جرقه‌های مشترک (اگر API برگرداند)
       let sparkDescriptions = '';
-      if (r.common_micro_motives && r.common_micro_motives.length > 0) {
-        sparkDescriptions = r.common_micro_motives
-          .slice(0, 3)
-          .map(c => c.description || state.microMotivesMap[c.code] || c.code)
-          .join('؛ ');
+      if (r.common_micro_motives?.length) {
+        sparkDescriptions = r.common_micro_motives.slice(0,3).map(c => c.description || state.microMotivesMap[c.code] || c.code).join('؛ ');
       }
 
       html += `
@@ -622,13 +612,14 @@ function displayResults(data, sjt, conj) {
     });
   }
 
-  // دکمهٔ نمایش پاسخ خام API
+  // دکمه‌ها: کپی Payload + Debug Raw Response + شروع دوباره
   html += `
-    <div style="margin-top:20px;text-align:center;">
+    <div style="margin-top:20px;text-align:center;display:flex;flex-direction:column;gap:10px;">
+      <button class="btn" onclick="copyPayload()" style="font-size:0.8rem;background:#333;color:#f0c040;">📋 کپی Payload ارسالی (برای تست در Swagger)</button>
       <button class="btn" onclick="document.getElementById('debugRawResponse').classList.toggle('hidden')" style="font-size:0.8rem;background:#333;color:#aaa;">🔧 نمایش پاسخ خام API (Debug)</button>
       <pre id="debugRawResponse" class="hidden" style="background:#111;padding:10px;border-radius:8px;overflow-x:auto;font-size:0.7rem;color:#0f0;text-align:left;direction:ltr;margin-top:10px;">${JSON.stringify(data, null, 2).substring(0, 3000)}</pre>
     </div>
-    <button class="btn btn-primary" onclick="resetJourney()">شروع دوباره</button>`;
+    <button class="btn btn-primary" onclick="resetJourney()" style="margin-top:15px;">شروع دوباره</button>`;
 
   app.innerHTML = html;
 }
@@ -649,6 +640,16 @@ function resetJourney() {
 async function init() {
   await Promise.all([loadQuestions(), loadMicroMotivesMap()]);
   render();
+}
+// تابع کمکی برای کپی Payload در کلیپ‌بورد
+function copyPayload() {
+  const payload = buildPayload();
+  const text = JSON.stringify(payload, null, 2);
+  navigator.clipboard.writeText(text).then(() => {
+    alert('✅ Payload با موفقیت کپی شد! حالا می‌تونی توی Swagger تستش کنی.');
+  }).catch(() => {
+    alert('❌ خطا در کپی. خودت دستی کپی کن.');
+  });
 }
 
 init();
