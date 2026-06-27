@@ -512,10 +512,12 @@ function displayResults(data, sjt, conj) {
     html += `<p style="color:#f0c040;">رشته‌ای با آستانهٔ ۳۰٪ پیدا نشد. جرقه‌های بیشتری بزن یا مسیرهای جدیدی انتخاب کن.</p>`;
   } else {
     matched.forEach(r => {
+      // امتیاز تفکیکی — اگر API برگرداند
       const mScore = r.m_score || 0;
       const sScore = r.s_score || 0;
       const vScore = r.v_score || 0;
-      // استخراج جرقه‌های مشترک (اگر API برگرداند)
+
+      // جرقه‌های مشترک — اگر API برگرداند
       let sparkDescriptions = '';
       if (r.common_micro_motives && r.common_micro_motives.length > 0) {
         sparkDescriptions = r.common_micro_motives
@@ -523,7 +525,8 @@ function displayResults(data, sjt, conj) {
           .map(c => c.description || state.microMotivesMap[c.code] || c.code)
           .join('؛ ');
       }
-      // استخراج شواهد (اگر API برگرداند)
+
+      // شواهد — اگر API برگرداند
       let evidenceText = '';
       if (r.evidence && typeof r.evidence === 'object') {
         const flat = Object.values(r.evidence).flat().slice(0, 3);
@@ -546,7 +549,14 @@ function displayResults(data, sjt, conj) {
     });
   }
 
-  html += `<button class="btn btn-primary" onclick="resetJourney()">شروع دوباره</button>`;
+  // دکمهٔ Debug برای نمایش پاسخ خام API
+  html += `
+    <div style="margin-top:20px;text-align:center;">
+      <button class="btn" onclick="document.getElementById('debugRaw').classList.toggle('hidden')" style="font-size:0.8rem;background:#333;color:#aaa;">🔧 نمایش پاسخ خام (Debug)</button>
+      <pre id="debugRaw" class="hidden" style="background:#111;padding:10px;border-radius:8px;overflow-x:auto;font-size:0.7rem;color:#0f0;text-align:left;direction:ltr;margin-top:10px;">${JSON.stringify(data, null, 2).substring(0, 2000)}</pre>
+    </div>
+    <button class="btn btn-primary" onclick="resetJourney()">شروع دوباره</button>`;
+
   app.innerHTML = html;
 }
 
