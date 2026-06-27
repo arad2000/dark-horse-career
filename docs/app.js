@@ -526,8 +526,7 @@ function analyzeValueStyle(answers) {
   return { values: selected.slice(0, 5), summary: unique.slice(0, 4).join('، '), description: 'ارزش‌های بنیادین شما نشان می‌دهد که چه چیزی به کارتان معنا می‌بخشد.' };
 }
 
-// ==================== DISPLAY RESULTS (تمیز، بدون دیباگ) ====================
-// ==================== DISPLAY RESULTS (V19.2 — اصلاح نهایی) ====================
+// ==================== DISPLAY RESULTS (V20.0 — سناریو برای هر رشته) ====================
 function displayResults(data, sjt, conj) {
   const recs = data.discovery_result?.recommendations || [];
   const matched = recs.filter(r => (r.fit_score || 0) >= 30).sort((a, b) => b.fit_score - a.fit_score);
@@ -535,55 +534,9 @@ function displayResults(data, sjt, conj) {
   const strategyStyle = state.strategyAnswers.length >= 15 ? analyzeStrategyStyle(state.strategyAnswers) : null;
   const valueStyle = state.valueAnswers.length >= 5 ? analyzeValueStyle(state.valueAnswers) : null;
 
-  // تحلیل همسویی برای بهترین رشته (بر اساس شواهد واقعی)
-  let alignmentHTML = '';
-  if (matched.length > 0) {
-    const best = matched[0];
-    const evidence = best.evidence || {};
-
-    const microMatch = evidence.micro_motives_matched || evidence.micro_motives_match || [];
-    const strategyMatch = evidence.strategy_matched || evidence.strategy_match || [];
-    const valueMatch = evidence.value_matched || evidence.value_match || [];
-
-    const hasStrategy = strategyMatch.length > 0;
-    const hasValue = valueMatch.length > 0;
-
-    if (hasStrategy && hasValue) {
-      // 🎯 سناریوی ۱: همسویی طلایی
-      alignmentHTML = `
-        <div style="background:#1a1a2e;border:2px solid #f0c040;border-radius:12px;padding:15px;margin:15px 0;text-align:right;">
-          <p style="margin:0;font-size:1.2rem;">🎯 <strong style="color:#f0c040;">همسویی طلایی!</strong></p>
-          <p style="color:#b0a080;line-height:1.8;">عالی! خرده‌انگیزه‌هایت، سبک فکری و ارزش‌هایت — هر سه لایهٔ فردیت تو — با رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> کاملاً هم‌راستا هستند. این مسیر برای تو مثل یک جادهٔ هموار و روشن است — با قدرت قدم بردار.</p>
-        </div>`;
-    } else if (hasStrategy && !hasValue) {
-      // ⚡ سناریوی ۲: لایهٔ دوم همسو، لایهٔ سوم ناهمسو
-      alignmentHTML = `
-        <div style="background:#1a1a2e;border:2px solid #d4af37;border-radius:12px;padding:15px;margin:15px 0;text-align:right;">
-          <p style="margin:0;font-size:1.2rem;">⚡ <strong style="color:#d4af37;">همسویی سبک فکری — اما ارزش‌هایت کمی متفاوت است</strong></p>
-          <p style="color:#b0a080;line-height:1.8;">خرده‌انگیزه‌هایت و سبک فکری‌ات با رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> همسو هستند، اما <strong>ارزش‌های بنیادینت</strong> مسیر کمی متفاوتی را نشان می‌دهند. این یک فرصت است: تو می‌توانی در این رشته با <strong>انگیزه‌های متفاوت و نوآورانه</strong> نسبت به دیگران عمل کنی. مسیرهای شغلی غیرسنتی، محیط‌های کاری با ارزش‌های متفاوت، یا سازمان‌های مردم‌نهاد را بررسی کن.</p>
-        </div>`;
-    } else if (!hasStrategy && hasValue) {
-      // ⚡ سناریوی ۳: لایهٔ سوم همسو، لایهٔ دوم ناهمسو
-      alignmentHTML = `
-        <div style="background:#1a1a2e;border:2px solid #d4af37;border-radius:12px;padding:15px;margin:15px 0;text-align:right;">
-          <p style="margin:0;font-size:1.2rem;">⚡ <strong style="color:#d4af37;">همسویی ارزش‌ها — اما سبک فکری‌ات مسیر متفاوتی را می‌طلبد</strong></p>
-          <p style="color:#b0a080;line-height:1.8;">خرده‌انگیزه‌هایت و ارزش‌هایت با رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> همسو هستند، اما <strong>سبک فکری و روش یادگیری‌ات</strong> با مسیر سنتی این رشته تفاوت دارد. این یعنی تو نیاز داری مسیر را به روش خودت طی کنی. <strong>محیط‌های خلاق، استارتاپی، یا دانشگاه‌های با یادگیری مبتنی بر پروژه (PBL)</strong> می‌توانند برای تو مناسب‌تر باشند.</p>
-        </div>`;
-    } else {
-      // 🔍 سناریوی ۴: فقط لایهٔ اول همسو
-      alignmentHTML = `
-        <div style="background:#1a1a2e;border:2px solid #b0a080;border-radius:12px;padding:15px;margin:15px 0;text-align:right;">
-          <p style="margin:0;font-size:1.2rem;">🔍 <strong style="color:#f0c040;">خرده‌انگیزه‌هایت قوی هستند — سبک فکری و ارزش‌هایت هنوز در حال شکل‌گیری هستند</strong></p>
-          <p style="color:#b0a080;line-height:1.8;">رشتهٔ <strong style="color:#f0c040;">${best.major_name_fa}</strong> با خرده‌انگیزه‌هایت همسویی بالایی دارد. با همین تعداد خرده‌انگیزه، این رشته‌ها بیشترین هم‌راستایی را با فردیت فعلی تو نشان می‌دهند. اگر دوست داری جنبه‌های دیگری از خودت را کشف کنی، می‌توانی به شهر رؤیاها برگردی و قلمروهای جدید را کاوش کنی — اما این کاملاً اختیاری است.</p>
-        </div>`;
-    }
-  }
-
   let html = `
     <h2>📊 نتایج</h2>
     <p style="color:#b0a080;font-style:italic;margin-bottom:15px;">✨ این پیشنهادها بر اساس ویژگی‌هایی است که <strong>امروز</strong> در خودت کشف کردی. فردیت یک سفر است، نه یک مقصد — ممکن است در طول زمان تغییر کند و این کاملاً طبیعی است.</p>
-
-    ${alignmentHTML}
 
     ${strategyStyle || valueStyle ? `
     <div style="background:#1a1a2e;border:1px solid #d4af37;border-radius:12px;padding:15px;margin:15px 0;text-align:right;font-size:0.85rem;">
@@ -598,6 +551,41 @@ function displayResults(data, sjt, conj) {
     html += `<p style="color:#f0c040;">با همین خرده‌انگیزه‌ها، هیچ رشته‌ای به آستانهٔ ۳۰٪ نرسیده است.</p>`;
   } else {
     matched.forEach(r => {
+      // --- استخراج شواهد و تحلیل همسویی برای این رشته ---
+      let alignmentBadge = '';
+      if (r.evidence && typeof r.evidence === 'object') {
+        const microMatch = r.evidence.micro_motives_matched || r.evidence.micro_motives_match || [];
+        const strategyMatch = r.evidence.strategy_matched || r.evidence.strategy_match || [];
+        const valueMatch = r.evidence.value_matched || r.evidence.value_match || [];
+
+        const hasStrategy = strategyMatch.length > 0;
+        const hasValue = valueMatch.length > 0;
+
+        // تعیین سناریو و پیشنهاد شخصی‌سازی‌شده
+        let scenarioText = '';
+        let borderColor = '#b0a080';
+
+        if (hasStrategy && hasValue) {
+          borderColor = '#f0c040';
+          scenarioText = '🎯 هر سه لایهٔ فردیتت با این رشته هم‌راستاست.';
+        } else if (hasStrategy && !hasValue) {
+          borderColor = '#d4af37';
+          scenarioText = '⚡ خرده‌انگیزه‌ها و سبک فکری‌ات همسو هستند، اما ارزش‌هایت مسیر متفاوتی نشان می‌دهند. می‌توانی با انگیزه‌های نوآورانه در این رشته عمل کنی.';
+        } else if (!hasStrategy && hasValue) {
+          borderColor = '#d4af37';
+          scenarioText = '⚡ خرده‌انگیزه‌ها و ارزش‌هایت همسو هستند، اما سبک فکری‌ات با مسیر سنتی تفاوت دارد. محیط‌های خلاق و استارتاپی را بررسی کن.';
+        } else {
+          borderColor = '#b0a080';
+          scenarioText = '🔍 خرده‌انگیزه‌هایت با این رشته همسو هستند. سبک فکری و ارزش‌هایت هنوز در حال شکل‌گیری هستند.';
+        }
+
+        alignmentBadge = `
+          <div style="background:#1a1a2e;border:1px solid ${borderColor};border-radius:8px;padding:8px 10px;margin-top:8px;text-align:right;font-size:0.8rem;">
+            <p style="margin:0;color:${borderColor};line-height:1.6;">${scenarioText}</p>
+          </div>`;
+      }
+
+      // --- استخراج شواهد متنی ---
       let evidenceHtml = '';
       if (r.evidence && typeof r.evidence === 'object') {
         const parts = [];
@@ -609,12 +597,15 @@ function displayResults(data, sjt, conj) {
         if (valueMatch.length) parts.push(`⚖️ ارزش‌های هم‌راستا: ${valueMatch.slice(0,2).map(m=>m.description||m).join('، ')}`);
         if (parts.length) evidenceHtml = parts.join('<br>');
       }
-      html += `<div class="card" style="text-align:right;">
-        <h3 style="color:#f0c040;">${r.major_name_fa || 'رشتهٔ پیشنهادی'}</h3>
-        <div class="progress-bar"><div class="progress-fill" style="width:${r.fit_score}%"></div></div>
-        <p style="margin-top:8px;">🔹 <strong>${r.fit_score}%</strong> تطابق</p>
-        ${evidenceHtml ? `<p style="font-size:0.85rem;color:#b0a080;line-height:1.8;">📋 ${evidenceHtml}</p>` : ''}
-      </div>`;
+
+      html += `
+        <div class="card" style="text-align:right;">
+          <h3 style="color:#f0c040;">${r.major_name_fa || 'رشتهٔ پیشنهادی'}</h3>
+          <div class="progress-bar"><div class="progress-fill" style="width:${r.fit_score}%"></div></div>
+          <p style="margin-top:8px;">🔹 <strong>${r.fit_score}%</strong> تطابق</p>
+          ${evidenceHtml ? `<p style="font-size:0.85rem;color:#b0a080;line-height:1.8;">📋 ${evidenceHtml}</p>` : ''}
+          ${alignmentBadge}
+        </div>`;
     });
   }
 
