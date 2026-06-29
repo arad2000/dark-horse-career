@@ -129,7 +129,6 @@ function render() {
     case 'manifesto': renderManifesto(); break;
     case 'guide': renderGuide(); break;
     case 'splash': renderSplash(); break;
-      <button class="btn" onclick="showAllFeedback()" style="margin-top:8px;font-size:0.8rem;background:#333;color:#aaa;">📋 مشاهده بازخوردها (admin)</button>
     case 'realm': renderRealm(); break;
     case 'subRealm': renderSubRealm(); break;
     case 'narrowPath': renderNarrowPath(); break;
