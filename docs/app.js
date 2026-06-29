@@ -1,7 +1,7 @@
 // frontend/app.js — نسخهٔ نهایی V25.6
 // تغییرات: Manifesto جدید، UUID، Resume کامل، History، Race Condition، Retry
 
-const API_BASE = 'https://dark-horse-api.onrender.com';
+const API_BASE = 'https://dark-horse-career.onrender.com';
 const DATA_BASE = 'https://raw.githubusercontent.com/arad2000/dark-horse-career/main/data/';
 
 // ==================== GLOBAL STATE ====================
